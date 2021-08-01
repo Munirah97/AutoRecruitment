@@ -27,8 +27,6 @@
             </div>
         </div>
 
-
-
         <!-- Registration Form -->
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5" style="direction:rtl">
             <div class="col-lg-7">
@@ -37,7 +35,7 @@
                     <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
                     <!-- NID input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="nid" type="number" placeholder="Enter your NID..." required />
+                        <input class="form-control" id="nid" type="number" placeholder="Enter your NID..." required onkeyup="vlidateNID()" />
                         <label for="NID">رقم الهوية الوطنية</label>
                         <div class="invalid-feedback">A name is required.</div>
                     </div>
@@ -457,10 +455,16 @@
                         </div>
                     </div>
                     <!-- Submit Button-->
-                    <div class="d-grid"><button class="btn btn-primary btn-xl " id="submitButton" type="submit" style="margin-top:20px">Submit</button></div>
+                    <div class="text-center"><button class="btn btn-primary btn-xl " id="submitButton" type="submit" style="margin-top:20px">ارسال التقديم</button></div>
                 </form>
             </div>
         </div>
         
     </div>
 </section>
+
+<script>
+    function vlidateNID() {
+
+    }
+</script>
