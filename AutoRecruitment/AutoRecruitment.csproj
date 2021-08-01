@@ -129,6 +129,9 @@
   <ItemGroup>
     <Content Include="Content\assets\favicon.ico" />
     <Content Include="Content\assets\img\bg-masthead.jpg" />
+    <Content Include="Content\assets\img\niti-bg-crop.jpg" />
+    <Content Include="Content\assets\img\niti-bg.jpg" />
+    <Content Include="Content\assets\img\niti-bg2.jpg" />
     <Content Include="Content\assets\img\portfolio\fullsize\1.jpg" />
     <Content Include="Content\assets\img\portfolio\fullsize\2.jpg" />
     <Content Include="Content\assets\img\portfolio\fullsize\3.jpg" />
@@ -141,6 +144,7 @@
     <Content Include="Content\assets\img\portfolio\thumbnails\4.jpg" />
     <Content Include="Content\assets\img\portfolio\thumbnails\5.jpg" />
     <Content Include="Content\assets\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="Content\assets\vendor\jquery\jquery.min.js" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="favicon.ico" />
@@ -148,6 +152,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\assets\vendor\jquery\jquery.min.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -172,6 +177,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\temp.cshtml" />
+    <Content Include="Views\Home\RegistrationForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
