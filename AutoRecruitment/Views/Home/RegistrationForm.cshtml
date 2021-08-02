@@ -29,15 +29,15 @@
 
         <!-- Registration Form -->
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5" style="direction:rtl">
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <form id="contactForm">
 
                     <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
                     <!-- NID input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="nid" type="number" placeholder="Enter your NID..." required onkeyup="vlidateNID()" />
+                        <input class="form-control" id="nid" type="number" placeholder="..." maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
                         <label for="NID">رقم الهوية الوطنية</label>
-                        <div class="invalid-feedback">A name is required.</div>
+                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
                     <p>الرجاء كتابة الاسم كما هو مكتوب في جواز السفر او الهوية الوطنية <span style="color:#f5494c">*</span> </p>
@@ -46,33 +46,33 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- First Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الأول (انجليزي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="enNameF" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <label for="enNameF">الاسم الأول (انجليزي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Second Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الثاني (انجليزي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="enNameS" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <label for="enNameS">الاسم الثاني (انجليزي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Third Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الثالث (انجليزي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="enNameT" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <label for="enNameT">الاسم الثالث (انجليزي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Last Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">اسم العائلة (انجليزي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="enNameL" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <label for="enNameL">اسم العائلة (انجليزي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                     </div>
@@ -82,33 +82,33 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- First Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الأول (عربي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="arNameF" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/> 
+                                <label for="arNameF">الاسم الأول (عربي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Second Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الثاني (عربي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="arNameS" type="text" placeholder="..."  maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="arNameS">الاسم الثاني (عربي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Third Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">الاسم الثالث (عربي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="arNameT" type="text" placeholder="..."  maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="arNameT">الاسم الثالث (عربي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Last Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">اسم العائلة (عربي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="arNameL" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"  />
+                                <label for="arNameL">اسم العائلة (عربي)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                     </div>
@@ -116,10 +116,10 @@
                     <p>البريد الالكتروني <span style="color:#f5494c">*</span> </p>
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control is-invalid" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);"/>
                         <label for="email">البريد الالكتروني</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        <div id="invalid-email" class="invalid-feedback">هذا الحقل مطلوب</div>
+                        
                     </div>
 
 
@@ -464,7 +464,38 @@
 </section>
 
 <script>
-    function vlidateNID() {
+    function inputMaxLength(input) {
+        if (input.value.length > input.maxLength) {
+            input.value = input.value.slice(0, input.maxLength);
+        }
+    }
+    function vlidateEmpty(input) {
+        if (input.value == "") {
+            input.classList.add("is-invalid");
+        }
+        else {
+            input.classList.remove("is-invalid");
+        }
+    }
 
+
+    function validateEmail(input)
+    {
+        var lblError = document.getElementById("invalid-email");
+        if (input.value == "") {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+            input.classList.add("is-invalid");
+        }
+        else {
+            var email = input.value;
+            var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if (!expr.test(email)) {
+                lblError.innerHTML = "البريد الالكتروني غير صحيح";
+                input.classList.add("is-invalid");
+            }
+            else {
+                input.classList.remove("is-invalid");
+            }
+        }
     }
 </script>
