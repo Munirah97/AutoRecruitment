@@ -146,6 +146,12 @@
     <Content Include="Content\assets\img\portfolio\thumbnails\6.jpg" />
     <Content Include="Content\assets\vendor\jquery\jquery.min.js" />
     <Content Include="Content\css\styles.css" />
+    <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\DatePicker\js\bootstrap-hijri-datepicker.js" />
+    <Content Include="Content\DatePicker\js\bootstrap-hijri-datepicker.min.js" />
+    <Content Include="Content\DatePicker\js\bootstrap-hijri-datetimepicker.js" />
+    <Content Include="Content\DatePicker\js\bootstrap-hijri-datetimepicker.min.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

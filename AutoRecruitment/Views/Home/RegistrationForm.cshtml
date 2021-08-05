@@ -35,9 +35,9 @@
                     <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
                     <!-- NID input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="nid" type="number" placeholder="..." maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                        <input class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this)" />
                         <label for="NID">رقم الهوية الوطنية</label>
-                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                        <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
                     <p>الرجاء كتابة الاسم كما هو مكتوب في جواز السفر او الهوية الوطنية <span style="color:#f5494c">*</span> </p>
@@ -46,7 +46,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- First Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="enNameF" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <input class="form-control" id="enNameF" type="text" placeholder="الاسم الأول (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="enNameF">الاسم الأول (انجليزي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -54,7 +54,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Second Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="enNameS" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <input class="form-control" id="enNameS" type="text" placeholder="الاسم الثاني (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="enNameS">الاسم الثاني (انجليزي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -62,7 +62,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Third Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="enNameT" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <input class="form-control" id="enNameT" type="text" placeholder="الاسم الثالث (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="enNameT">الاسم الثالث (انجليزي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -70,7 +70,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Last Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="enNameL" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>
+                                <input class="form-control" id="enNameL" type="text" placeholder="اسم العائلة (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="enNameL">اسم العائلة (انجليزي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -82,7 +82,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- First Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="arNameF" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/> 
+                                <input class="form-control" id="arNameF" type="text" placeholder="الاسم الأول (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="arNameF">الاسم الأول (عربي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -90,7 +90,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Second Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="arNameS" type="text" placeholder="..."  maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <input class="form-control" id="arNameS" type="text" placeholder="الاسم الثاني (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="arNameS">الاسم الثاني (عربي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -98,7 +98,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Third Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="arNameT" type="text" placeholder="..."  maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <input class="form-control" id="arNameT" type="text" placeholder="الاسم الثالث (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="arNameT">الاسم الثالث (عربي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -106,7 +106,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 ">
                             <!-- Last Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="arNameL" type="text" placeholder="..." maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"  />
+                                <input class="form-control" id="arNameL" type="text" placeholder="اسم العائلة (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="arNameL">اسم العائلة (عربي)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
@@ -116,10 +116,10 @@
                     <p>البريد الالكتروني <span style="color:#f5494c">*</span> </p>
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);"/>
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);" />
                         <label for="email">البريد الالكتروني</label>
                         <div id="invalid-email" class="invalid-feedback">هذا الحقل مطلوب</div>
-                        
+
                     </div>
 
 
@@ -147,17 +147,17 @@
                         <div class="col-xl-6">
                             <!-- Hijri-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">تاريخ الميلاد (هجري)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control hijri-date-default" id="HDate" type="text" placeholder="تاريخ الميلاد (هجري)" onpaste="validateDate(this,'Hijri','invalid-hijri')" onfocusout="validateDate(this,'Hijri','invalid-hijri')" />
+                                <label for="HDate">تاريخ الميلاد (هجري)</label>
+                                <div id="invalid-hijri" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-6 ">
                             <!-- Gorgian -->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-                                <label for="name">تاريخ الميلاد (ميلادي)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control hijri-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
+                                <label for="MDate">تاريخ الميلاد (ميلادي)</label>
+                                <div id="invalid-gregorian" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                     </div>
@@ -165,37 +165,37 @@
                     <!-- Blood Type input-->
                     <p>فصيلة الدم <span style="color:#f5494c">*</span></p>
                     <div class="form-floating mb-3">
-                        <select class="form-control" style="padding-top:0; padding-bottom:0" id="blood" required>
-                            <option selected disabled>اختر فصيلة الدم</option>
-                            <option>A+</option>
-                            <option>A-</option>
-                            <option>B+</option>
-                            <option>B-</option>
-                            <option>AB+</option>
-                            <option>AB-</option>
-                            <option>O+</option>
-                            <option>O-</option>
+                        <select class="form-control" style="padding-top:0; padding-bottom:0" id="blood" onfocusout="vlidateEmpty(this)">
+                            <option value="" selected disabled>اختر فصيلة الدم</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
                         </select>
-                        <div class="invalid-feedback">A name is required.</div>
+                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
                     <!-- Grades input-->
-                    <p>درجة الثانوية والقدرات (ارقام صحيحة فقط)<span style="color:#f5494c">*</span></p>
+                    <p>درجة الثانوية والقدرات (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
                     <div class="row">
                         <div class="col-xl-6">
                             <!-- Hijri-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Enter your name..." required />
-                                <label for="">النسبة المئوية للثانوية العامة</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="highgrade">النسبة المئوية للثانوية العامة</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                         <div class="col-xl-6 ">
                             <!-- Gorgian -->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Enter your name..." required />
-                                <label for="">نسبة القدرات (قياس)</label>
-                                <div class="invalid-feedback">A name is required.</div>
+                                <input class="form-control" id="qiasgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="qiasgrade">نسبة القدرات (قياس)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
                     </div>
@@ -203,28 +203,29 @@
                     <p>ارقام التواصل <span style="color:#f5494c">*</span> </p>
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+                        <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone1')" />
                         <label for="phone">هاتف المتقدم</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        <div id="invalid-phone1" class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+                        <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone2')" />
+
                         <label for="phone">هاتف ولي الأمر</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        <div id="invalid-phone2" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+                        <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone3')" />
                         <label for="phone">هاتف احد الأقارب</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        <div id="invalid-phone3" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
                     </div>
 
                     <!-- Address input-->
                     <p>مكان الإقامة <span style="color:#f5494c">*</span></p>
                     <div class="form-floating mb-3">
-                        <select class="form-control" style="padding-top:0; padding-bottom:0" id="blood" required>
-                            <option selected disabled>اختر مكان الاقامة</option>
+                        <select class="form-control" style="padding-top:0; padding-bottom:0" id="address" required onfocusout="vlidateEmpty(this)">
+                            <option value="" selected disabled>اختر مكان الاقامة</option>
                             <option> الرياض - Riyadh </option>
                             <option> الدرعية - Daryiah </option>
                             <option> الخرج - Al Kharij </option>
@@ -372,7 +373,7 @@
                             <option> بني حسن - Bani Hassan </option>
                             <option> سكاكا - Sakaka </option>
                         </select>
-                        <div class="invalid-feedback">A name is required.</div>
+                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
                     <br />
 
@@ -381,18 +382,18 @@
                         <p>هل سبق لك الحصول على دعم من صندوق الموارد البشرية <span style="color:#f5494c">*</span></p>
 
                         <label class="mycontainer" style="float:right;">
-                            نعم
-                            <input type="radio" checked="checked" name="hrdf" onclick="handleClick(this);" value="">
+                            لا
+                            <input type="radio" checked="checked" name="hrdf" onclick="handleClick(this);" value="no">
                             <span class="checkmark"></span>
                         </label>
                         <label class="mycontainer" style="float:right">
-                            لا
-                            <input type="radio" name="hrdf" onclick="handleClick(this);" value="">
+                            نعم
+                            <input type="radio" name="hrdf" onclick="handleClick(this);" value="yes">
                             <span class="checkmark"></span>
                         </label>
                         <label class="mycontainer" style="float:right">
                             لا أعلم
-                            <input type="radio" name="hrdf" onclick="handleClick(this);" value="">
+                            <input type="radio" name="hrdf" onclick="handleClick(this);" value="dont_know">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -405,52 +406,89 @@
 
                         <label class="mycontainer" style="float:right;">
                             لائق صحياً وخالي من الأمراض المزمنة.
-                            <input type="radio" checked="checked" name="health" onclick="handleClick(this);" value="batch">
+                            <input type="radio" checked="checked" name="health" onclick="Hide('healthOther')" value="well">
                             <span class="checkmark"></span>
                         </label>
                         <label class="mycontainer" style="float:right">
                             من ذوي الاحتياجات الخاصة.
-                            <input type="radio" name="health" onclick="handleClick(this);" value="trainee">
+                            <input type="radio" name="health" onclick="Hide('healthOther')" value="special_needs">
                             <span class="checkmark"></span>
                         </label>
                         <label class="mycontainer" style="float:right">
                             أخرى
-                            <input type="radio" name="health" onclick="handleClick(this);" value="trainee">
+                            <input type="radio" name="health" onclick="Show('healthOther')" value="other">
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <br />
                     <br />
+
+                    <!-- Health Condition -> Other -->
+                    <div id="healthOther" style="display:none;">
+                        <p>اكتب المشكلة الصحية التي تواجهها <span style="color:#f5494c">*</span> </p>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="healthOtherInput" type="text" placeholder="المشكلة الصحية" onfocusout="validateEmail(this);" />
+                            <label for="email">المشكلة الصحية</label>
+                            <div id="invalid-email" class="invalid-feedback">هذا الحقل مطلوب</div>
+                        </div>
+                    </div>
+
 
                     <!-- Degree -->
                     <div style="display:inline-block; direction:rtl">
                         <p>هل حصلت على شهادة أعلى من الثانوية العامة (دبلوم/ بكالوريوس) <span style="color:#f5494c">*</span></p>
 
                         <label class="mycontainer" style="float:right;">
-                            نعم
-                            <input type="radio" checked="checked" name="degree" onclick="handleClick(this);" value="batch">
+                            لا
+                            <input type="radio" checked="checked" name="degree" onclick="Hide('GPA')" value="no">
                             <span class="checkmark"></span>
                         </label>
                         <label class="mycontainer" style="float:right">
-                            لا
-                            <input type="radio" name="degree" onclick="handleClick(this);" value="trainee">
+                            نعم
+                            <input type="radio" name="degree" onclick="Show('GPA')" value="yes">
                             <span class="checkmark"></span>
                         </label>
                     </div>
+
+                    <!-- GPA input-->
+                    <div id="GPA" style="display:none; margin-top:20px; margin-bottom:40px">
+                        <p>معدل الدبلوم/الباكلوريوس (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" style="padding-top:0; padding-bottom:0" id="GPAInput" onfocusout="vlidateEmpty(this)">
+                                <option value="" selected disabled>المعدل التراكمي</option>
+                                <option value="5">5</option>
+                                <option value="4.5">4.5</option>
+                                <option value="4">4</option>
+                                <option value="3.5">3.5</option>
+                                <option value="3">3</option>
+                                <option value="2.5">2.5</option>
+                                <option value="2">2</option>
+                                <option value="1.5">1.5</option>
+                                <option value="1">1</option>
+                            </select>
+                            <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                        </div>
+                    </div>
+
 
                     <div class="row gx-4 gx-lg-5" style="margin-top:15px">
                         <div class="col-lg-12 bg-light" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%);  padding-top:10px">
                             <div class="ar-text">
                                 <div class="row">
                                     <div class="col-1">
-                                        <input type="checkbox" style="float:right; margin: 5px;" />
+                                        <label class="mycontainer">
+                                            
+                                            <input type="checkbox">
+                                            <span class="checkbox"></span>
+                                        </label>
                                     </div>
                                     <div class="col-11">
-                            <p>أتعهد وأقر بأن جميع البيانات التي سيتم إدخالها في نموذج التقديم هذا صحيحة ودقيقة، وفي حال اتضح خلاف ذلك فيحق للمعهد الوطني للتدريب الصناعي إلغاء عملية التسجيل حتى لو تم اكتشاف ذلك أثناء أو بعد إصدار القرار النهائي للقبول، كما أوافق على قيام المعهد الوطني للتدريب الصناعي بالتحقق من البيانات الخاصة بـي والحصول على أية بيانات أخرى بالتواصل مع الجهات المختصة.</p>
+                                        <p>أتعهد وأقر بأن جميع البيانات التي سيتم إدخالها في نموذج التقديم هذا صحيحة ودقيقة، وفي حال اتضح خلاف ذلك فيحق للمعهد الوطني للتدريب الصناعي إلغاء عملية التسجيل حتى لو تم اكتشاف ذلك أثناء أو بعد إصدار القرار النهائي للقبول، كما أوافق على قيام المعهد الوطني للتدريب الصناعي بالتحقق من البيانات الخاصة بـي والحصول على أية بيانات أخرى بالتواصل مع الجهات المختصة.</p>
 
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -464,11 +502,14 @@
 </section>
 
 <script>
+    //----- To prevent typing more than maxlength -----
     function inputMaxLength(input) {
         if (input.value.length > input.maxLength) {
             input.value = input.value.slice(0, input.maxLength);
         }
     }
+
+    //----- To Check if Field is Empty -----
     function vlidateEmpty(input) {
         if (input.value == "") {
             input.classList.add("is-invalid");
@@ -478,9 +519,30 @@
         }
     }
 
+    
+    //----- To Check National ID Field -----
+    function vlidateNID(input) {
+        var lblError = document.getElementById("invalid-nid");
+        if (input.value == "") {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+            input.classList.add("is-invalid");
+        }
+        else {
+            var nid = input.value;
+            var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if (!expr.test(email)) {
+                lblError.innerHTML = "رقم الهوية الوطنية غير صالح";
+                input.classList.add("is-invalid");
+            }
+            else {
+                input.classList.remove("is-invalid");
+            }
+        }
+    }
 
-    function validateEmail(input)
-    {
+
+    //----- To Check Email Field -----
+    function validateEmail(input) {
         var lblError = document.getElementById("invalid-email");
         if (input.value == "") {
             lblError.innerHTML = "هذا الحقل مطلوب";
@@ -498,4 +560,137 @@
             }
         }
     }
+
+    //----- To Check Phone Number Field -----
+    function validatePhoneNumber(input, errID) {
+        var lblError = document.getElementById(errID);
+        if (input.value == "") {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+            input.classList.add("is-invalid");
+        }
+        else {
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (input.value.match(phoneno)) {
+                input.classList.remove("is-invalid");
+            }
+            else {
+                lblError.innerHTML = "رقم الهاتف غير صحيح";
+                input.classList.add("is-invalid");
+                //alert("Error");
+            }
+        }
+    }
+   
+    $('.phoneNumber').keyup(function (e) {
+        var ph = this.value.replace(/\D/g, '').substring(0, 12);
+        // Backspace and Delete keys
+        var deleteKey = (e.keyCode == 8 || e.keyCode == 46);
+        var len = ph.length;
+        if (len == 0) {
+            ph = ph;
+        }
+        else if (len < 3) {
+            ph = '(' + ph;
+        }
+        else if (len == 3) {
+            ph = '(' + ph + (deleteKey ? '' : ') ');
+        }
+        else if (len < 5) {
+            ph = '(' + ph.substring(0, 3) + ') ' + ph.substring(3, 5);
+        }
+        else if (len == 5) {
+            ph = '(' + ph.substring(0, 3) + ') ' + ph.substring(3, 5) + (deleteKey ? '' : '-');
+        }
+        else if (len < 8) {
+            ph = '(' + ph.substring(0, 3) + ') ' + ph.substring(3, 5) + '-' + ph.substring(5, 8);
+        }
+        else if (len == 8) {
+            ph = '(' + ph.substring(0, 3) + ') ' + ph.substring(3, 5) + '-' + ph.substring(5, 8) + (deleteKey ? '' : '-');
+        }
+        else {
+            ph = '(' + ph.substring(0, 3) + ') ' + ph.substring(3, 5) + '-' + ph.substring(5, 8) + '-' + ph.substring(8, 17);
+        }
+        this.value = ph;
+    });
+   
+    //----- To Check Date Field -----
+    function validateDate(input, dateType, errID) {
+        var lblError = document.getElementById(errID);
+        if (input.value == "") {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+            input.classList.add("is-invalid");
+        }
+        else {
+            const dateArray = input.value.split("-")
+            if (dateType == 'Hijri') {
+                if (parseInt(dateArray[2]) > 1500) {
+                    lblError.innerHTML = "التاريخ الهجري غير صحيح";
+                    input.classList.add("is-invalid");
+                }
+                else {
+                    input.classList.remove("is-invalid");
+                    //convertDate('HTG',);
+                   @* var date = new Date(Date.UTC(HijriArr[2], HijriArr[1], HijriArr[0], 3, 0, 0));
+                    alert(date.toLocaleDateString('en-eg'));
+                    var datet = new Date('9/1/1997').toLocaleDateString('AR-SA');
+                    alert(datet);*@
+                }
+            }
+            else if (dateType == 'Gregorian') {
+                if (parseInt(dateArray[2]) < 1500) {
+                    lblError.innerHTML = "التاريخ الميلادي غير صحيح";
+                    input.classList.add("is-invalid");
+                }
+                else {
+                    input.classList.remove("is-invalid");
+                    //convertDate('HTG',);
+                    @* var date = new Date(Date.UTC(HijriArr[2], HijriArr[1], HijriArr[0], 3, 0, 0));
+                    alert(date.toLocaleDateString('en-eg'));
+                    var datet = new Date('9/1/1997').toLocaleDateString('AR-SA');
+                    alert(datet);*@
+                } 
+            }
+        }
+    }
+    //----- To Convert Date H -> G -----
+
+    //----- To Convert Date G -> H -----
+
+
+    //----- To Display Date Picker -----
+    $(function () {
+        initHijrDatePickerDefault();
+    });
+
+    function initHijrDatePickerDefault() {
+        $(".hijri-date-default").hijriDatePicker({
+            locale: "ar-sa",
+            format: "DD-MM-YYYY",
+            hijriFormat: "iDD-iMM-iYYYY",
+            dayViewHeaderFormat: "MMMM YYYY",
+            hijriDayViewHeaderFormat: "iMMMM iYYYY",
+            showSwitcher: true,
+            allowInputToggle: false,
+            showTodayButton: false,
+            useCurrent: false,
+            isRTL: false,
+            viewMode: 'days',
+            keepOpen: false,
+            hijri: false,
+            debug: true,
+            showClear: false,
+            showTodayButton: false,
+            showClose: true
+        });
+    }
+
+    //----- Display/Hide Input when user check the radio btn -----
+    function Show(inputID) {
+        document.getElementById(inputID).style.display='block';
+
+    }
+    function Hide(inputID) {
+        document.getElementById(inputID).style.display = 'none';
+    }
+
 </script>
