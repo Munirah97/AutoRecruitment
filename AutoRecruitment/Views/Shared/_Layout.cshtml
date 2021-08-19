@@ -9,6 +9,8 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!------Icons Link----->
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap Icons-->
@@ -25,7 +27,7 @@
 
     <!-- DatePicker -->
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-   @* <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/flatly/bootstrap.min.css" rel="stylesheet">*@
+    @* <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/flatly/bootstrap.min.css" rel="stylesheet">*@
     <link href="~/Content/DatePicker/css/bootstrap-datetimepicker.css?v2" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
@@ -42,8 +44,22 @@
     @RenderBody()
 
     <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Company Name</div></div>
+    <footer class=" footer bg-niti py-4">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 ali" st>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.linkedin.com/company/national-industrial-training-institute-niti-/" ><i class="bx bxl-linkedin"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://twitter.com/NITI_KSA"><i class="bx bxl-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.facebook.com/pages/National-Industrial-Training-Institute/434689203347627"><i class="bx bxl-facebook"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.youtube.com/channel/UCvTozhTf7URfAGCWyY5u7xQ"><i class="bx bxl-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.instagram.com/niti_ksa/?hl=en"><i class="bx bxl-instagram-alt"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.snapchat.com/niti_ksa"><i class="bx bxl-snapchat"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small text-center mt-3" style="color:white">جميع الحقوق محفوظة للمعهد الوطني للتدريب الصناعي  @DateTime.Now.Year &copy;</div>
+            </div>
+        </div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

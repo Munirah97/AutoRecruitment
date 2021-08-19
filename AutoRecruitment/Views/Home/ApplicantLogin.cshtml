@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Applicant Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Masthead-->
+<header class="masthead" style="height: min-content">
+    <div class="container px-4 px-lg-5 h-50">
+        <div class="row gx-4 gx-lg-5 h-50 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">المعهد الوطني للتدريب الصناعي</h1>
+                <h2 class="text-white font-weight-bold">- برنامج كوادر السلامة والصحة المهنية -</h2>
+                <hr class="divider" />
+            </div>
+        </div>
+    </div>
+</header>
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">تسجيل الدخول لمراجعة التقديم</h2>
+        <hr class="divider" />
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-12 text-center ar-text">
+                @*                    <div class="mb-2"><i class="bi-person fs-1 text-primary"></i></div>
+                *@                    <form id="contactForm">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-10">
+                            <!-- NID input -->
+                            <div class="form-floating mb-3">
+                                <input style="border-radius:10rem" class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this)" />
+                                <label for="NID">رقم الهوية الوطنية</label>
+                                <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                            <!-- PIN input -->
+                            <div class="form-floating mb-3" id="onetimePass" style="display: none">
+                                <input style="border-radius:10rem;" class="form-control" id="pin" type="text" placeholder="كلمة المرور المؤقتة" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this)" />
+                                <label for="pin">كلمة المرور المؤقتة</label>
+                                <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                            <!-- Send Btn -->
+                            <button class="btn btn-primary btn-xl mb-1" id="sendButton" type="button" onclick="window.open('/SC/Registration', target = '_self')" style="display:none;width:100%; height:58px">دخول</button>
+                            <button class="btn btn-primary btn-xl " id="requestButton" type="button" onclick="requestPass()" style="width:100%; height:58px">ارسال كلمة مرور مؤقتة</button>
+                            <h6 id="msg" class="text-center mt-4" style="display:none">تم ارسال كلمة مرور مؤقتة الى البريد الالكتروني ms***@@gmail.com</h6>
+                            <h6 id="timer" class="text-center mt-4" style="display:none"></h6>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    function requestPass() {
+        document.getElementById("requestButton").disabled = true;
+        timer();
+        document.getElementById("msg").style.display = "block";
+        document.getElementById("timer").style.display = "block";
+        document.getElementById("sendButton").style.display = "block";
+        document.getElementById("onetimePass").style.display = "block";
+    }
+
+    function timer() {
+        // Set the date we're counting down to
+        var countDown = Math.floor(1000 * 60 * 2);
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Find the distance between now and the count down date
+            countDown = countDown - 1000;
+
+            // Time calculations for days, hours, minutes and seconds
+            var minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("timer").innerHTML = "اعادة الارسال خلال " + minutes + ":" + seconds;
+
+            // If the count down is over, write some text
+            if (countDown < 0) {
+                clearInterval(x);
+                document.getElementById("timer").style.display = "none";
+                document.getElementById("requestButton").disabled = false;
+            }
+        }, 1000);
+    }
+</script>
+
