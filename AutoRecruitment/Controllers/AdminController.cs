@@ -13,5 +13,30 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
+
+        public ActionResult Applicants()
+        {
+            return View();
+        }
+
+        public ActionResult Programs()
+        {
+            return View();
+        }
+
+        public ActionResult Campaigns()
+        {
+            return View();
+        }
+
+        public ActionResult Users()
+        {
+            return View();
+        }
+
+        public ActionResult Configuration()
+        {
+            return View();
+        }
     }
 }

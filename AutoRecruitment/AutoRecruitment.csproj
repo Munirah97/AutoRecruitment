@@ -123,7 +123,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\APNEController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SCController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1836,6 +1836,7 @@
     <Content Include="Content\assets\vendor\boxicons\css\transformations.css" />
     <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.svg" />
     <Content Include="Content\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\css\myStyleSheet.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.css" />
     <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.min.css" />
@@ -2037,6 +2038,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Admin\Applicants.cshtml" />
+    <Content Include="Views\Admin\Campaigns.cshtml" />
+    <Content Include="Views\Admin\Configuration.cshtml" />
     <None Include="Views\Admin\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2051,14 +2055,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\temp.cshtml" />
-    <Content Include="Views\SC\RegistrationForm.cshtml" />
-    <Content Include="Views\APNE\Index.cshtml" />
-    <Content Include="Views\SC\Index.cshtml" />
-    <Content Include="Views\APNE\RegistrationForm.cshtml" />
-    <Content Include="Views\SC\Registration.cshtml" />
+    <Content Include="Views\Registration\RegistrationForm.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\RegistrationReview.cshtml" />
     <Content Include="Views\Home\ApplicantLogin.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\tamplate.cshtml" />
+    <Content Include="Views\Admin\Programs.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

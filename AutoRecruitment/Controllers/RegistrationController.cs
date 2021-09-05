@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AutoRecruitment.Controllers
 {
-    public class SCController : Controller
+    public class RegistrationController : Controller
     {
         // GET: SC
         public ActionResult Index()
@@ -19,7 +19,7 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
-        public ActionResult Registration()
+        public ActionResult RegistrationReview()
         {
             return View();
         }

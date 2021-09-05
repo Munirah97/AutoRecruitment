@@ -1,0 +1,184 @@
+﻿.ar-text {
+    font-family: Calibri;
+    text-align: right;
+}
+
+/*--------- status bar -----*/
+.progressbar {
+    counter-reset: step;
+}
+
+    .progressbar li {
+        list-style-type: none;
+        width: 25%;
+        float: right;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        color: #7d7d7d;
+    }
+
+        .progressbar li:before {
+            width: 30px;
+            height: 30px;
+            content: '✓';
+            /*content: counter(step);*/
+            counter-increment: step;
+            line-height: 30px;
+            border: 2px solid #7d7d7d;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            background-color: white;
+            color: #fff;
+        }
+
+        .progressbar li:after {
+            width: 100%;
+            height: 2px;
+            content: '';
+            position: absolute;
+            background-color: #7d7d7d;
+            top: 15px;
+            right: -50%;
+            z-index: -1;
+        }
+
+        .progressbar li:first-child:after {
+            content: none;
+        }
+
+        .progressbar li.active {
+            color: #0a3049;
+            font-weight: bold;
+        }
+
+            .progressbar li.active:before {
+                border-color: #0a3049;
+                background: #0a3049;
+            }
+
+            .progressbar li.active + li:after {
+                background-color: #0a3049;
+            }
+
+/*--------- contact us icons -----*/
+.btn-social {
+    border-radius: 100% !important;
+    display: inline-flex !important;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.25rem !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------- Hide Spinner in input type number -----*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.form-floating label {
+    color: #6c757d !important;
+}
+
+
+/*======================= Radio Btn / Checkbox =====================*/
+/* The container */
+.mycontainer {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default radio button */
+    .mycontainer input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* Create a custom checkbox */
+.checkbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.mycontainer:hover input ~ .checkmark, .mycontainer:hover input:checked ~ .checkbox {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a color background */
+.mycontainer input:checked ~ .checkmark, .mycontainer input:checked ~ .checkbox {
+    background-color: #f5494c;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after, .checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.mycontainer input:checked ~ .checkmark:after, .mycontainer input:checked ~ .checkbox:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.mycontainer .checkmark:after {
+    top: 9px;
+    right: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* Style the checkbox */
+.mycontainer .checkbox:after {
+    left: 11px;
+    top: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
