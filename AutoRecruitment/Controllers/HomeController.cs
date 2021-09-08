@@ -13,11 +13,6 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
-        public ActionResult ApplicantLogin()
-        {
-            return View();
-        }
-
         public ActionResult temp()
         {
             return View();

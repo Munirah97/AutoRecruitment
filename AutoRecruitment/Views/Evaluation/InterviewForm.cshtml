@@ -1,0 +1,306 @@
+﻿
+@{
+    ViewBag.Title = "Interview Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Masthead-->
+<header class="masthead2" style="height: min-content">
+    <div class="container px-4 px-lg-5 h-50">
+        <div class="row gx-4 gx-lg-5 h-50 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">المعهد الوطني للتدريب الصناعي</h1>
+                <h2 class="text-white font-weight-bold">- اسم البرنامج -</h2>
+                <hr class="divider" />
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Body -->
+<section class="page-section bg-light" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+            </div>
+        </div>
+
+        <!-- Interview Form -->
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-8 col-md-10">
+                <form id="contactForm">
+
+                    <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
+                    <!-- NID input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" style="border-radius:10rem" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this)" />
+                        <label for="NID">رقم الهوية الوطنية</label>
+                        <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                    </div>
+
+                    <div class="row gx-4 gx-lg-5 m-1 mb-4" style="background-color:#fff;border-radius:25px; height:150px">
+                        <div class="col-lg-12 p-4" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%); border-radius:25px">
+                            <div class="ar-text">
+                                <div class="row">
+                                    <div class="col-12">
+                                        الاسم الرباعي: --
+                                        <br />
+                                        العمر: --
+                                        <br />
+                                        الدرجة العلمية: --
+                                        <br />
+                                        التخصص: --
+                                        <br />
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <p class="m-3">درجة التقييم <span style="color:#f5494c">(1 تعني ضعيف و 5 تعني ممتاز)</span> </p>
+
+                    <!-- AR Lang -->
+                    <div class="m-3 mt-3">
+                        <p>اللغة العربية <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="ar_lang" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="ar_lang" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="ar_lang" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="ar_lang" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="ar_lang" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Eng Lang -->
+                    <div class="m-3 mt-5">
+                        <p>اللغة الانجليزية <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="eng_lang" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="eng_lang" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="eng_lang" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="eng_lang" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="eng_lang" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Communication Skill -->
+                    <div class="m-3 mt-5">
+                        <p>مهارة التواصل <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="cominu_skill" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="cominu_skill" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="cominu_skill" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="cominu_skill" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="cominu_skill" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Health Condition -->
+                    <div class="m-3 mt-5">
+                        <p>السلامة الجسدية والنفسية <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="helth" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="helth" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="helth" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="helth" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="helth" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Style -->
+                    <div class="m-3 mt-5">
+                        <p>المظهر الخارجي <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="style" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="style" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="style" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="style" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="style" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Jop Skill -->
+                    <div class="m-3 mt-5">
+                        <p>المهارات الوظيفية <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="job_skill" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="job_skill" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="job_skill" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="job_skill" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="job_skill" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Accept/Reject -->
+                    <div class="m-3 mt-5">
+                        <p>المقبول أو المرفوض (من وجهة نظرك) <span style="color:#f5494c">*</span></p>
+
+                        <label class="mycontainer">
+                            1
+                            <input type="radio" checked="checked" name="acceptance" value="1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            2
+                            <input type="radio" name="acceptance" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            3
+                            <input type="radio" name="acceptance" value="3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            4
+                            <input type="radio" name="acceptance" value="4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            5
+                            <input type="radio" name="acceptance" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            إنتظار
+                            <input type="radio" name="acceptance" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="mycontainer">
+                            مرفوض
+                            <input type="radio" name="acceptance" value="5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Remarks -->
+                    <div class="form-floating mb-3 mt-5">
+                        <textarea class="form-control" id="remarks" placeholder="ملاحظات" style="height:100px; border-radius:25px"></textarea>
+                        <label for="remarks">ملاحظات</label>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="text-center">
+                        @*<button class="btn btn-primary btn-xl mt-3" id="submitButton" type="button">ارسال التقييم</button>*@
+                        <a class="btn btn-primary btn-xl mt-3" id="submitButton" href="/Evaluation/ResponsePage"> ارسال التقييم</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+

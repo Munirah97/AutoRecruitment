@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Evaluation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Masthead-->
+<header class="masthead2" style="height: min-content">
+    <div class="container px-4 px-lg-5 h-50">
+        <div class="row gx-4 gx-lg-5 h-50 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">المعهد الوطني للتدريب الصناعي</h1>
+                <h2 class="text-white font-weight-bold">- تقييم المتقدمين -</h2>
+                <hr class="divider" />
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Body -->
+<div class="container px-4 px-lg-5 mt-4 mb-4">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-xl-6 col-lg-6 text-center">
+            <div class="form-floating mb-3 d-flex">
+                <h4 class="m-3" style="font-family: Calibri;min-width: max-content;">اسم البرنامج </h4>
+                <select class="form-control" style="padding-top:0; padding-bottom:0;" id="">
+                    <option value="" selected>برنامج التدرج الوظيفي (APNE)</option>
+                    <option value="">برنامج كوادر الصحة والسلامة المهنية (OHS)</option>
+                </select>
+                @*<div class="invalid-feedback">هذا الحقل مطلوب</div>*@
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio-->
+<div id="portfolio">
+    <div class="container-fluid p-0 mb-5">
+        <div class="row g-0 justify-content-center">
+            <div class="col-lg-3 col-sm-4 p-2">
+                <a class="img-box" href="/Evaluation/EngAssessmentForm">
+                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" style="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">نموذج</div>
+                        <div class="project-name">المقابلة الشخصية</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-4 p-2">
+                <a class="img-box" href="/Evaluation/InterviewForm">
+                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" style="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">نموذج</div>
+                        <div class="project-name">تقييم اللغة الانجليزية</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+

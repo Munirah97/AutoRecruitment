@@ -6,25 +6,20 @@ using System.Web.Mvc;
 
 namespace AutoRecruitment.Controllers
 {
-    public class RegistrationController : Controller
+    public class EvaluationController : Controller
     {
-        // GET: SC
+        // GET: Evaluation
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ApplicantLogin()
+        public ActionResult InterviewForm()
         {
             return View();
         }
 
-        public ActionResult RegistrationForm()
-        {
-            return View();
-        }
-
-        public ActionResult RegistrationReview()
+        public ActionResult EngAssessmentForm()
         {
             return View();
         }
@@ -33,6 +28,5 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-
     }
 }

@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace AutoRecruitment.Controllers
 {
-    public class APNEController : Controller
+    public class LoginController : Controller
     {
-        // GET: APNE
+        // GET: Login
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult RegistrationForm()
         {
             return View();
         }

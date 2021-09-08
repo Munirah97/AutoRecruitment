@@ -121,8 +121,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\APNEController.cs" />
+    <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,6 +133,7 @@
   <ItemGroup>
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.min.css" />
+    <Content Include="Content\AdminContent\img\no-img.jpg" />
     <Content Include="Content\AdminContent\img\undraw_posting_photo.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile_1.svg" />
@@ -1836,7 +1838,7 @@
     <Content Include="Content\assets\vendor\boxicons\css\transformations.css" />
     <Content Include="Content\assets\vendor\boxicons\fonts\boxicons.svg" />
     <Content Include="Content\assets\vendor\jquery\jquery.min.js" />
-    <Content Include="Content\css\myStyleSheet.css" />
+    <Content Include="Content\css\customStyleSheet.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.css" />
     <Content Include="Content\DatePicker\css\bootstrap-datetimepicker.min.css" />
@@ -1844,6 +1846,7 @@
     <Content Include="Content\DatePicker\js\bootstrap-hijri-datepicker.min.js" />
     <Content Include="Content\DatePicker\js\bootstrap-hijri-datetimepicker.js" />
     <Content Include="Content\DatePicker\js\bootstrap-hijri-datetimepicker.min.js" />
+    <Content Include="Content\js\customScript.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2058,11 +2061,17 @@
     <Content Include="Views\Registration\RegistrationForm.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\RegistrationReview.cshtml" />
-    <Content Include="Views\Home\ApplicantLogin.cshtml" />
+    <Content Include="Views\Registration\ApplicantLogin.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\tamplate.cshtml" />
     <Content Include="Views\Admin\Programs.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Registration\ResponsePage.cshtml" />
+    <Content Include="Views\Evaluation\Index.cshtml" />
+    <Content Include="Views\Evaluation\EngAssessmentForm.cshtml" />
+    <Content Include="Views\Evaluation\InterviewForm.cshtml" />
+    <Content Include="Views\Evaluation\ResponsePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

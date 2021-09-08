@@ -8,23 +8,22 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Applicants</h1>
-        <div style="float:right">
-            <button class="btn btn-primary btn-icon-split" onclick="CardView()">
+        <h1 class="h2 mb-0 text-gray-700">Applicants</h1>
+        <div class=" d-sm-inline-block">
+            <a role="button" class=" btn btn-sm btn-primary shadow-sm btn-icon-split" onclick="CardView()">
                 <span class="icon text-white-50">
-                    <i class="fas fa-id-card"></i>
-                </span>
+                    <i class="fas fa-id-card fa-x text-white-50 mr-1"></i>
+                </span> 
                 <span class="text">Card View</span>
-            </button>
-            <button class="btn btn-primary btn-icon-split" onclick="TableView()">
+            </a>
+            <a role="button" class="btn btn-sm btn-primary shadow-sm btn-icon-split" onclick="TableView()">
                 <span class="icon text-white-50">
-                    <i class="fas fa-table"></i>
+                    <i class="fas fa-table fa-x text-white-50 mr-1"></i>
                 </span>
-                <span class="text">Table View</span>
-            </button>
+                <span class="text">Table View</span> 
+            </a>
         </div>
     </div>
-    <br />
 
     <!-- Card View -->
     <div id="CardView">
@@ -54,7 +53,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Munirah
                                 </div>
                                 <div class="text-xs text-gray-800 mb-1">
@@ -74,7 +73,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                     Munirah
                                 </div>
                                 <div class="text-xs text-gray-800 mb-1">
@@ -108,7 +107,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     Munirah
                                 </div>
                                 <div class="text-xs text-gray-800 mb-1">
@@ -129,9 +128,6 @@
     <!-- Tale View -->
     <div id="TableView" style="display:none">
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

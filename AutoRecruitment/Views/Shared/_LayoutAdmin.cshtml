@@ -17,8 +17,8 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="~/Content/AdminContent/css/sb-admin-2.min.css" rel="stylesheet">
-    
+
+    <link href="~/Content/AdminContent/css/sb-admin-2.css" rel="stylesheet" />
     <!-- Table styles for this page -->
     <link href="~/Content/AdminContent/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -32,8 +32,6 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            @**@
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Admin/index">
                 <div class="sidebar-brand-icon">
@@ -92,16 +90,30 @@
             </div>
             <!-- Nav Item -->
             <li class="nav-item" id="RegistrationTerms">
-                <a class="nav-link" href="/Registration/Index">
+                <a class="nav-link" href="/Registration/Index" target="_blank">
                     <i class="fas fa-fw fa-clipboard-check"></i>
                     <span>Registration Terms</span>
                 </a>
             </li>
             <!-- Nav Item -->
             <li class="nav-item" id="RegistrationForm">
-                <a class="nav-link" href="/Registration/RegistrationForm">
-                    <i class="far fa-fw fa-sticky-note"></i>
+                <a class="nav-link" href="/Registration/RegistrationForm" target="_blank">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
                     <span>Registration Form</span>
+                </a>
+            </li>
+            <!-- Nav Item -->
+            <li class="nav-item" id="RegistrationForm">
+                <a class="nav-link" href="/Evaluation/InterviewForm" target="_blank">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>Interview Form</span>
+                </a>
+            </li>
+            <!-- Nav Item -->
+            <li class="nav-item" id="RegistrationForm">
+                <a class="nav-link" href="/Evaluation/EngAssessmentForm" target="_blank">
+                    <i class="far fa-fw fa-check-circle"></i>
+                    <span>English Assessment Form</span>
                 </a>
             </li>
 
