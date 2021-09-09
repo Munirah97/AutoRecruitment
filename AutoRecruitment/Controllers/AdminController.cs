@@ -18,6 +18,10 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
+        public ActionResult ApplicantProfile()
+        {
+            return View();
+        }
 
         public ActionResult Programs()
         {

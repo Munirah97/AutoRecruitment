@@ -459,35 +459,63 @@
 
                             <label class="mycontainer" style="float:right;">
                                 لا
-                                <input type="radio" checked="checked" name="degree" onclick="Hide('GPA')" value="no">
+                                <input type="radio" checked="checked" name="degree" onclick="Hide('HighEducation')" value="no">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="mycontainer" style="float:right">
                                 نعم
-                                <input type="radio" name="degree" onclick="Show('GPA')" value="yes">
+                                <input type="radio" name="degree" onclick="Show('HighEducation')" value="yes">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
 
-                        <!-- GPA input-->
-                        <div id="GPA" style="display:none; margin-top:20px; margin-bottom:40px">
-                            <p>معدل الدبلوم/الباكلوريوس (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
-                            <div class="form-floating mb-3">
-                                <select class="form-control" style="padding-top:0; padding-bottom:0" id="GPAInput" onfocusout="vlidateEmpty(this)">
-                                    <option value="" selected disabled>المعدل التراكمي</option>
-                                    <option value="5">5</option>
-                                    <option value="4.5">4.5</option>
-                                    <option value="4">4</option>
-                                    <option value="3.5">3.5</option>
-                                    <option value="3">3</option>
-                                    <option value="2.5">2.5</option>
-                                    <option value="2">2</option>
-                                    <option value="1.5">1.5</option>
-                                    <option value="1">1</option>
-                                </select>
-                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+
+                        <!-- High Education Info -->
+                        <div id="HighEducation" style="display:none; margin-top:20px; margin-bottom:40px">
+                            <p>معلومات الشهادة <span style="color:#f5494c">*</span></p>
+                            <div class="row">
+                                <div class="col-4" style="padding-left:0">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-control pt-0 pb-0" id="education" onfocusout="vlidateEmpty(this)">
+                                            <option value="" selected disabled>الدرجة العلمية</option>
+                                            <option value="dip">دبلوم</option>
+                                            <option value="bach">بكالوريوس</option>
+                                            <option value="master">ماجستير</option>
+                                        </select>
+                                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4" style="padding-left:0">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="major" type="text" placeholder="التخصص" onfocusout="validateEmail(this);" />
+                                        <label for="">التخصص </label>
+                                        <div id="invalid-email" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-2" style="padding-left:0">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="gpa" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="المعدل" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                        <label for="qiasgrade">المعدل</label>
+                                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-2 ">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-control pt-0 pb-0" id="gpaScale" onfocusout="vlidateEmpty(this)">
+                                            <option value="" selected disabled>نظام المعدل</option>
+                                            <option value="5">5.00</option>
+                                            <option value="4.5">4.00</option>
+                                            <option value="4">100%</option>
+                                        </select>
+                                        <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
 
 
                         <div class="row gx-4 gx-lg-5" style="margin-top:15px">

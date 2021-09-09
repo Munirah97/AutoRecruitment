@@ -66,10 +66,14 @@
         <br />
         <div class="row">
             <div class="col-6">
-                <div class="text-center" style="float:left"><button class="btn btn-primary btn-xl" id="submitButton" type="button" onclick="window.open('@Url.Action("RegistrationForm" , "Registration", new { target="_parent" })')">تقديم جديد</button></div>
+                <div class="text-center" style="float:left">
+                    <a class="btn btn-primary btn-xl mt-3" id="submitButton" href="/Registration/RegistrationForm"> تقديم جديد</a>
+                </div>
             </div>
             <div class="col-6">
-                <div class="text-center"  style="float:right"><button class="btn btn-primary btn-xl" id="submitButton" type="button" onclick="window.open('@Url.Action("RegistrationReview" , "Registration" , new { target="_parent" })')">مراجعة تقديم</button></div>
+                <div class="text-center" style="float:right">
+                    <a class="btn btn-primary btn-xl mt-3" id="submitButton" href="/Registration/RegistrationReview"> مراجعة تقديم</a>
+                </div>
             </div>
         </div>
 

@@ -2044,6 +2044,7 @@
     <Content Include="Views\Admin\Applicants.cshtml" />
     <Content Include="Views\Admin\Campaigns.cshtml" />
     <Content Include="Views\Admin\Configuration.cshtml" />
+    <Content Include="Views\Admin\ApplicantProfile.cshtml" />
     <None Include="Views\Admin\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
