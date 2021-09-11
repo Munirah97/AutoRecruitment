@@ -131,6 +131,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminContent\css\CustomStyle.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.min.css" />
     <Content Include="Content\AdminContent\img\no-img.jpg" />

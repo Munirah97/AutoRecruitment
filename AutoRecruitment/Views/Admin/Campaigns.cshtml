@@ -10,13 +10,144 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h2 mb-0 text-gray-700">Campaigns</h1>
-        <a role="button" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New Campaign
-        </a>
+        <div class=" d-sm-inline-block">
+            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="trigger_popup('newCamp')">
+                <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New Campaign
+
+            </button>
+        </div>
     </div>
 
 
+    <div class="row">
+        <!-- Default Card Example -->
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 ">Campaign 2021 for APNE Program</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                             aria-labelledby="dropdownMenuLink">
+                            @*<div class="dropdown-header">Dropdown Header:</div>*@
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Schedule Meeting</a>
+                            <a class="dropdown-item" href="#">View Applicants</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="mb-1">Registration</p>
+                            <p class="mb-1">
+                                <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
+                                Form Link:
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
+                                Form Status:
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
+                                No. of Applicants:
+                            </p>
 
+                            <!-- Divider -->
+                            <hr>
+
+                            <!-- Verification -->
+                            <div class="col-12">
+                                <p class="mb-1">Verification</p>
+
+                                <p class="mb-1">
+                                    <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
+                                    Verification Status:
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-user fa-x mr-2 text-gray-400"></i>
+                                    Verified By:
+                                </p>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr>
+
+                            <div class="col-12">
+                                <p class="mb-1">Acceptance </p>
+
+                                <p class="mb-1">
+                                    <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
+                                    Meeting Date:
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
+                                    Form Link:
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
+                                    No. of Accepted:
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 <!-- /.container-fluid -->
 
+<!-- ======= New Campaign ======= -->
+<div id="newCamp" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <form class="modal-content animate" role="form">
+                <span onclick="document.getElementById('newCamp').style.display='none'" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Create New Campaign</h5>
+                </div>
+                <div class="modal-container">
+
+                    <!-- Fields -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Field">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Field">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-group ">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="document.getElementById('newCamp').style.display='none'">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script>
+        function trigger_popup(modal_id) {
+            document.getElementById(modal_id).style.display = 'block';
+        }
+
+    </script>
