@@ -131,7 +131,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\AdminContent\css\CustomStyle.css" />
+    <Content Include="Content\AdminContent\css\customAdminStyle.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.min.css" />
     <Content Include="Content\AdminContent\img\no-img.jpg" />
@@ -141,6 +141,7 @@
     <Content Include="Content\AdminContent\img\undraw_profile_2.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile_3.svg" />
     <Content Include="Content\AdminContent\img\undraw_rocket.svg" />
+    <Content Include="Content\AdminContent\js\customAdminScript.js" />
     <Content Include="Content\AdminContent\js\demo\chart-area-demo.js" />
     <Content Include="Content\AdminContent\js\demo\chart-bar-demo.js" />
     <Content Include="Content\AdminContent\js\demo\chart-pie-demo.js" />

@@ -97,6 +97,8 @@
 
 .bootstrap-datetimepicker-widget .list-unstyled {
     margin: 0;
+    padding-left:0;
+    padding-right:0;
 }
 
 .bootstrap-datetimepicker-widget a[data-action] {

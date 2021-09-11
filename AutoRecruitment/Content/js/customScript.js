@@ -204,6 +204,7 @@ function validateDate(input, dateType, errID) {
 //----- To Display Date Picker -----
 $(function () {
     initHijrDatePickerDefault();
+    initGregorianDatePickerDefault();
 });
 
 function initHijrDatePickerDefault() {
@@ -213,7 +214,29 @@ function initHijrDatePickerDefault() {
         hijriFormat: "iDD-iMM-iYYYY",
         dayViewHeaderFormat: "MMMM YYYY",
         hijriDayViewHeaderFormat: "iMMMM iYYYY",
-        showSwitcher: true,
+        showSwitcher: false,
+        allowInputToggle: false,
+        showTodayButton: false,
+        useCurrent: false,
+        isRTL: false,
+        viewMode: 'days',
+        keepOpen: false,
+        hijri: true,
+        debug: true,
+        showClear: false,
+        showTodayButton: false,
+        showClose: true
+    });
+}
+
+function initGregorianDatePickerDefault() {
+    $(".gregorian-date-default").hijriDatePicker({
+        locale: "ar-sa",
+        format: "DD-MM-YYYY",
+        hijriFormat: "iDD-iMM-iYYYY",
+        dayViewHeaderFormat: "MMMM YYYY",
+        hijriDayViewHeaderFormat: "iMMMM iYYYY",
+        showSwitcher: false,
         allowInputToggle: false,
         showTodayButton: false,
         useCurrent: false,
@@ -227,7 +250,6 @@ function initHijrDatePickerDefault() {
         showClose: true
     });
 }
-
 //----- Display/Hide Input when user check the radio btn -----
 function Show(inputID) {
     document.getElementById(inputID).style.display = 'block';

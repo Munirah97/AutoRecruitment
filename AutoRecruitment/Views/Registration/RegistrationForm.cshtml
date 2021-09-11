@@ -30,7 +30,7 @@
         <!-- Registration Form -->
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-8">
-                <form id="contactForm">
+                <form>
 
                     <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
                     <!-- NID input-->
@@ -155,8 +155,8 @@
                         <div class="col-xl-6 ">
                             <!-- Gorgian -->
                             <div class="form-floating mb-3">
-                                <input class="form-control hijri-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
-                                <label for="MDate">تاريخ الميلاد (ميلادي)</label>
+                                <input class="form-control gregorian-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
+                                <label for="GDate">تاريخ الميلاد (ميلادي)</label>
                                 <div id="invalid-gregorian" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>

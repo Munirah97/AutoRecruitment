@@ -18,10 +18,16 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Content/AdminContent/css/sb-admin-2.css" rel="stylesheet" />
-    <link href="~/Content/AdminContent/css/CustomStyle.css" rel="stylesheet" />
+
+    <!-- Custom CSS (my style)-->
+    <link href="~/Content/AdminContent/css/customAdminStyle.css" rel="stylesheet" />
+
     <!-- Table styles for this page -->
     <link href="~/Content/AdminContent/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- DatePicker -->
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/DatePicker/css/bootstrap-datetimepicker.css?v2" rel="stylesheet" />
 
 </head>
 
@@ -191,8 +197,8 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>-->
-                            <!-- Dropdown - Messages -->
-                            <!--<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                        <!-- Dropdown - Messages -->
+                        <!--<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                  aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
@@ -208,7 +214,6 @@
                                 </form>
                             </div>
                         </li>-->
-
                         <!-- Nav Item - Alerts -->
                         <!--<li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -344,26 +349,26 @@
                                      src="~/Content/AdminContent/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                    @*        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>*@
+                            @*        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>*@
                         </li>
 
                     </ul>
@@ -441,6 +446,18 @@
 
     <!-- Page level custom scripts -->
     <script src="~/Content/AdminContent/js/demo/datatables-demo.js"></script>
+
+
+    <script src="~/Content/AdminContent/js/customAdminScript.js"></script>
+    
+    <!-- Date Picker-->
+@*    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-hijri@2.1.2/moment-hijri.min.js"></script>*@
+    <script src="~/Content/DatePicker/js/bootstrap-hijri-datetimepicker.js?v2"></script>
 </body>
 
 </html>
