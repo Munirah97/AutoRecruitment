@@ -30,10 +30,10 @@
             <div class="col-lg-8 col-md-10">
                 <form id="contactForm">
 
-                    <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
+                    @*<p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>*@
                     <!-- NID input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" style="border-radius:10rem" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this)" />
+                        <input class="form-control" style="border-radius:10rem" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
                         <label for="NID">رقم الهوية الوطنية</label>
                         <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
                     </div>

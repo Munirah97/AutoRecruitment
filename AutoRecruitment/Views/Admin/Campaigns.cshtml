@@ -54,7 +54,7 @@
                                 Form Status: <span class="close-status">close</span>
                             </p>
                             <p class="mb-1">
-                                <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
+                                <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
                                 No. of Applicants:
                             </p>
 
@@ -66,7 +66,7 @@
                                 <p class="mb-1">Verification</p>
 
                                 <p class="mb-1">
-                                    <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
+                                    <i class="fas fa-info-circle fa-x mr-1 text-gray-400"></i>
                                     Verification Status:
                                 </p>
                                 <p class="mb-1">
@@ -90,7 +90,7 @@
                                     Form Link:
                                 </p>
                                 <p class="mb-1">
-                                    <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
                                     No. of Accepted:
                                 </p>
                             </div>
@@ -134,13 +134,12 @@
                             <div class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Reg Form Start date input-->
+                        <!-- Reg Form Start/End date input-->
                         <div class="row">
                             <div class="col-xl-6">
-                                <!-- Hijri-->
                                 <div class="form-floating mb-3">
-                                    @*                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'open','invalid-open-date','EDate')" />
-                                    *@                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                                    @*<input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'open','invalid-open-date','EDate')" />*@
+                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="ODate">Registration Open</label>
                                     <div id="invalid-open-date" class="invalid-feedback">Required</div>
                                 </div>
@@ -148,12 +147,18 @@
                             <div class="col-xl-6 ">
                                 <!-- Gorgian -->
                                 <div class="form-floating mb-3">
-                                    @*                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />
-                                    *@                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                                    @*<input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />*@
+                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="CDate">Registration Close</label>
                                     <div id="invalid-close-date" class="invalid-feedback">Required</div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control gregorian-date-default" id="ExDate" type="text" placeholder="Applications Expiry Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="ODate">Applications Expiry Date</label>
+                            <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
                         <!-- Buttons -->
@@ -229,6 +234,12 @@
                                     <div id="invalid-close-date" class="invalid-feedback">Required</div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control gregorian-date-default" id="ExDate" type="text" placeholder="Applications Expiry Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="ODate">Applications Expiry Date</label>
+                            <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
                         <!-- Buttons -->

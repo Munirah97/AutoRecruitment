@@ -27,10 +27,15 @@ function vlidateEmpty(input) {
 
 
 //----- To Check National ID Field -----
-function vlidateNID(input) {
+function vlidateNID(input,errLang) {
     var lblError = document.getElementById("invalid-nid");
     if (input.value == "") {
-        lblError.innerHTML = "هذا الحقل مطلوب";
+        if (errLang == 'eng') {
+            lblError.innerHTML = "Required";
+        }
+        else {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+        }
         input.classList.add("is-invalid");
     }
     else {
@@ -39,7 +44,12 @@ function vlidateNID(input) {
         // (2) : TotalSUM =+ if [index] is even -> value * 2 --> tens + ones (EX: value = 8 --> 8*2 = 16 --> 1+6 = 7 --> TotalSUM =+ 7)
         // (3) : if TotalSUM mod 10 = 0 --> Valid
         if (input.value.length < 10) { // number of digit less than 10
-            lblError.innerHTML = "رقم الهوية يجب ان يتكون من 10 خانات";
+            if (errLang == 'eng') {
+                lblError.innerHTML = "National ID should be 10 digits";
+            }
+            else {
+                lblError.innerHTML = "رقم الهوية يجب ان يتكون من 10 خانات";
+            }
             input.classList.add("is-invalid");
         }
         else {
@@ -69,17 +79,18 @@ function vlidateNID(input) {
             }
 
             if (totalSUM % 10 != 0) {
-                lblError.innerHTML = "رقم الهوية الوطنية غير صالح";
+                if (errLang == 'eng') {
+                    lblError.innerHTML = "National ID number is invalid";
+                }
+                else {
+                    lblError.innerHTML = "رقم الهوية الوطنية غير صالح";
+                }
                 input.classList.add("is-invalid");
             }
             else {
                 input.classList.remove("is-invalid");
             }
-            //alert(arrayNID[0]);
-
-
         }
-
     }
 }
 

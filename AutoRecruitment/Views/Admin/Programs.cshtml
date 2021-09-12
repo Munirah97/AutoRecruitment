@@ -10,7 +10,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h2 mb-0 text-gray-700">Programs</h1>
-        <a role="button" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a role="button" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="open_popup('new_program')">
             <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New Program
         </a>
     </div>
@@ -19,39 +19,40 @@
 
     <div class="row">
         <!-- Default Card Example -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-12">
             <div class="card mb-4">
-                <div class="card-header">
-                    APNE Program
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <i class="fas fa-calendar fa-x mr-2 text-gray-400"></i>
-                            Last Campaign:
-                        </div>
-                        <div class="col-12">
-                            <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
-                            No. of Applicants
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 ">APNE Program</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                             aria-labelledby="dropdownMenuLink">
+                            @*<div class="dropdown-header">Dropdown Header:</div>*@
+                            <a class="dropdown-item" role="button" onclick="open_popup('edit_program')">Edit</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    OHS Program
-                </div>
+                <!-- Card Body -->
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <i class="fas fa-calendar fa-x mr-2 text-gray-400"></i>
-                            Last Campaign:
-                        </div>
-                        <div class="col-12">
-                            <i class="fas fa-users fa-x mr-2 text-gray-400"></i>
-                            No. of Applicants
+                            <p class="mb-1">
+                                <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
+                                Program Name:
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
+                                Last Campaign:
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                Waiting List:
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -61,3 +62,96 @@
 
 </div>
 <!-- /.container-fluid -->
+<!-- ======= New Campaign ======= -->
+<div id="new_program" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('new_program')" class="close" title="Close">&times;</span>
+                <div class="modal-header-container">
+                    <h5>Create New Program</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Program Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Full Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Program Short Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_short" type="text" placeholder="Program Short Name" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Short Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('new_program')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= Edit Campaign ======= -->
+<div id="edit_program" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('edit_program')" class="close" title="Close">&times;</span>
+                <div class="modal-header-container">
+                    <h5>Edit Program</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Program Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Full Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Program Short Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_short" type="text" placeholder="Program Short Name" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Short Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('edit_program')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
