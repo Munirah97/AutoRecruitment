@@ -88,6 +88,51 @@
                             <div class="invalid-feedback">Required</div>
                         </div>
 
+                        <!-- Program Verification Rules -->
+                            <table border="0" style="width: 100%; padding:10px; text-align: center" id="">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 5%;">
+                                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" onclick="addDes()" type="button" style="width:100%;height: calc(3.5rem + 2px);" >
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </td>
+                                        <td style="width: 35%;">
+                                            <div class="form-floating">
+                                                <input class="form-control" name="program_short" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="camp_title">Field</label>
+                                                <div class="invalid-feedback">Required</div>
+                                            </div>                                            </td>
+                                        <td style="width: 20%;">
+                                            <div class="form-floating">
+                                                <input class="form-control" name="program_short" type="text" placeholder="Condition" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="camp_title">Condition</label>
+                                                <div class="invalid-feedback">Required</div>
+                                            </div>                                            </td>
+                                        <td style="width: 35%;">
+                                            <div class="form-floating">
+                                                <input class="form-control" name="program_short" type="text" placeholder="Value" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="camp_title">Value</label>
+                                                <div class="invalid-feedback">Required</div>
+                                            </div>                                            </td>
+                                        <td style="width: 5%;">
+                                            <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm float-left" onclick="deleteRow(this)" type="button" style="width:100%; height: calc(3.5rem + 2px);">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="col-xl-5 col-lg-6 col-md-6 ">
+                                
+                            </div>
+                            <div class="col-xl-2">
+                                
+                            </div>
+                            <div class="col-xl-5 col-lg-6 col-md-6 ">
+                                
+                            </div>
+
                         <!-- Buttons -->
                         <div class="row justify-content-center mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">

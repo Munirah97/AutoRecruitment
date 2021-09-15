@@ -208,17 +208,39 @@
                         <div id="invalid-phone1" class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone2')" />
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="form-floating mb-3">
+                                <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone2')" />
 
-                        <label for="phone">هاتف ولي الأمر</label>
-                        <div id="invalid-phone2" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
+                                <label for="phone">هاتف ولي الأمر</label>
+                                <div id="invalid-phone2" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="" type="text" placeholder="اسم ولي الأمر" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="">اسم ولي الأمر</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone3')" />
-                        <label for="phone">هاتف احد الأقارب</label>
-                        <div id="invalid-phone3" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="form-floating mb-3">
+                                <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone3')" />
+                                <label for="phone">هاتف احد الأقارب</label>
+                                <div id="invalid-phone3" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="" type="text" placeholder="اسم صاحب الرقم" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="">اسم صاحب الرقم</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Address input-->

@@ -1,4 +1,39 @@
-﻿/*-------style for open status------*/
+﻿.btn_delete {
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+    text-decoration: none;
+}
+
+    .btn_delete:hover {
+        color: #f5494c;
+        transition: 0.3s;
+    }
+
+.btn_add {
+    text-align: center;
+    background: #82ce34;
+    display: inline-block;
+    padding: 6px 35px 8px 35px;
+    border-radius: 4px;
+    color: #fff;
+    transition: none;
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    outline: none !important;
+    width: 100%;
+    height: 40px
+}
+
+    .btn_add:hover {
+        background-color: #6fb32b;
+    }
+
+/*-------style for open status------*/
 .open-status {
     margin: auto;
     padding: 3px 10px;
