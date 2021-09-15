@@ -35,8 +35,14 @@
                              aria-labelledby="dropdownMenuLink">
                             @*<div class="dropdown-header">Dropdown Header:</div>*@
                             <a class="dropdown-item" role="button" onclick="open_popup('editCamp')">Edit</a>
-                            <a class="dropdown-item" href="#">Schedule Meeting</a>
                             <a class="dropdown-item" href="/Admin/Applicants">View Applicants</a>
+                            <a class="dropdown-item" href="#">Export Applicants</a>
+                            <a class="dropdown-item" href="#">Verify Applicants</a>
+                            <a class="dropdown-item" href="#">Schedule Meeting</a>
+                            <a class="dropdown-item" href="#">Send Acceptance Form</a>
+                            <a class="dropdown-item" href="#">Upload OLT</a>
+                            <a class="dropdown-item" href="#">Calculate English Skill</a>
+
                         </div>
                     </div>
                 </div>
@@ -44,6 +50,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
+                            <!-- Registration Info -->
                             <p class="mb-1">Registration</p>
                             <p class="mb-1">
                                 <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
@@ -61,10 +68,9 @@
                             <!-- Divider -->
                             <hr>
 
-                            <!-- Verification -->
+                            <!-- Verification Info -->
                             <div class="col-12">
                                 <p class="mb-1">Verification</p>
-
                                 <p class="mb-1">
                                     <i class="fas fa-info-circle fa-x mr-1 text-gray-400"></i>
                                     Verification Status:
@@ -73,13 +79,18 @@
                                     <i class="fas fa-user fa-x mr-2 text-gray-400"></i>
                                     Verified By:
                                 </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                    No. of Qualified:
+                                </p>
                             </div>
 
                             <!-- Divider -->
                             <hr>
 
+                            <!-- Rules Acceptance Info -->
                             <div class="col-12">
-                                <p class="mb-1">Acceptance </p>
+                                <p class="mb-1">Rules Acceptance </p>
 
                                 <p class="mb-1">
                                     <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
@@ -93,6 +104,26 @@
                                     <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
                                     No. of Accepted:
                                 </p>
+
+                                <!-- Divider -->
+                                <hr>
+
+                                <!-- Evaluate Info -->
+                                <div class="col-12">
+                                    <p class="mb-1">Applicants Evaluation</p>
+                                    <p class="mb-1">
+                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                        No. of Interviews:
+                                    </p>
+                                    <p class="mb-1">
+                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                        No. of English Assessments:
+                                    </p>
+                                    <p class="mb-1">
+                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                        No. of OLT Responses:
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -161,8 +192,44 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
+                        <!-- Campaign Verification Rules -->
+                        <table border="0" class="text-center" id="camp_rules_table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_rule">Field</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <div class="form-floating">
+                                            <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                                <option value="" selected disabled>Condition</option>
+                                                <option value="gt">Grater than</option>
+                                                <option value="eq">Equal to</option>
+                                                <option value="lt">Less than</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td style="width: 35%;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="v_value" type="text" placeholder="Value" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_value">Value</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRule('camp_rules_table')" type="button">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
                         <!-- Buttons -->
-                        <div class="row justify-content-center mb-3">
+                        <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
                                 <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
                                     Save
@@ -242,8 +309,45 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
+
+                        <!-- Campaign Verification Rules -->
+                        <table border="0" class="text-center" id="camp_rules_table_edit">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_rule">Field</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <div class="form-floating">
+                                            <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                                <option value="" selected disabled>Condition</option>
+                                                <option value="gt">Grater than</option>
+                                                <option value="eq">Equal to</option>
+                                                <option value="lt">Less than</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td style="width: 35%;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="v_value" type="text" placeholder="Value" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_value">Value</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 10%;">
+                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRule('camp_rules_table_edit')" type="button">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
                         <!-- Buttons -->
-                        <div class="row justify-content-center mb-3">
+                        <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
                                 <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
                                     Save

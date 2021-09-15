@@ -54,59 +54,7 @@ function validateEmail(input) {
     }
 }
 
-//----- To Check Date Field -----
-/*function validateDate(input, dateType, errID, Date) {
-    var lblError = document.getElementById(errID);
-    var otherDate = document.getElementById(Date);
-    if (input.value == "") {
-        lblError.innerHTML = "Required";
-        input.classList.add("is-invalid");
-    }
-    else {
-        var today = new Date();
 
-        // -- Convert the input to date
-        const selectedDateArray = input.value.split("-");
-        var selectedDate = new Date(selectedDateArray[2] + "-" + selectedDateArray[1] + "-" + selectedDateArray[0]);
-
-        var dateToCompareArray, dateToCompare ;
-        // -- Convert the other date-input to date
-        if (otherDate.value != '') {
-            dateToCompareArray = otherDate.value.split("-");
-            dateToCompare = new Date(dateToCompareArray[2] + "-" + dateToCompareArray[1] + "-" + dateToCompareArray[0]);
-        }
-        *//*//************** issue from here --> logig is not working
-        if (dateType == 'open') {
-            if (selectedDate < today) {
-                lblError.innerHTML = "Please, select future date";
-                input.classList.add("is-invalid");
-            }
-            // -- if the open date is > close date
-            else if (otherDate.value != '' && selectedDate > dateToCompare ) {
-                lblError.innerHTML = "Open date should be before close date";
-                input.classList.add("is-invalid");
-            }
-            else {
-                input.classList.remove("is-invalid");
-            }
-        }
-        else if (dateType == 'close') {
-            if (selectedDate < today) {
-                lblError.innerHTML = "Please, select future date";
-                input.classList.add("is-invalid");
-            }
-            // -- if the close date is < open date
-            else if (otherDate.value != '' && selectedDate < dateToCompare) {
-                lblError.innerHTML = "Close date should be after open date";
-                input.classList.add("is-invalid");
-            }
-            else {
-                input.classList.remove("is-invalid");
-            }
-        }
-    }
-}
-*/
 //----- To Display Date Picker -----
 $(function () {
     initDatePickerDefault();
@@ -136,4 +84,48 @@ function initDatePickerDefault() {
             close: 'close'
         },
     });
+}
+
+// Add new row in rules table
+function addRule(tableId) {
+    var table = document.getElementById(tableId);
+    var row = table.insertRow(table.rows.length);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
+    cell1.innerHTML =
+          '<div class="form-floating">'
+        + '     <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>'
+        + '     <label for="v_rule">Field</label>'
+        + '</div>';
+
+    cell2.innerHTML =
+          '<div class="form-floating">'
+        + '   <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">'
+        + '       <option value="" selected disabled>Condition</option>'
+        + '       <option value="gt">Grater than</option>'
+        + '       <option value="eq">Equal to</option>'
+        + '       <option value="lt">Less than</option>'
+        + '   </select>'
+        + '</div>';
+
+    cell3.innerHTML =
+          '<div class="form-floating">'
+        + '     <input class="form-control" name="v_value" type="text" placeholder="Value" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>'
+        + '     <label for="v_value">Value</label>'
+        + '</div>';
+
+    cell4.innerHTML =
+          '<button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
+        + '     <i class="fas fa-trash"></i>'
+        + '</button>';
+}
+
+//delete row in rules table
+function deleteRow(o) {
+    var p = o.parentNode.parentNode;
+    p.parentNode.removeChild(p);
 }

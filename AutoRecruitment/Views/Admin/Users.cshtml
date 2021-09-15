@@ -10,7 +10,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h2 mb-0 text-gray-700">Users</h1>
-        <a role="button" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a role="button" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="open_popup('new_user')">
             <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New User
         </a>
     </div>
@@ -32,7 +32,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                  aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" role="button" onclick="open_popup('edit_user')">Edit</a>
+                                <a class="dropdown-item" href="#">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -62,3 +63,165 @@
 
 </div>
 <!-- /.container-fluid -->
+<!-- ======= New User ======= -->
+<div id="new_user" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('new_user')" class="close" title="Close">&times;</span>
+                <div class="modal-header-container">
+                    <h5>Create New User</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Unername input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="username" type="text" placeholder="NITI Username" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" autocomplete="off" />
+                            <label for="username">NITI Username</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Full Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="full_name" type="text" placeholder="Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" autocomplete="off" />
+                            <label for="full_name">Full Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Email input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);" autocomplete="off" />
+                            <label for="email">NITI Email</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Privileges -->
+                        <p>Privileges</p>
+
+                        <div class="">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    Admin
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Read
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Write
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Evaluate
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('new_user')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ======= New User ======= -->
+<div id="edit_user" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('edit_user')" class="close" title="Close">&times;</span>
+                <div class="modal-header-container">
+                    <h5>Edit User</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Unername input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" value="mshehab" name="username" type="text" placeholder="NITI Username" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" autocomplete="off" />
+                            <label for="username">NITI Username</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Full Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" value="Munirah Ahmed" name="full_name" type="text" placeholder="Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" autocomplete="off" />
+                            <label for="full_name">Full Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Email input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" value="mshehab@niti.edu.sa" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);" autocomplete="off" />
+                            <label for="email">NITI Email</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Privileges -->
+                        <p>Privileges</p>
+
+                        <div class="">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    Admin
+                                    <input type="checkbox" name="priv" value="" checked>
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Read
+                                    <input type="checkbox" name="priv" value="" checked>
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Write
+                                    <input type="checkbox" name="priv" value="" checked>
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    Evaluate
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('edit_user')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

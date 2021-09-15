@@ -1,39 +1,4 @@
-﻿.btn_delete {
-    font-size: 25px;
-    background-color: transparent;
-    border: none;
-    outline: none !important;
-    text-decoration: none;
-}
-
-    .btn_delete:hover {
-        color: #f5494c;
-        transition: 0.3s;
-    }
-
-.btn_add {
-    text-align: center;
-    background: #82ce34;
-    display: inline-block;
-    padding: 6px 35px 8px 35px;
-    border-radius: 4px;
-    color: #fff;
-    transition: none;
-    font-size: 14px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    transition: 0.3s;
-    border: none;
-    outline: none !important;
-    width: 100%;
-    height: 40px
-}
-
-    .btn_add:hover {
-        background-color: #6fb32b;
-    }
-
-/*-------style for open status------*/
+﻿/*-------style for open status------*/
 .open-status {
     margin: auto;
     padding: 3px 10px;
@@ -61,7 +26,8 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
+    overflow-x: hidden; 
+    overflow-y: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -443,4 +409,97 @@ span.psw {
 .was-validated .input-group .form-select:invalid:focus,
 .input-group .form-select.is-invalid:focus {
     z-index: 3;
+}
+
+
+
+/*======================= Radio Btn / Checkbox =====================*/
+/* The container */
+.mycontainer {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.mycontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* Create a custom checkbox */
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.mycontainer:hover input ~ .checkmark, .mycontainer:hover input:checked ~ .checkbox {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a color background */
+.mycontainer input:checked ~ .checkmark, .mycontainer input:checked ~ .checkbox {
+    background-color: #24405c;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after, .checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.mycontainer input:checked ~ .checkmark:after, .mycontainer input:checked ~ .checkbox:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.mycontainer .checkmark:after {
+    top: 9px;
+    right: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* Style the checkbox */
+.mycontainer .checkbox:after {
+    left: 11px;
+    top: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
