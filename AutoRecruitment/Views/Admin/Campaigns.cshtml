@@ -38,7 +38,7 @@
                             <a class="dropdown-item" href="/Admin/Applicants">View Applicants</a>
                             <a class="dropdown-item" href="#">Export Applicants</a>
                             <a class="dropdown-item" href="#">Verify Applicants</a>
-                            <a class="dropdown-item" href="#">Schedule Meeting</a>
+                            <a class="dropdown-item" role="button" onclick="open_popup('schedule_meeting')">Schedule Meeting</a>
                             <a class="dropdown-item" href="#">Send Acceptance Form</a>
                             <a class="dropdown-item" href="#">Upload OLT</a>
                             <a class="dropdown-item" href="#">Calculate English Skill</a>
@@ -192,7 +192,30 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Campaign Verification Rules -->
+                        <!-- Waiting status rules -->
+                        <p>Applicants need to finish:</p>
+                        <div class="">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    Interview
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    English Assessment
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    OLT
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Campaign Verification -->
+                        <p class="mb-1 mt-3">Campaign Qualification Rules</p>
                         <table border="0" class="text-center" id="camp_rules_table">
                             <tbody>
                                 <tr>
@@ -309,8 +332,30 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
+                        <!-- Waiting status rules -->
+                        <p>Applicants need to finish:</p>
+                        <div class="">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    Interview
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    English Assessment
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer">
+                                    OLT
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
 
-                        <!-- Campaign Verification Rules -->
+                        <!-- Campaign Verification -->
+                        <p class="mb-1 mt-3">Campaign Qualification Rules</p>
                         <table border="0" class="text-center" id="camp_rules_table_edit">
                             <tbody>
                                 <tr>
@@ -368,3 +413,53 @@
     </div>
 </div>
 
+<!-- ======= Schedule Meeting ======= -->
+<div id="schedule_meeting" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('schedule_meeting')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Schedule Meeting</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+
+                        <!-- Camp Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="camp_title" type="text" placeholder="Campaign Title" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Campaign Title</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control gregorian-date-default" id="ExDate" type="text" placeholder="Applications Expiry Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="ODate">Applications Expiry Date</label>
+                            <div id="invalid-open-date" class="invalid-feedback">Required</div>
+                        </div>
+
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('schedule_meeting')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

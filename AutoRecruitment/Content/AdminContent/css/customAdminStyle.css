@@ -1,4 +1,33 @@
-﻿/*-------style for open status------*/
+﻿
+/*-------style for Qualified Applicant Card------*/
+
+.text-orange {
+    color: #de7826 !important;
+}
+
+.border-left-orange {
+    border-left: 0.25rem solid #de7826 !important;
+}
+
+.border-bottom-orange {
+    border-bottom: 0.25rem solid #de7826 !important;
+}
+
+.bg-orange {
+    background-color: #de7826 !important;
+}
+
+/*-------style for Expired and Reject Applicant Card bg------*/
+
+.card-bg-gray {
+    background-color: #f0f0f0 !important;
+}
+
+.card-bg-red {
+    background-color: #ffeded !important;
+}
+
+/*-------style for open status------*/
 .open-status {
     margin: auto;
     padding: 3px 10px;
