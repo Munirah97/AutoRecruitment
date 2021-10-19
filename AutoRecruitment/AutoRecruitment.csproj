@@ -134,6 +134,7 @@
     <Content Include="Content\AdminContent\css\customAdminStyle.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
     <Content Include="Content\AdminContent\img\no-img.jpg" />
+    <Content Include="Content\AdminContent\img\RS.png" />
     <Content Include="Content\AdminContent\img\undraw_posting_photo.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile_1.svg" />
