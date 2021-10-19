@@ -36,12 +36,13 @@
                             @*<div class="dropdown-header">Dropdown Header:</div>*@
                             <a class="dropdown-item" role="button" onclick="open_popup('editCamp')">Edit</a>
                             <a class="dropdown-item" href="/Admin/Applicants">View Applicants</a>
-                            <a class="dropdown-item" href="#">Verify Applicants</a>
+                            <a class="dropdown-item" role="button" onclick="verify_applicants()">Verify Applicants</a>
                             <a class="dropdown-item" href="#">Export Applicants</a>
                             <a class="dropdown-item" role="button" onclick="open_popup('schedule_meeting')">Schedule Meeting</a>
                             <a class="dropdown-item" href="#">Send Acceptance Form</a>
                             <a class="dropdown-item" role="button" onclick="open_popup('upload_olt')">Upload OLT</a>
                             <a class="dropdown-item" href="#">Calculate English Skill</a>
+                            <a class="dropdown-item" href="#">Upload Admitted Applicants</a>
 
                         </div>
                     </div>
@@ -50,21 +51,50 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <!-- Registration Info -->
-                            <p class="mb-1">Registration</p>
-                            <p class="mb-1">
-                                <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
-                                Form Link:
-                            </p>
-                            <p class="mb-1">
-                                <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
-                                Form Status: <span class="close-status">close</span>
-                            </p>
-                            <p class="mb-1">
-                                <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                No. of Applicants:
-                            </p>
+                            <!-- Camp Info -->
+                            <div class="col-12">
+                                <p class="mb-1">
+                                    <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
+                                    Creation Date: <span class="text-gray-500">August 15, 2021</span>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
+                                    Registration Open: <span class="text-gray-500">August 22, 2021</span>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
+                                    Registration Close: <span class="text-gray-500">Septemper 2, 2021</span>
+                                </p>
 
+                                <p class="mb-1 mt-3">
+                                    <i class="far fa-check-circle"></i> Interview
+                                    <i class="far fa-times-circle ml-3"></i> English Assessment
+                                    <i class="far fa-check-circle ml-3"></i> OLT
+
+                                </p>
+                                <p class="mb-1 ">
+                                    Applications Expire in <span class="text-gray-500">December 31, 2021</span>
+                                </p>
+                            </div>
+                            <!-- Divider -->
+                            <hr>
+    
+                            <!-- Registration Info -->
+                            <div class="col-12">
+                                <p class="mb-1">Registration</p>
+                                <p class="mb-1">
+                                    <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
+                                    Registration Link:
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
+                                    Form Status: <span class="close-status">close</span>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                    No. of Applicants: <span class="text-gray-500">10685 Persons</span>
+                                </p>
+                            </div>
                             <!-- Divider -->
                             <hr>
 
@@ -73,15 +103,15 @@
                                 <p class="mb-1">Verification</p>
                                 <p class="mb-1">
                                     <i class="fas fa-info-circle fa-x mr-1 text-gray-400"></i>
-                                    Verification Status:
+                                    Verification Status: <span id="t1" style="display:none" class="open-status">Done</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-user fa-x mr-2 text-gray-400"></i>
-                                    Verified By:
+                                    Verified By: <span id="t2" style="display:none" class="text-gray-500">mshehab</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                    No. of Qualified:
+                                    No. of Qualified: <span id="t3" style="display:none" class="text-gray-500">6592 Persons</span>
                                 </p>
                             </div>
 
@@ -94,36 +124,38 @@
 
                                 <p class="mb-1">
                                     <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
-                                    Meeting Date:
+                                    Meeting Date: <span class="text-gray-500">--</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-link fa-x mr-2 text-gray-400"></i>
-                                    Form Link:
+                                    Acceptance Link: <span class="text-gray-500">--</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                    No. of Acceptance:
+                                    No. of Acceptance: <span class="text-gray-500">--</span>
                                 </p>
 
-                                <!-- Divider -->
-                                <hr>
 
-                                <!-- Evaluate Info -->
-                                <div class="col-12">
-                                    <p class="mb-1">Applicants Evaluation</p>
-                                    <p class="mb-1">
-                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                        No. of Interviews:
-                                    </p>
-                                    <p class="mb-1">
-                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                        No. of English Assessments:
-                                    </p>
-                                    <p class="mb-1">
-                                        <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                        No. of OLT Responses:
-                                    </p>
-                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr>
+
+                            <!-- Evaluate Info -->
+                            <div class="col-12">
+                                <p class="mb-1">Applicants Evaluation</p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                    No. of Interviews: <span class="text-gray-500">--</span>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                    No. of English Assessments: <span class="text-gray-500">--</span>
+                                </p>
+                                <p class="mb-1">
+                                    <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
+                                    No. of OLT Responses: <span class="text-gray-500">--</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -152,8 +184,7 @@
                         <div class="form-floating mb-3">
                             <select class="form-control pt-0 pb-0" id="program" onfocusout="vlidateEmpty(this)">
                                 <option value="" selected disabled>Choose Program</option>
-                                <option value="apne">APNE</option>
-                                <option value="ohs">OHS</option>
+                                <option value="apne">Apprenticeship (APNE)</option>
                             </select>
                             <div class="invalid-feedback">Required</div>
                         </div>
@@ -519,6 +550,7 @@
         </div>
     </div>
 </div>
+
 <script>
     function getFile() {
         document.getElementById("import_file").click();
@@ -543,9 +575,12 @@
         }
 
     }
-    //$("#import_file").on("change", function (e) {
-    //    alert('test');
+    function verify_applicants() {
+        document.getElementById('t1').style.display = '';
+        document.getElementById('t2').style.display = '';
+        document.getElementById('t3').style.display = '';
 
-       
-    //});
+        succ_response.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on Qualification Rules';
+        document.getElementById('success_popup').style.display = 'block';
+    }
 </script>

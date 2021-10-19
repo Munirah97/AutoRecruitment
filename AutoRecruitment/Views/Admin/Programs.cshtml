@@ -42,15 +42,15 @@
                         <div class="col-12">
                             <p class="mb-1">
                                 <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
-                                Program Name:
+                                Program Name: <span class="text-gray-500">Apprenticeship (APNE)</span>
                             </p>
                             <p class="mb-1">
                                 <i class="fas fa-calendar-alt fa-x mr-2 text-gray-400"></i>
-                                Last Campaign:
+                                Last Campaign: <span class="text-gray-500">August 15, 2021</span>
                             </p>
                             <p class="mb-1">
                                 <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                Waiting List:
+                                Waiting List: <span class="text-gray-500">85 Persons</span>
                             </p>
 
                         </div>
@@ -75,10 +75,17 @@
                 <div class="modal-container">
                     <!-- Form -->
                     <form>
-                        <!-- Program Name input-->
+                        <!-- Program Name En input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                            <label for="camp_title">Program Full Name</label>
+                            <label for="camp_title">Program Full Name (English)</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Program Name Ar input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Full Name (Arabic)</label>
                             <div class="invalid-feedback">Required</div>
                         </div>
 
@@ -90,6 +97,7 @@
                         </div>
 
                         <!-- Program Verification Rules -->
+                        <p class="mb-1 mt-3">Default Qualification Rules</p>
                         <table border="0" class="text-center" id="rules_table">
                             <tbody>
                                 <tr>
@@ -116,7 +124,7 @@
                                         </div>
                                     </td>
                                     <td style="width: 10%;">
-                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRule('rules_table')" type="button" >
+                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRule('rules_table')" type="button">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </td>
@@ -157,10 +165,17 @@
                 <div class="modal-container">
                     <!-- Form -->
                     <form>
-                        <!-- Program Name input-->
+                        <!-- Program Name En input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                            <label for="camp_title">Program Full Name</label>
+                            <label for="camp_title">Program Full Name (English)</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Program Name Ar input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="program_name" type="text" placeholder="Program Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="camp_title">Program Full Name (Arabic)</label>
                             <div class="invalid-feedback">Required</div>
                         </div>
 
@@ -172,6 +187,7 @@
                         </div>
 
                         <!-- Program Verification Rules -->
+                        <p class="mb-1 mt-3">Default Qualification Rules</p>
                         <table border="0" class="text-center" id="rules_table_edit">
                             <tbody>
                                 <tr>
