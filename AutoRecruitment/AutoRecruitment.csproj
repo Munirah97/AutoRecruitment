@@ -133,7 +133,6 @@
   <ItemGroup>
     <Content Include="Content\AdminContent\css\customAdminStyle.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
-    <Content Include="Content\AdminContent\css\sb-admin-2.min.css" />
     <Content Include="Content\AdminContent\img\no-img.jpg" />
     <Content Include="Content\AdminContent\img\undraw_posting_photo.svg" />
     <Content Include="Content\AdminContent\img\undraw_profile.svg" />
@@ -1818,6 +1817,8 @@
     <Content Include="Content\AdminContent\vendor\jquery\jquery.slim.js" />
     <Content Include="Content\AdminContent\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Content\assets\favicon.ico" />
+    <Content Include="Content\assets\img\done_icon.png" />
+    <Content Include="Content\assets\img\error-icon.png" />
     <Content Include="Content\assets\img\logo.png" />
     <Content Include="Content\assets\img\niti-bg-crop.jpg" />
     <Content Include="Content\assets\img\niti-bg.jpg" />
@@ -1834,6 +1835,7 @@
     <Content Include="Content\assets\img\portfolio\thumbnails\4.jpg" />
     <Content Include="Content\assets\img\portfolio\thumbnails\5.jpg" />
     <Content Include="Content\assets\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="Content\assets\img\warning-icon2.png" />
     <Content Include="Content\assets\vendor\boxicons\css\animations.css" />
     <Content Include="Content\assets\vendor\boxicons\css\boxicons.css" />
     <Content Include="Content\assets\vendor\boxicons\css\boxicons.min.css" />
@@ -2074,7 +2076,9 @@
     <Content Include="Views\Evaluation\Index.cshtml" />
     <Content Include="Views\Evaluation\EngAssessmentForm.cshtml" />
     <Content Include="Views\Evaluation\InterviewForm.cshtml" />
-    <Content Include="Views\Evaluation\ResponsePage.cshtml" />
+    <Content Include="Views\Evaluation\ResponsePageAr.cshtml" />
+    <Content Include="Views\Evaluation\ResponsePageEn.cshtml" />
+    <Content Include="Views\Registration\AcceptanceForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

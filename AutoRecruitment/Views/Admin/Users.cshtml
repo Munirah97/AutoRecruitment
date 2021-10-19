@@ -33,7 +33,7 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                  aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" role="button" onclick="open_popup('edit_user')">Edit</a>
-                                <a class="dropdown-item" href="#">Delete</a>
+                                <a class="dropdown-item" role="button" onclick="confirm_popup()">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -86,13 +86,6 @@
                         <div class="form-floating mb-3">
                             <input class="form-control" name="full_name" type="text" placeholder="Full Name" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" autocomplete="off" />
                             <label for="full_name">Full Name</label>
-                            <div class="invalid-feedback">Required</div>
-                        </div>
-
-                        <!-- Email input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);" autocomplete="off" />
-                            <label for="email">NITI Email</label>
                             <div class="invalid-feedback">Required</div>
                         </div>
 
@@ -171,13 +164,6 @@
                             <div class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Email input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" value="mshehab@niti.edu.sa" id="email" type="email" placeholder="name@example.com" onfocusout="validateEmail(this);" autocomplete="off" />
-                            <label for="email">NITI Email</label>
-                            <div class="invalid-feedback">Required</div>
-                        </div>
-
                         <!-- Privileges -->
                         <p>Privileges</p>
 
@@ -225,3 +211,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    function confirm_popup() {
+        warn_response_continue.innerHTML = 'If you delete this user, the user will no longer can access Recruitment System';
+        document.getElementById('warn_popup_continue').style.display = 'block';
+    }
+</script>

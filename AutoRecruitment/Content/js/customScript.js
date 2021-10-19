@@ -1,12 +1,46 @@
 ﻿/*!
  * 
- * This script is used to vaildate registration fields 
+ * This script is used to vaildate registration fields + give forms user intraction
  * 
 */ 
 //
 // Scripts
-// 
 
+
+//----------- Calculate Scores in English Assessment Form --------------
+$(".reading_score").click(function () {
+    var Total_score = 0;
+    $(".reading_score").each(function () {
+        if (this.checked) {
+            Total_score = Total_score + parseInt(this.value);
+        }
+    });
+    $(".total_reading_score").each(function () {
+        this.innerHTML = Total_score;
+    });
+});
+
+$(".speaking_score").click(function () {
+    var Total_score = 0;
+    $(".speaking_score").each(function () {
+        if (this.checked) {
+            Total_score = Total_score + parseInt(this.value);
+        }
+    });
+    $(".total_speaking_score").each(function () {
+        this.innerHTML = Total_score;
+    });
+});
+
+//----------- Upload files in Interview Form using custom style for input file  --------------
+function getFile(file_id) {
+    document.getElementById(file_id).click();
+}
+function importFile(file_id, file_name) {
+    //display file name in the field
+    var name = document.getElementById(file_id).files.item(0).name;
+    document.getElementById(file_name).value = name;
+}
 
 //----- To prevent typing more than maxlength -----
 function inputMaxLength(input) {

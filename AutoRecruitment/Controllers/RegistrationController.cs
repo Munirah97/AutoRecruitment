@@ -29,6 +29,11 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
+        public ActionResult AcceptanceForm()
+        {
+            return View();
+        }
+
         public ActionResult ResponsePage()
         {
             return View();

@@ -36,11 +36,11 @@
                             @*<div class="dropdown-header">Dropdown Header:</div>*@
                             <a class="dropdown-item" role="button" onclick="open_popup('editCamp')">Edit</a>
                             <a class="dropdown-item" href="/Admin/Applicants">View Applicants</a>
-                            <a class="dropdown-item" href="#">Export Applicants</a>
                             <a class="dropdown-item" href="#">Verify Applicants</a>
+                            <a class="dropdown-item" href="#">Export Applicants</a>
                             <a class="dropdown-item" role="button" onclick="open_popup('schedule_meeting')">Schedule Meeting</a>
                             <a class="dropdown-item" href="#">Send Acceptance Form</a>
-                            <a class="dropdown-item" href="#">Upload OLT</a>
+                            <a class="dropdown-item" role="button" onclick="open_popup('upload_olt')">Upload OLT</a>
                             <a class="dropdown-item" href="#">Calculate English Skill</a>
 
                         </div>
@@ -102,7 +102,7 @@
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
-                                    No. of Accepted:
+                                    No. of Acceptance:
                                 </p>
 
                                 <!-- Divider -->
@@ -304,22 +304,22 @@
                             <div class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Reg Form Start date input-->
+                        <!-- Reg Form Start/End date input-->
                         <div class="row">
                             <div class="col-xl-6">
-                                <!-- Hijri-->
+                                <!-- Start Date -->
                                 <div class="form-floating mb-3">
-                                    @*                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'open','invalid-open-date','EDate')" />
-                                    *@                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                                    @*<input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'open','invalid-open-date','EDate')" />*@
+                                    <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="ODate">Registration Open</label>
                                     <div id="invalid-open-date" class="invalid-feedback">Required</div>
                                 </div>
                             </div>
                             <div class="col-xl-6 ">
-                                <!-- Gorgian -->
+                                <!-- End Date -->
                                 <div class="form-floating mb-3">
-                                    @*                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />
-                                    *@                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                                    @*<input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />*@
+                                    <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="CDate">Registration Close</label>
                                     <div id="invalid-close-date" class="invalid-feedback">Required</div>
                                 </div>
@@ -426,18 +426,22 @@
                 <div class="modal-container">
                     <!-- Form -->
                     <form>
-
-                        <!-- Camp Name input-->
+                        <p class="mb-3 text-gray-400" style="font-size:10pt">
+                            <i class="fas fa-info-circle fa-x mr-2 "></i>
+                            Only <span class="font-weight-bold text-orange">Qualified</span> applicants will recieve the meeting invitation
+                        </p>
+                        <!-- Meeting Date input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="camp_title" type="text" placeholder="Campaign Title" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                            <label for="camp_title">Campaign Title</label>
-                            <div class="invalid-feedback">Required</div>
+                            @*<input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />*@
+                            <input class="form-control gregorian-date-default" id="MeetingDate" type="text" placeholder="Meeting Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                            <label for="MeetingDate">Meeting Date</label>
+                            <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
                         </div>
 
-
+                        <!-- Meeting Message -->
                         <div class="form-floating mb-3">
-                            <input class="form-control gregorian-date-default" id="ExDate" type="text" placeholder="Applications Expiry Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
-                            <label for="ODate">Applications Expiry Date</label>
+                            <textarea style=" min-height:130px;" class="form-control" id="meetingMsg" placeholder="Message" onfocusout="vlidateEmpty(this)"></textarea>
+                            <label for="ODate">Message</label>
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
@@ -463,3 +467,85 @@
         </div>
     </div>
 </div>
+
+<!-- ======= Upload OLT ======= -->
+<div id="upload_olt" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('upload_olt')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Upload OLT Results</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        
+                        <!-- File input -->
+                        <div class="form-floating mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control small" id="filename" placeholder="Upload File ..."
+                                       aria-label="Upload" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="getFile()">
+                                        <i class="fas fa-upload fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="file" id="import_file" style="display: none;" accept=".xls,.xlsx" onchange="importFile()" />
+
+                            <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Upload
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('upload_olt')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function getFile() {
+        document.getElementById("import_file").click();
+    }
+    function importFile() {
+        //check if the selected file is EXCEL
+        var accepted = ["xls", "xlsx"];
+        var extension = document.getElementById('import_file').files.item(0).name.split('.').pop();
+        if (!(accepted.includes(extension))) {
+            //reomve the selected file
+            document.getElementById('import_file').value = null;
+            document.getElementById('filename').value = "";
+
+            //display warning
+            warn_response.innerHTML = 'You can only upload Excel files';
+            document.getElementById('warn_popup').style.display = 'block';
+        }
+        else {
+            //display file name in the field
+            var name = document.getElementById('import_file').files.item(0).name;
+            document.getElementById('filename').value = name;
+        }
+
+    }
+    //$("#import_file").on("change", function (e) {
+    //    alert('test');
+
+       
+    //});
+</script>

@@ -10,8 +10,8 @@ var myPieChart = new Chart(ctx, {
       labels: ["Qualification", "Rules Acceptance", "Interview"],
     datasets: [{
       data: [55, 30, 15],
-      backgroundColor: ['#24405c', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      backgroundColor: ['#0a3049', '#82ce34', '#36b9cc'],
+      hoverBackgroundColor: ['#115078', '#73ad37', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },

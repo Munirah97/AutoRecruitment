@@ -38,13 +38,14 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <div class="sidebar-brand-icon text-center">
+                <img src="~/Content/assets/img/logo.png" style="margin:5px; width:70px;" />
+            </div>
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Admin/index">
-                <div class="sidebar-brand-icon">
-                    <img src="~/Content/assets/img/logo.png" style="margin:5px; width:70px;" />
-                </div>
+                
 
-                <div class="sidebar-brand-text mx-3">Recruitment System</div>
+                <div class="sidebar-brand-text mx-3" style="font-size:10pt">Recruitment System</div>
             </a>
 
             <!-- Divider -->
@@ -67,11 +68,11 @@
             </div>
             <!-- Nav Item - Applicants -->
             <!--<li class="nav-item" id="Applicants">
-                <a class="nav-link" href="/Admin/Applicants">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Applicants</span>
-                </a>
-            </li>-->
+        <a class="nav-link" href="/Admin/Applicants">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Applicants</span>
+        </a>
+    </li>-->
             <!-- Nav Item - Program -->
             <li class="nav-item" id="Programs">
                 <a class="nav-link" href="/Admin/Programs">
@@ -98,13 +99,7 @@
             <li class="nav-item" id="RegistrationTerms">
                 <a class="nav-link" href="/Registration/Index" target="_blank">
                     <i class="fas fa-fw fa-clipboard-check"></i>
-                    <span>Registration Terms</span>
-                </a>
-            </li>
-            <!-- Nav Item -->
-            <li class="nav-item" id="RegistrationForm">
-                <a class="nav-link" href="/Registration/RegistrationForm" target="_blank">
-                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    @*<i class="fas fa-fw fa-clipboard-list"></i>*@
                     <span>Registration Form</span>
                 </a>
             </li>
@@ -113,6 +108,13 @@
                 <a class="nav-link" href="/Evaluation" target="_blank">
                     <i class="fas fa-fw fa-tasks"></i>
                     <span>Evaluation Forms</span>
+                </a>
+            </li>
+            <!-- Nav Item -->
+            <li class="nav-item" id="AcceptForm">
+                <a class="nav-link" href="/Registration/AcceptanceForm" target="_blank">
+                    <i class="fas fa-fw fa-user-check"></i>
+                    <span>Acceptance Form</span>
                 </a>
             </li>
 
@@ -383,7 +385,9 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; National Industrial Training Institute (NITI) 2021</span>
+                        <span>
+                            All Rights Reserved for NITI &copy; @DateTime.Now.Year  | Designed and Developed by Information Technology Unit
+                        </span>
                     </div>
                 </div>
             </footer>
@@ -436,27 +440,134 @@
     <script src="~/Content/AdminContent/js/demo/chart-area-demo.js"></script>
     <script src="~/Content/AdminContent/js/demo/chart-pie-demo.js"></script>
 
-    <!-- jQuery -->
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="~/Content/AdminContent/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="~/Content/AdminContent/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="~/Content/AdminContent/js/demo/datatables-demo.js"></script>
-
-
     <script src="~/Content/AdminContent/js/customAdminScript.js"></script>
-    
+
     <!-- Date Picker-->
-@*    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment-hijri@2.1.2/moment-hijri.min.js"></script>*@
     <script src="~/Content/DatePicker/js/bootstrap-hijri-datetimepicker.js?v2"></script>
+
+    <!-- ======= Success POP UP ======= -->
+    <div id="success_popup" class="modal">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-sm-10">
+                <div class="modal-content animate" style="border-radius: 10px;">
+
+                    <div class="imgcontainer" style="margin-top: -50px">
+                        <img src="~/Content/assets/img/done_icon.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
+                    </div>
+
+                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
+                        <div class="form-group">
+                            <p id="succ_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-success shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('success_popup')">
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Error POP UP ======= -->
+    <div id="err_popup" class="modal">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-sm-10">
+                <div class="modal-content animate" style="border-radius: 10px;">
+
+                    <div class="imgcontainer" style="margin-top: -50px">
+                        <img src="~/Content/assets/img/error-icon.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
+                    </div>
+
+                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
+                        <div class="form-group">
+                            <p id="err_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('err_popup')">
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Warning POP UP ======= -->
+    <div id="warn_popup" class="modal">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-sm-10">
+                <div class="modal-content animate" style="border-radius: 10px;">
+                    <div class="imgcontainer" style="margin-top: -50px">
+                        <img src="~/Content/assets/img/warning-icon2.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
+                    </div>
+
+                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
+                        <div class="form-group">
+                            <p id="warn_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('warn_popup')">
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Warning POP UP WITH continue  ======= -->
+    <div id="warn_popup_continue" class="modal">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-sm-10">
+                <div class="modal-content animate" style="border-radius: 10px;">
+                    <div class="imgcontainer" style="margin-top: -50px">
+                        <img src="~/Content/assets/img/warning-icon2.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
+                    </div>
+
+                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
+                        <div class="form-group">
+                            <p id="warn_response_continue" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-right" type="button" style="width:100%" onclick="continue_submit()">
+                                    Continue
+                                </button>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('warn_popup_continue')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

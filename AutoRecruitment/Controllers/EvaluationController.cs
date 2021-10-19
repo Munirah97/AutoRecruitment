@@ -24,7 +24,12 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
-        public ActionResult ResponsePage()
+        public ActionResult ResponsePageAr()
+        {
+            return View();
+        }
+
+        public ActionResult ResponsePageEn()
         {
             return View();
         }

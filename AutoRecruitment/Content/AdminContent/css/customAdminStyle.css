@@ -2,19 +2,19 @@
 /*-------style for Qualified Applicant Card------*/
 
 .text-orange {
-    color: #de7826 !important;
+    color: #e6995a !important;
 }
 
 .border-left-orange {
-    border-left: 0.25rem solid #de7826 !important;
+    border-left: 0.25rem solid #e6995a !important;
 }
 
 .border-bottom-orange {
-    border-bottom: 0.25rem solid #de7826 !important;
+    border-bottom: 0.25rem solid #e6995a !important;
 }
 
 .bg-orange {
-    background-color: #de7826 !important;
+    background-color: #e6995a !important;
 }
 
 /*-------style for Expired and Reject Applicant Card bg------*/
@@ -64,7 +64,7 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto 15% auto; /* 10% from the top, 15% from the bottom and centered */
+    margin: 12% auto 15% auto; /* 10% from the top, 15% from the bottom and centered */
     border: none;
     width: 100%;
     border-radius: 5px;
@@ -72,6 +72,12 @@
 
 /* Center the image and position the close button */
 .modal-header-container {
+    text-align: center;
+    margin: 24px 0 24px 0;
+    position: relative;
+}
+
+.imgcontainer {
     text-align: center;
     margin: 24px 0 24px 0;
     position: relative;
@@ -124,7 +130,7 @@ span.psw {
 
     to {
         opacity: 1;
-        margin: 10% auto 15% auto;
+        margin: 12% auto 15% auto;
     }
 }
 
@@ -136,7 +142,7 @@ span.psw {
 
     to {
         opacity: 1;
-        margin: 10% auto 15% auto;
+        margin: 12% auto 15% auto;
     }
 }
 
@@ -495,7 +501,7 @@ span.psw {
 
 /* When the radio button is checked, add a color background */
 .mycontainer input:checked ~ .checkmark, .mycontainer input:checked ~ .checkbox {
-    background-color: #24405c;
+    background-color: #0a3049;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
