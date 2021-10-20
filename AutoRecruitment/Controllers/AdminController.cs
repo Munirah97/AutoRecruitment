@@ -13,16 +13,6 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-
-        public ActionResult Applicants()
-        {
-            return View();
-        }
-        public ActionResult ApplicantProfile()
-        {
-            return View();
-        }
-
         public ActionResult Programs()
         {
             return View();
@@ -32,7 +22,26 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-
+        public ActionResult Applicants()
+        {
+            return View();
+        }
+        public ActionResult ApplicantProfile()
+        {
+            return View();
+        }
+        public ActionResult ResponsesReg()
+        {
+            return View();
+        }
+        public ActionResult ResponsesInterview()
+        {
+            return View();
+        }
+        public ActionResult ResponsesEvalu()
+        {
+            return View();
+        }
         public ActionResult Users()
         {
             return View();

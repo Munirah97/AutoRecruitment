@@ -11,7 +11,7 @@
 .upload_input {
     width: 100%;
     height: 30px;
-    border-radius: 10rem;
+    /*border-radius: 10rem;*/
     background-color:#fff !important;
 }
 .upload_btn {
@@ -22,12 +22,11 @@
     border: 0;
     background: none;
     font-size: 16px;
-    padding: 0 20px;
-    width:15%;
+    width: 15%;
     background: #f5494c;
     color: #fff;
     transition: 0.3s;
-    border-radius: 50px;
+    border-radius: 0.25rem;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     outline: none;
 }

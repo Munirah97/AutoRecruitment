@@ -33,12 +33,31 @@
             <div class="col-lg-8">
                 <form>
 
-                    <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
+
+
                     <!-- NID input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
-                        <label for="NID">رقم الهوية الوطنية</label>
-                        <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
+                    <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <!-- Text -->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
+                                <label for="NID">رقم الهوية الوطنية</label>
+                                <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 ">
+                            <!-- File Upload -->
+                            <div class="form-floating mb-3" id="upload_form">
+                                <input class="form-control upload_input" id="file_nid_name" placeholder="صورة من الشهادة" disabled />
+                                <button type="button" class="upload_btn" onclick="getFile('file_nid')">
+                                    <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                </button>
+                                <label>صورة من الهوية الوطنية</label>
+                                <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                <input type="file" id="file_nid" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_nid','file_nid_name')" />
+                            </div>
+                        </div>
                     </div>
 
                     <p>الرجاء كتابة الاسم كما هو مكتوب في جواز السفر او الهوية الوطنية <span style="color:#f5494c">*</span> </p>
@@ -180,11 +199,11 @@
                         <div class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
 
-                    <!-- Grades input-->
-                    <p>درجة الثانوية والقدرات (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
+                    <!-- High School Grade input-->
+                    <p>درجة الثانوية (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
                     <div class="row">
                         <div class="col-xl-6">
-                            <!-- Hijri-->
+                            <!-- Text -->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="highgrade">النسبة المئوية للثانوية العامة</label>
@@ -192,17 +211,45 @@
                             </div>
                         </div>
                         <div class="col-xl-6 ">
-                            <!-- Gorgian -->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="qiasgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                <label for="qiasgrade">نسبة القدرات (قياس)</label>
-                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                            <!-- File Upload -->
+                            <div class="form-floating mb-3" id="upload_form">
+                                <input class="form-control upload_input" id="file_highschool_name" placeholder="صورة من الشهادة" disabled />
+                                <button type="button" class="upload_btn" onclick="getFile('file_highschool')">
+                                    <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                </button>
+                                <label>مرفق شهادة الثانوية</label>
+                                <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                <input type="file" id="file_highschool" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_highschool','file_highschool_name')" />
                             </div>
                         </div>
                     </div>
 
-                    <p>ارقام التواصل <span style="color:#f5494c">*</span> </p>
+                    <!-- Qiyas Grade input-->
+                    <p>درجة القدرات (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
+                    <div class="row">
+                        <div class="col-xl-6 ">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="qiysgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <label for="qiysgrade">نسبة القدرات (قياس)</label>
+                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 ">
+                            <!-- File Upload -->
+                            <div class="form-floating mb-3" id="upload_form">
+                                <input class="form-control upload_input" id="file_qiys_name" placeholder="صورة من الشهادة" disabled />
+                                <button type="button" class="upload_btn" onclick="getFile('file_qiys')">
+                                    <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                </button>
+                                <label>مرفق نتيجة قياس</label>
+                                <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                <input type="file" id="file_qiys" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_qiys','file_qiys_name')" />
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Phone number input-->
+                    <p>ارقام التواصل <span style="color:#f5494c">*</span> </p>
                     <div class="form-floating mb-3">
                         <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone1')" />
                         <label for="phone">هاتف المتقدم</label>
@@ -477,7 +524,7 @@
                     <div id="HighEducation" style="display:none; margin-top:20px; margin-bottom:40px">
                         <p>معلومات الشهادة <span style="color:#f5494c">*</span></p>
                         <div class="row">
-                            <div class="col-4" style="padding-left:0">
+                            <div class="col-6">
                                 <div class="form-floating mb-3">
                                     <select class="form-control pt-0 pb-0" id="education" onfocusout="vlidateEmpty(this)">
                                         <option value="" selected disabled>الدرجة العلمية</option>
@@ -489,7 +536,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-4" style="padding-left:0">
+                            <div class="col-6">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="major" type="text" placeholder="التخصص" onfocusout="validateEmail(this);" />
                                     <label for="">التخصص </label>
@@ -497,15 +544,15 @@
                                 </div>
                             </div>
 
-                            <div class="col-2" style="padding-left:0">
+                            <div class="col-3">
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="gpa" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="المعدل" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                    <input class="form-control" id="gpa" type="number" placeholder="المعدل" maxlength="4" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="qiasgrade">المعدل</label>
                                     <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                 </div>
                             </div>
 
-                            <div class="col-2 ">
+                            <div class="col-3">
                                 <div class="form-floating mb-3">
                                     <select class="form-control pt-0 pb-0" id="gpaScale" onfocusout="vlidateEmpty(this)">
                                         <option value="" selected disabled>نظام المعدل</option>
@@ -516,9 +563,34 @@
                                     <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                 </div>
                             </div>
+
+                            <div class="col-6 ">
+                                <!-- File Upload -->
+                                <div class="form-floating mb-3" id="upload_form">
+                                    <input class="form-control upload_input" id="file_university_name" placeholder="صورة من الشهادة" disabled />
+                                    <button type="button" class="upload_btn" onclick="getFile('file_university')">
+                                        <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                    </button>
+                                    <label>مرفق الشهادة</label>
+                                    <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                    <input type="file" id="file_university" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_university','file_university_name')" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+                    <!-- CV -->
+                    <p class="mt-3">ملف السيرة الذاتية <span style="color:#f5494c">*</span> </p>
+                    <div class="form-floating mb-5">
+                        <!-- File Upload -->
+                        <input class="form-control upload_input" id="file_cv_name" placeholder="صورة من الشهادة" disabled />
+                        <button type="button" class="upload_btn" onclick="getFile('file_cv')">
+                            <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                        </button>
+                        <label>مرفق السيرة الذاتية</label>
+                        <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                        <input type="file" id="file_cv" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_cv','file_cv_name')" />
+                    </div>
 
                     <div class="row gx-4 gx-lg-5" style="margin-top:15px">
                         <div class="col-lg-12 bg-light" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%);  padding-top:10px">
