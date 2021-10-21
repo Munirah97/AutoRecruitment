@@ -1,5 +1,17 @@
 ﻿
-/*-------style for Qualified Applicant Card------*/
+/*=============== style action options in responses tables ===============*/
+.action {
+    color: #0a3049;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.action:hover {
+    color: #0a3049;
+    text-decoration: underline;
+}
+
+/*=============== style for Qualified Applicant Card ===============*/
 
 .text-orange {
     color: #e6995a !important;
@@ -17,7 +29,7 @@
     background-color: #e6995a !important;
 }
 
-/*-------style for Expired and Reject Applicant Card bg------*/
+/*=============== style for Expired and Reject Applicant Card bg ===============*/
 
 .card-bg-gray {
     background-color: #f0f0f0 !important;
@@ -27,7 +39,8 @@
     background-color: #ffeded !important;
 }
 
-/*-------style for open status------*/
+/*======================= style for open status =====================*/
+
 .open-status {
     margin: auto;
     padding: 3px 10px;
@@ -46,6 +59,7 @@
     border-radius: 5px;
 }
 
+/*======================= Popup window =====================*/
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -159,8 +173,7 @@ span.psw {
 }
 
 
-/* Form input */
-
+/*=======================  Form Style =====================*/
 .form-floating {
     position: relative;
 }
@@ -252,8 +265,8 @@ span.psw {
     transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-/* Validate form */
 
+/*=======================  Validate form =====================*/
 .valid-feedback {
     display: none;
     width: 100%;

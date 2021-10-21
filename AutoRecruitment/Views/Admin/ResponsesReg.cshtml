@@ -33,93 +33,75 @@
                                 <tr>
                                     <th>Program</th>
                                     <th>Campaign</th>
+                                    <th>Natinal ID</th>
                                     <th>Name</th>
-                                    <th>Gender</th>
-                                    <th>Blood</th>
                                     <th>Age</th>
                                     <th>Address</th>
-                                    <th>Qyias</th>
-                                    <th>High School</th>
                                     <th>Application Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>APNE</td>
                                     <td>Campaign 2021</td>
+                                    <td>1096358795</td>
                                     <td>Munirah</td>
-                                    <td>Female</td>
-                                    <td>A+</td>
+                                    <td>22</td>
+                                    <td>Ahsa</td>
+                                    <td class="text-xs font-weight-bold text-orange">Qualified</td>
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a> | <a class="action" role="button" onclick="view_log('Application')">View Changes Log</a></td>
+
+                                </tr>
+                                <tr>
+                                    <td>APNE</td>
+                                    <td>Campaign 2021</td>
+                                    <td>1096358795</td>
+                                    <td>Mohammed</td>
                                     <td>24</td>
                                     <td>Ahsa</td>
-                                    <td>86</td>
-                                    <td>99</td>
-                                    <td class="text-xs font-weight-bold text-orange">Qualified</td>
-                                </tr>
-                                <tr>
-                                    <td>APNE</td>
-                                    <td>Campaign 2021</td>
-                                    <td>Mohamed</td>
-                                    <td>Male</td>
-                                    <td>AB+</td>
-                                    <td>26</td>
-                                    <td>Dmmam</td>
-                                    <td>70</td>
-                                    <td>89</td>
                                     <td class="text-xs font-weight-bold text-info">Potential</td>
-
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
                                     <td>Campaign 2021</td>
-                                    <td>Mohamed</td>
-                                    <td>Male</td>
-                                    <td>AB+</td>
-                                    <td>26</td>
+                                    <td>1096358795</td>
+                                    <td>Mohammed</td>
+                                    <td>24</td>
                                     <td>Dmmam</td>
-                                    <td>70</td>
-                                    <td>89</td>
                                     <td class="text-xs font-weight-bold text-orange">Qualified</td>
-
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
                                     <td>Campaign 2021</td>
+                                    <td>1096358795</td>
                                     <td>Monther</td>
-                                    <td>Male</td>
-                                    <td>O+</td>
                                     <td>23</td>
                                     <td>Dmmam</td>
-                                    <td>70</td>
-                                    <td>89</td>
                                     <td class="text-xs font-weight-bold text-danger">Rejected</td>
-
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
                                     <td>Campaign 2021</td>
-                                    <td>Khaled</td>
-                                    <td>Male</td>
-                                    <td>B+</td>
-                                    <td>23</td>
+                                    <td>1096358795</td>
+                                    <td>Monther</td>
+                                    <td>19</td>
                                     <td>Ahsa</td>
-                                    <td>66</td>
-                                    <td>78</td>
                                     <td class="text-xs font-weight-bold text-orange">Qualified</td>
-
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
                                     <td>Campaign 2021</td>
+                                    <td>1096358795</td>
                                     <td>Hamad</td>
-                                    <td>Male</td>
-                                    <td>O+</td>
-                                    <td>18</td>
+                                    <td>21</td>
                                     <td>Ahsa</td>
-                                    <td>70</td>
-                                    <td>89</td>
                                     <td class="text-xs font-weight-bold text-orange">Qualified</td>
-
+                                    <td> <a href="#">Profile</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a>
                                 </tr>
                             </tbody>
                         </table>
@@ -133,3 +115,38 @@
 
 </div>
 
+<!-- ======= Edit Record ======= -->
+<div id="editRecord" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('editRecord')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Edit Application Record</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('editRecord')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

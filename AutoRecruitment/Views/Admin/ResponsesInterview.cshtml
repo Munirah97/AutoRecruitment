@@ -10,7 +10,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h2 mb-0 text-gray-700">Interview Responses</h1>
-        
+
         <div class=" d-sm-inline-block">
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                 <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
@@ -54,7 +54,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a></td>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
@@ -65,7 +65,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a></td>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
@@ -76,7 +76,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a></td>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
@@ -87,7 +87,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a></td>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
@@ -98,7 +98,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a> | <a class="action" role="button" onclick="view_log('Interview')">Changes Log</a></td>
                                 </tr>
                                 <tr>
                                     <td>APNE</td>
@@ -109,7 +109,7 @@
                                     <td>7.5/10</td>
                                     <td>NA</td>
                                     <td>mshehab</td>
-                                    <td>View</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">View</a> | <a class="action" role="button" onclick="open_popup('editRecord')">Edit</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -123,3 +123,65 @@
 
 </div>
 
+<!-- ======= View Record ======= -->
+<div id="viewRecord" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('viewRecord')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Interview 4528</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('viewRecord')">
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ======= Edit Record ======= -->
+<div id="editRecord" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('editRecord')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Edit Interview Record</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('editRecord')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

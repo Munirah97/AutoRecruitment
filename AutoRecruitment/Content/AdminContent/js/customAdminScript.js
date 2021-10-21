@@ -7,6 +7,13 @@
 // Scripts
 // 
 
+
+//----- open view log window ---------
+function view_log(modal_name) {
+    document.getElementById('log_name').innerHTML = modal_name;
+    document.getElementById('viewLog').style.display = 'block';
+}
+
 //----- open / close modal for create or edit forms -----
 function open_popup(modal_id) {
     document.getElementById(modal_id).style.display = 'block';
@@ -120,6 +127,37 @@ function addRule(tableId) {
 
     cell4.innerHTML =
           '<button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
+        + '     <i class="fas fa-trash"></i>'
+        + '</button>';
+}
+
+// Add new row in regulation table
+function addRegu(tableId) {
+    var table = document.getElementById(tableId);
+    var row = table.insertRow(table.rows.length);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+    cell1.innerHTML =
+        '<td style="width: 35%;vertical-align: top;">'
+        +'   <div class="form-floating">'
+        +'        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
+        +'        <label for="v_rule">Section Title</label>'
+        +'    </div>'
+        +'</td>';
+
+    cell2.innerHTML =
+        '<td style="width: 55%;">'
+        + '    <div class="form-floating">'
+        + '        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>'
+        + '        <label for="v_value">List of regulations...</label>'
+        + '    </div>'
+        + '</td>';
+
+    cell3.innerHTML =
+        '<button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
         + '     <i class="fas fa-trash"></i>'
         + '</button>';
 }

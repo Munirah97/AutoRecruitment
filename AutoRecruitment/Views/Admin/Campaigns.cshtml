@@ -11,10 +11,12 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h2 mb-0 text-gray-700">Campaigns</h1>
         <div class=" d-sm-inline-block">
-            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="open_popup('newCamp')">
-                <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New Campaign
-
+            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="open_popup('importHRDF')">
+                <i class="fas fa-file-import fa-sm text-white-50 mr-1"></i> Import HRDF
             </button>
+            <a href="/Admin/CampaignDetail" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> New Campaign
+            </a>
         </div>
     </div>
 
@@ -78,7 +80,7 @@
                             </div>
                             <!-- Divider -->
                             <hr>
-    
+
                             <!-- Registration Info -->
                             <div class="col-12">
                                 <p class="mb-1">Registration</p>
@@ -223,7 +225,37 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Waiting status rules -->
+                        <!-- Registeration Requested Files -->
+                        <p>Applicants need to Upload:</p>
+                        <div class="mb-3">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    National ID
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    High School Certificate
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    Qiyas 
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    CV
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- rules -->
                         <p>Applicants need to finish:</p>
                         <div class="">
                             <div class="d-flex ">
@@ -363,7 +395,37 @@
                             <div id="invalid-open-date" class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Waiting status rules -->
+                        <!-- Registeration Requested Files -->
+                        <p>Applicants need to Upload:</p>
+                        <div class="form-floating mb-3">
+                            <div class="d-flex ">
+                                <label class="mycontainer">
+                                    National ID
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    High School Certificate
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    Qiyas
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+
+                                <label class="mycontainer">
+                                    CV
+                                    <input type="checkbox" name="reg_files" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- applicants rules -->
                         <p>Applicants need to finish:</p>
                         <div class="">
                             <div class="d-flex ">
@@ -512,11 +574,11 @@
                 <div class="modal-container">
                     <!-- Form -->
                     <form>
-                        
+
                         <!-- File input -->
                         <div class="form-floating mb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control small" id="filename" placeholder="Upload File ..."
+                                <input type="text" class="form-control small" id="filename" placeholder="Select File ..."
                                        aria-label="Upload" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button" onclick="getFile()">
@@ -551,6 +613,57 @@
     </div>
 </div>
 
+<!-- ======= Import HRDF ======= -->
+<div id="importHRDF" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('importHRDF')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Import HRDF</h5>
+                </div>
+                <div class="modal-container">
+                    <!-- Form -->
+                    <form>
+
+                        <!-- File input -->
+                        <div class="form-floating mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control small" id="filename" placeholder="Select File ..."
+                                       aria-label="Upload" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="getFile()">
+                                        <i class="fas fa-upload fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="file" id="import_file" style="display: none;" accept=".xls,.xlsx" onchange="importFile()" />
+
+                            <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Import
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('importHRDF')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     function getFile() {
         document.getElementById("import_file").click();
