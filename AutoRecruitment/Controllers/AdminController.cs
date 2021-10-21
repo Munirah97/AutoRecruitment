@@ -51,6 +51,10 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
+        public ActionResult Blacklist()
+        {
+            return View();
+        }
         public ActionResult Configuration()
         {
             return View();

@@ -96,6 +96,33 @@
                             <div class="invalid-feedback">Required</div>
                         </div>
 
+                        <!-- Campaign Regulation -->
+                        <p class="mb-1">Requlation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span></p>
+                        <table border="0" class="text-center mb-3" id="prog_regu_table" style="width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%;vertical-align: top;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_rule">Section Title</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 55%;">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>
+                                            <label for="v_value">List of regulations...</label>
+                                        </div>
+                                    </td>
+
+                                    <td style="width: 10%;">
+                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRegu('prog_regu_table')" type="button">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                         <!-- Program Verification Rules -->
                         <p class="mb-1 mt-3">Default Qualification Rules</p>
                         <table border="0" class="text-center" id="rules_table">
@@ -185,6 +212,33 @@
                             <label for="camp_title">Program Short Name</label>
                             <div class="invalid-feedback">Required</div>
                         </div>
+
+                        <!-- Campaign Regulation -->
+                        <p class="mb-1">Requlation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span></p>
+                        <table border="0" class="text-center mb-3" id="prog_regu_table" style="width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%;vertical-align: top;">
+                                        <div class="form-floating">
+                                            <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />
+                                            <label for="v_rule">Section Title</label>
+                                        </div>
+                                    </td>
+                                    <td style="width: 55%;">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>
+                                            <label for="v_value">List of regulations...</label>
+                                        </div>
+                                    </td>
+
+                                    <td style="width: 10%;">
+                                        <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRegu('prog_regu_table')" type="button">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                         <!-- Program Verification Rules -->
                         <p class="mb-1 mt-3">Default Qualification Rules</p>

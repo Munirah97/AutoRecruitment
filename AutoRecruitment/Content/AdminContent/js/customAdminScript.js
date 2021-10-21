@@ -131,6 +131,7 @@ function addRule(tableId) {
         + '</button>';
 }
 
+
 // Add new row in regulation table
 function addRegu(tableId) {
     var table = document.getElementById(tableId);
@@ -140,21 +141,18 @@ function addRegu(tableId) {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
 
+    cell1.style.verticalAlign = 'top';
     cell1.innerHTML =
-        '<td style="width: 35%;vertical-align: top;">'
-        +'   <div class="form-floating">'
-        +'        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
-        +'        <label for="v_rule">Section Title</label>'
-        +'    </div>'
-        +'</td>';
+        '   <div class="form-floating">'
+        + '        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
+        + '        <label for="v_rule">Section Title</label>'
+        + '    </div>';
 
     cell2.innerHTML =
-        '<td style="width: 55%;">'
-        + '    <div class="form-floating">'
+        '    <div class="form-floating">'
         + '        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>'
         + '        <label for="v_value">List of regulations...</label>'
-        + '    </div>'
-        + '</td>';
+        + '    </div>';
 
     cell3.innerHTML =
         '<button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'

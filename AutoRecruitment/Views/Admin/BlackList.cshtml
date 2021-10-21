@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Blacklist";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-gray-700">Applicants in Blacklist</h1>
+
+        <div class=" d-sm-inline-block">
+            <a role="button" onclick="open_popup('addBlacklist')" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i> Add Applicant
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Tale View -->
+        <div id="TableView" style="width: 100%;">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="overflow-x:scroll">
+                            <thead>
+                                <tr>
+                                    <th>National ID</th>
+                                    <th>Blocked Date</th>
+                                    <th>Blocked By</th>
+                                    <th>Reasone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1012365478</td>
+                                    <td>October 15, 2021</td>
+                                    <td>mshehab</td>
+                                    <td>untrustable applicant</td>
+                                    <td> <a class="action" role="button" onclick="open_popup('viewRecord')">Remove</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= Add Applicant ======= -->
+<div id="addBlacklist" class="modal">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-sm-10">
+            <div class="modal-content animate">
+                <span onclick="close_popup('addBlacklist')" class="close" title="Close">&times;</span>
+
+                <div class="modal-header-container">
+                    <h5>Add Applicant in Blacklist</h5>
+                </div>
+                <div class="modal-container">
+                        <!-- NID -->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="nid" type="number" placeholder="National ID" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'en')" />
+                            <label for="NID">National ID</label>
+                            <div id="invalid-nid" class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Reason -->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="reason" placeholder="Reason" onfocusout="vlidateEmpty(this)" />
+                            <label for="reason">Reason</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Add
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('addBlacklist')">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

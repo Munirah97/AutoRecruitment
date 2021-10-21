@@ -6,6 +6,24 @@
 //
 // Scripts
 
+// Add new file upload in interview form
+function addFile(tableId) {
+    var table = document.getElementById(tableId);
+    if (table.rows.length < 5) {
+        var row = table.insertRow(table.rows.length);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML =
+            '<div class="form-floating mt-2" id="upload_form">'
+            + '    <input class="form-control upload_input" style="border-radius: 10rem" id="file_certi_name" placeholder="صورة من الشهادة" disabled />'
+            + '    <button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile(\'file_certi\')">'
+            + '        <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>'
+            + '    </button>'
+            + '    <label>ارفاق ملف...</label>'
+            + '    <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>'
+            + '    <input type="file" id="file_certi" style="display: none;" accept="image/*;capture=camera" onchange="importFile(\'file_certi\',\'file_certi_name\')" />'
+            + '</div>';
+    }
+}
 
 //----------- Calculate Scores in English Assessment Form --------------
 $(".reading_score").click(function () {
