@@ -38,6 +38,10 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
+        public ActionResult ResponsesAcceptance()
+        {
+            return View();
+        }
         public ActionResult ResponsesInterview()
         {
             return View();
@@ -50,7 +54,14 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-
+        public ActionResult Meetings()
+        {
+            return View();
+        }
+        public ActionResult Emails()
+        {
+            return View();
+        }
         public ActionResult Blacklist()
         {
             return View();

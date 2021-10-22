@@ -64,14 +64,14 @@
                 <div class="modal-container">
                         <!-- NID -->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="nid" type="number" placeholder="National ID" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'en')" />
+                            <input class="form-control" id="nid" type="number" placeholder="National ID" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'eng')" />
                             <label for="NID">National ID</label>
                             <div id="invalid-nid" class="invalid-feedback">Required</div>
                         </div>
 
                         <!-- Reason -->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="reason" placeholder="Reason" onfocusout="vlidateEmpty(this)" />
+                            <textarea class="form-control" id="reason" placeholder="Reason" onfocusout="vlidateEmpty(this)"></textarea>
                             <label for="reason">Reason</label>
                             <div class="invalid-feedback">Required</div>
                         </div>
@@ -80,7 +80,7 @@
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
                                 <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
-                                    Add
+                                    Save
                                 </button>
                             </div>
 

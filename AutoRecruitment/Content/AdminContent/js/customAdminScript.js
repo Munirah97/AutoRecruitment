@@ -41,25 +41,74 @@ function vlidateEmpty(input) {
     }
 }
 
-//----- To Check Email Field -----
-function validateEmail(input) {
-    var lblError = document.getElementById("invalid-email");
+//----- To Check National ID Field -----
+function vlidateNID(input, errLang) {
+    var lblError = document.getElementById("invalid-nid");
     if (input.value == "") {
-        lblError.innerHTML = "هذا الحقل مطلوب";
+        if (errLang == 'eng') {
+            lblError.innerHTML = "Required";
+        }
+        else {
+            lblError.innerHTML = "هذا الحقل مطلوب";
+        }
         input.classList.add("is-invalid");
     }
     else {
-        var email = input.value;
-        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-        if (!expr.test(email)) {
-            lblError.innerHTML = "البريد الالكتروني غير صحيح";
+        // Equation for Saudi NID is:
+        // (1) : TotalSUM =+ if [index] is odd -> use same number
+        // (2) : TotalSUM =+ if [index] is even -> value * 2 --> tens + ones (EX: value = 8 --> 8*2 = 16 --> 1+6 = 7 --> TotalSUM =+ 7)
+        // (3) : if TotalSUM mod 10 = 0 --> Valid
+        if (input.value.length < 10) { // number of digit less than 10
+            if (errLang == 'eng') {
+                lblError.innerHTML = "National ID should be 10 digits";
+            }
+            else {
+                lblError.innerHTML = "رقم الهوية يجب ان يتكون من 10 خانات";
+            }
             input.classList.add("is-invalid");
         }
         else {
-            input.classList.remove("is-invalid");
+            var totalSUM = 0;
+            var arrayNID = input.value.split("");
+            for (i = 0; i < arrayNID.length; i++) {
+                // (1) : if index is odd --> totalSUM =+ same value
+                if (i % 2 != 0) { // Odd index
+                    totalSUM = totalSUM + parseInt(arrayNID[i]);
+                }
+                // (2) : if index is even -->
+                else {
+                    // (2) : x = value * 2
+                    // (2) : totalSUM =+ x.TENS + x.ONES
+                    var x = parseInt(arrayNID[i]) * 2;
+                    // if value * 2 = number with 2 digit
+                    if (x.toString().length == 2) {
+                        // x.ONES -> x % 10
+                        // x.TENS -> Math.floor(x / 10)
+                        x = (x % 10) + (Math.floor(x / 10));
+                        totalSUM = totalSUM + x;
+                    }
+                    else {
+                        totalSUM = totalSUM + x;
+                    }
+                }
+            }
+
+            if (totalSUM % 10 != 0) {
+                if (errLang == 'eng') {
+                    lblError.innerHTML = "National ID number is invalid";
+                }
+                else {
+                    lblError.innerHTML = "رقم الهوية الوطنية غير صالح";
+                }
+                input.classList.add("is-invalid");
+            }
+            else {
+                input.classList.remove("is-invalid");
+            }
         }
     }
 }
+
 
 
 //----- To Display Date Picker -----

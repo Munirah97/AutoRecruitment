@@ -38,7 +38,7 @@
                     <!-- NID input-->
                     <p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- Text -->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
@@ -46,7 +46,7 @@
                                 <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6 ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- File Upload -->
                             <div class="form-floating mb-3" id="upload_form">
                                 <input class="form-control upload_input" id="file_nid_name" placeholder="صورة من الشهادة" disabled />
@@ -164,7 +164,7 @@
                     <!-- Birth date input-->
                     <p>تاريخ الميلاد بالسنة الهجرية أو الميلادية <span style="color:#f5494c">*</span></p>
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- Hijri-->
                             <div class="form-floating mb-3">
                                 <input class="form-control hijri-date-default" id="HDate" type="text" placeholder="تاريخ الميلاد (هجري)" onpaste="validateDate(this,'Hijri','invalid-hijri')" onfocusout="validateDate(this,'Hijri','invalid-hijri')" />
@@ -172,7 +172,7 @@
                                 <div id="invalid-hijri" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6 ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- Gorgian -->
                             <div class="form-floating mb-3">
                                 <input class="form-control gregorian-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
@@ -202,7 +202,7 @@
                     <!-- High School Grade input-->
                     <p>درجة الثانوية (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- Text -->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
@@ -210,7 +210,7 @@
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6 ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- File Upload -->
                             <div class="form-floating mb-3" id="upload_form">
                                 <input class="form-control upload_input" id="file_highschool_name" placeholder="صورة من الشهادة" disabled />
@@ -227,14 +227,14 @@
                     <!-- Qiyas Grade input-->
                     <p>درجة القدرات (في حالة وجود كسور قرّب إلى أقرب رقم)<span style="color:#f5494c">*</span></p>
                     <div class="row">
-                        <div class="col-xl-6 ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="qiysgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="qiysgrade">نسبة القدرات (قياس)</label>
                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6 ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <!-- File Upload -->
                             <div class="form-floating mb-3" id="upload_form">
                                 <input class="form-control upload_input" id="file_qiys_name" placeholder="صورة من الشهادة" disabled />
@@ -257,7 +257,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <div class="form-floating mb-3">
                                 <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone2')" />
 
@@ -265,7 +265,7 @@
                                 <div id="invalid-phone2" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="" type="text" placeholder="اسم ولي الأمر" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="">اسم ولي الأمر</label>
@@ -275,14 +275,14 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <div class="form-floating mb-3">
                                 <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone3')" />
                                 <label for="phone">هاتف احد الأقارب</label>
                                 <div id="invalid-phone3" class="invalid-feedback" data-sb-feedback="phone:required">هذا الحقل مطلوب</div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-6 col-md-6 ">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="" type="text" placeholder="اسم صاحب الرقم" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="">اسم صاحب الرقم</label>
@@ -524,7 +524,7 @@
                     <div id="HighEducation" style="display:none; margin-top:20px; margin-bottom:40px">
                         <p>معلومات الشهادة <span style="color:#f5494c">*</span></p>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-xl-6 col-lg-6 col-md-6 ">
                                 <div class="form-floating mb-3">
                                     <select class="form-control pt-0 pb-0" id="education" onfocusout="vlidateEmpty(this)">
                                         <option value="" selected disabled>الدرجة العلمية</option>
@@ -536,7 +536,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-xl-6 col-lg-6 col-md-6 ">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="major" type="text" placeholder="التخصص" onfocusout="validateEmail(this);" />
                                     <label for="">التخصص </label>
@@ -544,7 +544,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-xl-3 col-lg-3 col-md-3 ">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="gpa" type="number" placeholder="المعدل" maxlength="4" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                     <label for="qiasgrade">المعدل</label>
@@ -552,7 +552,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-xl-3 col-lg-3 col-md-3 ">
                                 <div class="form-floating mb-3">
                                     <select class="form-control pt-0 pb-0" id="gpaScale" onfocusout="vlidateEmpty(this)">
                                         <option value="" selected disabled>نظام المعدل</option>
@@ -564,7 +564,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6 ">
+                            <div class="col-xl-6 col-lg-6 col-md-6 ">
                                 <!-- File Upload -->
                                 <div class="form-floating mb-3" id="upload_form">
                                     <input class="form-control upload_input" id="file_university_name" placeholder="صورة من الشهادة" disabled />

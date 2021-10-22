@@ -1825,18 +1825,6 @@
     <Content Include="Content\assets\img\niti-bg-crop.jpg" />
     <Content Include="Content\assets\img\niti-bg.jpg" />
     <Content Include="Content\assets\img\niti-bg2.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\1.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\2.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\3.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\4.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\5.jpg" />
-    <Content Include="Content\assets\img\portfolio\fullsize\6.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\1.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\2.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\3.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\4.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\5.jpg" />
-    <Content Include="Content\assets\img\portfolio\thumbnails\6.jpg" />
     <Content Include="Content\assets\img\warning-icon2.png" />
     <Content Include="Content\assets\vendor\boxicons\css\animations.css" />
     <Content Include="Content\assets\vendor\boxicons\css\boxicons.css" />
@@ -2053,6 +2041,7 @@
     <Content Include="Views\Admin\ApplicantProfile.cshtml" />
     <Content Include="Views\Admin\CampaignDetail.cshtml" />
     <Content Include="Views\Admin\Blacklist.cshtml" />
+    <Content Include="Views\Admin\Emails.cshtml" />
     <None Include="Views\Admin\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2086,6 +2075,8 @@
     <Content Include="Views\Admin\ResponsesReg.cshtml" />
     <Content Include="Views\Admin\ResponsesInterview.cshtml" />
     <Content Include="Views\Admin\ResponsesEvalu.cshtml" />
+    <Content Include="Views\Admin\Meetings.cshtml" />
+    <Content Include="Views\Admin\ResponsesAcceptance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

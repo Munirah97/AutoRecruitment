@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Meetings";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-gray-700">Scheduled Meetings</h1>
+    </div>
+
+    <div class="row">
+        <!-- Tale View -->
+        <div id="TableView" style="width: 100%;">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="overflow-x:scroll">
+                            <thead>
+                                <tr>
+                                    <th>Program</th>
+                                    <th>Campaign</th>
+                                    <th>Meeting ID</th>
+                                    <th>Meeting Date</th>
+                                    <th>Scheduled By</th>
+                                    <th>Scheduling Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>APNE</td>
+                                    <td>Campaing 2021</td>
+                                    <td>30092</td>
+                                    <td>October 15, 2021</td>
+                                    <td>mshehab</td>
+                                    <td>October 2, 2021</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
