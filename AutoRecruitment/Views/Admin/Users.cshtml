@@ -19,7 +19,7 @@
     <!-- Card View -->
     <div id="CardView">
         <div class="row">
-            <div class="col-xl-4 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
 
                 <div class="card shadow mb-4 border-left-primary">
                     <!-- Card Header - Dropdown -->
@@ -47,7 +47,7 @@
                                 <div class="text-xs text-gray-800 mb-1">
                                     mshehab@niti.edu.sa
                                     <br />
-                                    Admin / Read / Write
+                                    Admin / Interviewer
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -92,28 +92,36 @@
                         <!-- Privileges -->
                         <p>Privileges</p>
                         <div class="">
-                            <div class="d-flex ">
-                                <label class="mycontainer">
+                                <label class="mycontainer d-inline-block">
+                                    Viewer
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer d-inline-block">
+                                    Editor
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer d-inline-block">
+                                    Interviewer
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer d-inline-block">
+                                    Evaluator
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer d-inline-block">
+                                    Registrar
+                                    <input type="checkbox" name="priv" value="">
+                                    <span class="checkbox"></span>
+                                </label>
+                                <label class="mycontainer d-inline-block">
                                     Admin
                                     <input type="checkbox" name="priv" value="">
                                     <span class="checkbox"></span>
                                 </label>
-                                <label class="mycontainer">
-                                    Read
-                                    <input type="checkbox" name="priv" value="">
-                                    <span class="checkbox"></span>
-                                </label>
-                                <label class="mycontainer">
-                                    Write
-                                    <input type="checkbox" name="priv" value="">
-                                    <span class="checkbox"></span>
-                                </label>
-                                <label class="mycontainer">
-                                    Evaluate
-                                    <input type="checkbox" name="priv" value="">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
                         </div>
 
                         <!-- Buttons -->
@@ -166,30 +174,37 @@
 
                         <!-- Privileges -->
                         <p>Privileges</p>
-
                         <div class="">
-                            <div class="d-flex ">
-                                <label class="mycontainer">
-                                    Admin
-                                    <input type="checkbox" name="priv" value="" checked>
-                                    <span class="checkbox"></span>
-                                </label>
-                                <label class="mycontainer">
-                                    Read
-                                    <input type="checkbox" name="priv" value="" checked>
-                                    <span class="checkbox"></span>
-                                </label>
-                                <label class="mycontainer">
-                                    Write
-                                    <input type="checkbox" name="priv" value="" checked>
-                                    <span class="checkbox"></span>
-                                </label>
-                                <label class="mycontainer">
-                                    Evaluate
-                                    <input type="checkbox" name="priv" value="">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
+                            <label class="mycontainer d-inline-block">
+                                Viewer
+                                <input type="checkbox" name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                Editor
+                                <input type="checkbox" name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                Interviewer
+                                <input type="checkbox" checked name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                Evaluator
+                                <input type="checkbox" name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                Registrar
+                                <input type="checkbox" name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                Admin
+                                <input type="checkbox" checked name="priv" value="">
+                                <span class="checkbox"></span>
+                            </label>
                         </div>
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">

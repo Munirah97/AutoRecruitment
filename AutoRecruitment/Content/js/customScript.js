@@ -1,64 +1,12 @@
 ﻿/*!
  * 
- * This script is used to vaildate registration fields + give forms user intraction
+ * This script is used to vaildate input fields + give forms user intraction
  * 
-*/ 
+*/
 //
 // Scripts
 
-// Add new file upload in interview form
-function addFile(tableId) {
-    var table = document.getElementById(tableId);
-    if (table.rows.length < 5) {
-        var row = table.insertRow(table.rows.length);
-        var cell1 = row.insertCell(0);
-        cell1.innerHTML =
-            '<div class="form-floating mt-2" id="upload_form">'
-            + '    <input class="form-control upload_input" style="border-radius: 10rem" id="file_certi_name" placeholder="صورة من الشهادة" disabled />'
-            + '    <button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile(\'file_certi\')">'
-            + '        <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>'
-            + '    </button>'
-            + '    <label>ارفاق ملف...</label>'
-            + '    <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>'
-            + '    <input type="file" id="file_certi" style="display: none;" accept="image/*;capture=camera" onchange="importFile(\'file_certi\',\'file_certi_name\')" />'
-            + '</div>';
-    }
-}
-
-//----------- Calculate Scores in English Assessment Form --------------
-$(".reading_score").click(function () {
-    var Total_score = 0;
-    $(".reading_score").each(function () {
-        if (this.checked) {
-            Total_score = Total_score + parseInt(this.value);
-        }
-    });
-    $(".total_reading_score").each(function () {
-        this.innerHTML = Total_score;
-    });
-});
-
-$(".speaking_score").click(function () {
-    var Total_score = 0;
-    $(".speaking_score").each(function () {
-        if (this.checked) {
-            Total_score = Total_score + parseInt(this.value);
-        }
-    });
-    $(".total_speaking_score").each(function () {
-        this.innerHTML = Total_score;
-    });
-});
-
-//----------- Upload files in Interview Form using custom style for input file  --------------
-function getFile(file_id) {
-    document.getElementById(file_id).click();
-}
-function importFile(file_id, file_name) {
-    //display file name in the field
-    var name = document.getElementById(file_id).files.item(0).name;
-    document.getElementById(file_name).value = name;
-}
+//=================== Validation =====================
 
 //----- To prevent typing more than maxlength -----
 function inputMaxLength(input) {
@@ -77,9 +25,8 @@ function vlidateEmpty(input) {
     }
 }
 
-
 //----- To Check National ID Field -----
-function vlidateNID(input,errLang) {
+function vlidateNID(input, errLang) {
     var lblError = document.getElementById("invalid-nid");
     if (input.value == "") {
         if (errLang == 'eng') {
@@ -146,7 +93,6 @@ function vlidateNID(input,errLang) {
     }
 }
 
-
 //----- To Check Email Field -----
 function validateEmail(input) {
     var lblError = document.getElementById("invalid-email");
@@ -188,6 +134,94 @@ function validatePhoneNumber(input, errID) {
     }
 }
 
+//----- Check Date Field -----
+function validateDate(input, dateType, errID) {
+    var lblError = document.getElementById(errID);
+    if (input.value == "") {
+        lblError.innerHTML = "هذا الحقل مطلوب";
+        input.classList.add("is-invalid");
+    }
+    else {
+        const dateArray = input.value.split("-")
+        if (dateType == 'Hijri') {
+            if (parseInt(dateArray[2]) > 1500) {
+                lblError.innerHTML = "التاريخ الهجري غير صحيح";
+                input.classList.add("is-invalid");
+            }
+            else {
+                input.classList.remove("is-invalid");
+                //convertDate('HTG',);
+
+            }
+        }
+        else if (dateType == 'Gregorian') {
+            if (parseInt(dateArray[2]) < 1500) {
+                lblError.innerHTML = "التاريخ الميلادي غير صحيح";
+                input.classList.add("is-invalid");
+            }
+            else {
+                input.classList.remove("is-invalid");
+                //convertDate('GTH',);
+
+            }
+        }
+    }
+}
+
+//----- function To Convert Date H -> G -----
+//----- function To Convert Date G -> H -----
+
+
+// End of Validation functions 
+
+
+//============== Interaction Functions ==============
+
+//----------- Calculate Scores in English Assessment Form --------------
+$(".reading_score").click(function () {
+    var Total_score = 0;
+    $(".reading_score").each(function () {
+        if (this.checked) {
+            Total_score = Total_score + parseInt(this.value);
+        }
+    });
+    $(".total_reading_score").each(function () {
+        this.innerHTML = Total_score;
+    });
+});
+
+$(".speaking_score").click(function () {
+    var Total_score = 0;
+    $(".speaking_score").each(function () {
+        if (this.checked) {
+            Total_score = Total_score + parseInt(this.value);
+        }
+    });
+    $(".total_speaking_score").each(function () {
+        this.innerHTML = Total_score;
+    });
+});
+
+//----------- Upload files in Interview Form using custom style for input file  --------------
+function getFile(file_id) {
+    document.getElementById(file_id).click();
+}
+function importFile(file_id, file_name) {
+    //display file name in the field
+    var name = document.getElementById(file_id).files.item(0).name;
+    document.getElementById(file_name).value = name;
+}
+
+//----- Display/Hide Input when user check the radio btn -----
+function Show(inputID) {
+    document.getElementById(inputID).style.display = 'block';
+
+}
+function Hide(inputID) {
+    document.getElementById(inputID).style.display = 'none';
+}
+
+// ----- Display phone number in 966-xxx-xxx-xxxx format -----
 $('.phoneNumber').keyup(function (e) {
     var ph = this.value.replace(/\D/g, '').substring(0, 12);
     // Backspace and Delete keys
@@ -220,49 +254,6 @@ $('.phoneNumber').keyup(function (e) {
     this.value = ph;
 });
 
-//----- To Check Date Field -----
-function validateDate(input, dateType, errID) {
-    var lblError = document.getElementById(errID);
-    if (input.value == "") {
-        lblError.innerHTML = "هذا الحقل مطلوب";
-        input.classList.add("is-invalid");
-    }
-    else {
-        const dateArray = input.value.split("-")
-        if (dateType == 'Hijri') {
-            if (parseInt(dateArray[2]) > 1500) {
-                lblError.innerHTML = "التاريخ الهجري غير صحيح";
-                input.classList.add("is-invalid");
-            }
-            else {
-                input.classList.remove("is-invalid");
-                //convertDate('HTG',);
-                /* var date = new Date(Date.UTC(HijriArr[2], HijriArr[1], HijriArr[0], 3, 0, 0));
-                alert(date.toLocaleDateString('en-eg'));
-                var datet = new Date('9/1/1997').toLocaleDateString('AR-SA');
-                alert(datet);*/
-            }
-        }
-        else if (dateType == 'Gregorian') {
-            if (parseInt(dateArray[2]) < 1500) {
-                lblError.innerHTML = "التاريخ الميلادي غير صحيح";
-                input.classList.add("is-invalid");
-            }
-            else {
-                input.classList.remove("is-invalid");
-                //convertDate('HTG',);
-                /* var date = new Date(Date.UTC(HijriArr[2], HijriArr[1], HijriArr[0], 3, 0, 0));
-                alert(date.toLocaleDateString('en-eg'));
-                var datet = new Date('9/1/1997').toLocaleDateString('AR-SA');
-                alert(datet);*/
-            }
-        }
-    }
-}
-//----- To Convert Date H -> G -----
-
-//----- To Convert Date G -> H -----
-
 
 //----- To Display Date Picker -----
 $(function () {
@@ -270,6 +261,8 @@ $(function () {
     initGregorianDatePickerDefault();
 });
 
+
+//--- Default Hijri Date Picker -----
 function initHijrDatePickerDefault() {
     $(".hijri-date-default").hijriDatePicker({
         locale: "ar-sa",
@@ -292,6 +285,7 @@ function initHijrDatePickerDefault() {
     });
 }
 
+//--- Default Gregorian Date Picker -----
 function initGregorianDatePickerDefault() {
     $(".gregorian-date-default").hijriDatePicker({
         locale: "ar-sa",
@@ -313,11 +307,37 @@ function initGregorianDatePickerDefault() {
         showClose: true
     });
 }
-//----- Display/Hide Input when user check the radio btn -----
-function Show(inputID) {
-    document.getElementById(inputID).style.display = 'block';
 
+//----- open popup window -----
+function open_popup(modal_id) {
+    document.getElementById(modal_id).style.display = 'block';
 }
-function Hide(inputID) {
-    document.getElementById(inputID).style.display = 'none';
+
+//----- close popup window and remove any validation in the window -----
+function close_popup(modal_id) {
+    $(".form-control").removeClass("is-invalid");
+    document.getElementById(modal_id).style.display = 'none';
 }
+
+//----- icons for check applicant data in interview form ---
+$(".incorrect-icon").click(function () {
+    this.classList.remove('incorrect-icon');
+    this.classList.add('incorrect-icon-active');
+});
+
+$(".incorrect-icon-active").click(function () {
+    alert('test');
+    this.classList.remove('incorrect-icon-active');
+    this.classList.add('incorrect-icon');
+});
+
+$(".correct-icon").click(function () {
+    this.classList.remove('correct-icon');
+    this.classList.add('correct-icon-active');
+});
+
+$(".correct-icon-active").click(function () {
+    alert('test');
+    this.classList.remove('correct-icon-active');
+    this.classList.add('correct-icon');
+});

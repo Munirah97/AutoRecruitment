@@ -437,34 +437,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="~/Content/AdminContent/vendor/jquery/jquery.min.js"></script>
-    <script src="~/Content/AdminContent/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="~/Content/AdminContent/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="~/Content/AdminContent/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="~/Content/AdminContent/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="~/Content/AdminContent/js/demo/chart-area-demo.js"></script>
-    <script src="~/Content/AdminContent/js/demo/chart-pie-demo.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="~/Content/AdminContent/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/Content/AdminContent/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="~/Content/AdminContent/js/demo/datatables-demo.js"></script>
-    <script src="~/Content/AdminContent/js/customAdminScript.js"></script>
-
-    <!-- Date Picker-->
-    <script src="~/Content/DatePicker/js/bootstrap-hijri-datetimepicker.js?v2"></script>
-
     <!-- ======= Success POP UP ======= -->
     <div id="success_popup" class="modal">
         <div class="row justify-content-center">
@@ -581,7 +553,6 @@
         </div>
     </div>
 
-
     <!-- ======= View Log POP UP ======= -->
     <div id="viewLog" class="modal">
         <div class="row justify-content-center">
@@ -615,15 +586,37 @@
         </div>
     </div>
 
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/AdminContent/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/AdminContent/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Content/AdminContent/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/AdminContent/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/AdminContent/js/demo/chart-area-demo.js"></script>
+    <script src="~/Content/AdminContent/js/demo/chart-pie-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/AdminContent/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/AdminContent/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom script -->
+    <script src="~/Content/AdminContent/js/demo/datatables-demo.js"></script>
+
+    <!--  Custom script validation and interaction -->
+    <script src="~/Content/AdminContent/js/customAdminScript.js"></script>
+
+    <!-- Date Picker-->
+    <script src="~/Content/DatePicker/js/bootstrap-hijri-datetimepicker.js?v2"></script>
+
 </body>
 
 </html>
-<script>
-    $(".nav-item").each(function () {
-        $(".nav-item").removeClass("active");
-        var url = window.location.href;
-        const page = url.split("/");
-        const pageID = page[page.length - 1];
-        $("#" + pageID).addClass("active");
-    });
-</script>

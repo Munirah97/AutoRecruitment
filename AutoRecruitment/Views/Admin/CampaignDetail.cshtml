@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Campaigns";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -66,7 +65,7 @@
 
                 <!-- Registeration Requested Files -->
                 <div class="col-xl-12 col-md-12">
-                    <p class="font-weight-bold text-primary">Applicants need to Upload:</p>
+                    <p class="font-weight-bold text-primary">Applicants need to Upload: <span class="noselect m-1" style="cursor:pointer;color:#f5494c; text-decoration:underline; font-weight:normal; font-size:9pt" onclick="addCustomFileUpload()">(Click to Add Custom File)</span></p>
                     <div class="mb-3">
                         <label class="mycontainer d-inline-block">
                             National ID
@@ -91,10 +90,16 @@
                             <input type="checkbox" name="reg_files" value="">
                             <span class="checkbox"></span>
                         </label>
+                        <table border="0" class="text-center" id="cstm_reg_files" style="width:100%">
+                            <tbody>
+                             
+                            </tbody>
+                        </table>
                     </div>
+                    
                 </div>
 
-                <!-- rules -->
+                <!-- Camp Required Steps -->
                 <div class="col-xl-12 col-md-12">
                     <p class="font-weight-bold text-primary">Applicants need to finish:</p>
                     <div class="mb-3">
@@ -116,9 +121,9 @@
                     </div>
                 </div>
 
-                <!-- Campaign Regulation -->
+                <!-- Campaign Regulration -->
                 <div class="col-xl-12 col-md-12">
-                    <p class="mb-1 font-weight-bold  text-primary">Requlation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span></p>
+                    <p class="mb-1 font-weight-bold text-primary">Requlation in Registeration Form <span class="text-gray-500" style="font-weight: normal; font-size:9pt">(Recommended in Arabic)</span></p>
                     <table border="0" class="text-center mb-3" id="camp_regu_table" style="width:100%">
                         <tbody>
                             <tr>
@@ -134,7 +139,7 @@
                                         <label for="v_value">List of regulations...</label>
                                     </div>
                                 </td>
-                                
+
                                 <td style="width: 10%;">
                                     <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRegu('camp_regu_table')" type="button">
                                         <i class="fas fa-plus"></i>
@@ -144,7 +149,7 @@
                         </tbody>
                     </table>
                 </div>
-    
+
                 <!-- Campaign Verification -->
                 <div class="col-xl-12 col-md-12">
                     <p class="mb-1 font-weight-bold  text-primary">Campaign Qualification Rules</p>
