@@ -339,16 +339,12 @@ span.psw {
     cursor: pointer;
 }
 
-.correct-icon-active {
-    color: #82ce34;
-    font-size: 18pt;
-    cursor: pointer;
+.correct-active {
+    color: #82ce34 !important;
 }
 
-.incorrect-icon-active {
-    color: #e74a3b;
-    font-size: 18pt;
-    cursor: pointer;
+.incorrect-active {
+    color: #e74a3b !important;
 }
 
 /*=============== prevent text selection ===============*/

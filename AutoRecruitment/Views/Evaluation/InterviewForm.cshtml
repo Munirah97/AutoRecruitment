@@ -38,16 +38,178 @@
                         <label for="NID">رقم الهوية الوطنية</label>
                         <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
                     </div>
-
+                    <!-- Validate Applicant Info-->
                     <div class="row gx-4 gx-lg-5 m-1 mb-4" style="position: relative;">
                         <div class="col-lg-12 p-4" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%); border-radius:25px;background-color:#fff;">
                             <div class="ar-text">
-                                <span class="m-2" onclick="open_popup('check_data')" style="position:absolute;top:5px;left:5px;cursor:pointer;color:#f5494c; text-decoration:underline">(التحقق من بيانات المتقدم)</span>
+                                <div class="col-xl-12 noselect">
+                                    <!-- Check applicant name -->
+                                    <div id="check_ar_name">
+                                        <!-- data-othericon used to send the id of the other icon to turn it off when the current icon is on -->
+                                        <!-- data-editid used to send the id of div tag for edit purpose -->
+                                        <span id="correct_name" class="d-inline-block align-middle correct-icon correct-active" data-othericon="incorrect_name" data-editid="update_ar_name">
+                                            <i class="bx bx-check-circle"></i>
+                                        </span>
+                                        <span id="incorrect_name" class="d-inline-block align-middle incorrect-icon" data-othericon="correct_name" data-editid="update_ar_name">
+                                            <i class="bx bx-x-circle"></i>
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            الاسم الرباعي (عربي):
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            منيرة أحمد سالم الشهاب
+                                        </span>
+                                    </div>
 
-                                الاسم الرباعي: --
-                                <br />
-                                العمر: --
-                                <br />
+                                    <!-- Edit applicant name if need -->
+                                    <div id="update_ar_name" class="row" style="display:none">
+                                        <div class="col-xl-3 col-lg-6 col-md-6 p-1">
+                                            <!-- First Name input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="arNameF" type="text" placeholder="الاسم الأول (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="arNameF">الاسم الأول (عربي)</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-6 p-1">
+                                            <!-- Second Name input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="arNameS" type="text" placeholder="الاسم الثاني (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="arNameS">الاسم الثاني (عربي)</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-6 p-1">
+                                            <!-- Third Name input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="arNameT" type="text" placeholder="الاسم الثالث (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="arNameT">الاسم الثالث (عربي)</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-6 p-1">
+                                            <!-- Last Name input-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="arNameL" type="text" placeholder="اسم العائلة (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="arNameL">اسم العائلة (عربي)</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Check applicant age -->
+                                    <div id="check_age">
+                                        <!-- data-othericon used to send the id of the other icon to turn it off when the current icon is on -->
+                                        <!-- data-editid used to send the id of div tag for edit purpose -->
+                                        <span id="correct_age" class="d-inline-block align-middle correct-icon correct-active" data-othericon="incorrect_age" data-editid="update_age">
+                                            <i class="bx bx-check-circle"></i>
+                                        </span>
+                                        <span id="incorrect_age" class="d-inline-block align-middle incorrect-icon" data-othericon="correct_age" data-editid="update_age">
+                                            <i class="bx bx-x-circle"></i>
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            العمر:
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            24
+                                        </span>
+                                    </div>
+
+                                    <!-- Edit applicant birthdate if need -->
+                                    <div id="update_age" class="row" style="display:none">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                            <!-- Hijri-->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control hijri-date-default" id="HDate" type="text" placeholder="تاريخ الميلاد (هجري)" onpaste="validateDate(this,'Hijri','invalid-hijri')" onfocusout="validateDate(this,'Hijri','invalid-hijri')" />
+                                                <label for="HDate">تاريخ الميلاد (هجري)</label>
+                                                <div id="invalid-hijri" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                            <!-- Gorgian -->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control gregorian-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
+                                                <label for="GDate">تاريخ الميلاد (ميلادي)</label>
+                                                <div id="invalid-gregorian" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Check applicant phone num -->
+                                    <div id="check_phone">
+                                        <!-- data-othericon used to send the id of the other icon to turn it off when the current icon is on -->
+                                        <!-- data-editid used to send the id of div tag for edit purpose -->
+                                        <span id="correct_phone" class="d-inline-block align-middle correct-icon correct-active" data-othericon="incorrect_phone" data-editid="update_phone">
+                                            <i class="bx bx-check-circle"></i>
+                                        </span>
+                                        <span id="incorrect_phone" class="d-inline-block align-middle incorrect-icon" data-othericon="correct_phone" data-editid="update_phone">
+                                            <i class="bx bx-x-circle"></i>
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            رقم التواصل:
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            966540213902
+                                        </span>
+                                    </div>
+
+                                    <!-- Edit applicant phone num if need -->
+                                    <div id="update_phone" style="display:none">
+                                        <div class="form-floating mb-1">
+                                            <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone1')" />
+                                            <label for="phone">هاتف المتقدم</label>
+                                            <div id="invalid-phone1" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Check applicant scores -->
+                                    <div id="check_scores">
+                                        <!-- data-othericon used to send the id of the other icon to turn it off when the current icon is on -->
+                                        <!-- data-editid used to send the id of div tag for edit purpose -->
+                                        <span id="correct_scores" class="d-inline-block align-middle correct-icon correct-active" data-othericon="incorrect_scores" data-editid="update_scores">
+                                            <i class="bx bx-check-circle"></i>
+                                        </span>
+                                        <span id="incorrect_scores" class="d-inline-block align-middle incorrect-icon" data-othericon="correct_scores" data-editid="update_scores">
+                                            <i class="bx bx-x-circle"></i>
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            درجة الثانوية:
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            76
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1" style="color:#f5494c">
+                                            |
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            درجة القدرات العامة:
+                                        </span>
+                                        <span class="d-inline-block align-middle mb-1">
+                                            55
+                                        </span>
+                                    </div>
+
+                                    <!-- Edit applicant birthdate if need -->
+                                    <div id="update_scores" class="row" style="display:none">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                            <!-- Text -->
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="highgrade">النسبة المئوية للثانوية العامة</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                            <div class="form-floating mb-1">
+                                                <input class="form-control" id="qiysgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <label for="qiysgrade">نسبة القدرات (قياس)</label>
+                                                <div class="invalid-feedback">هذا الحقل مطلوب</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -317,93 +479,3 @@
 
     </div>
 </section>
-<!-- ======= Check applicant data ======= -->
-<div id="check_data" class="modal">
-    <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-8 col-sm-10">
-            <div class="modal-content animate" style="border-radius: 25px;">
-                <span onclick="close_popup('check_data')" class="close" title="Close">&times;</span>
-
-                <div class="modal-header-container">
-                    <h5>تأكيد بيانات المتقدم</h5>
-                </div>
-                <div class="modal-container">
-                   <div class="row">
-                       <div class="col-xl-12 noselect">
-                           <div id="check_ar_name">
-                               <p class="d-inline-block correct-icon-active">
-                                   <i class="bx bx-check-circle"></i>
-                               </p>
-                               <p class="d-inline-block incorrect-icon pt-2">
-                                   <i class="bx bx-x-circle"></i>
-                               </p>
-                               <p class="d-inline-block">
-                                   الاسم الرباعي (عربي):
-                               </p>
-                               <p class="d-inline-block">
-                                   منيرة أحمد سالم الشهاب
-                               </p>
-                           </div>
-                           <div id="update_ar_name" class="row">
-                               <div class="col-xl-3 col-lg-6 col-md-6 p-1">
-                                   <!-- First Name input-->
-                                   <div class="form-floating mb-1">
-                                       <input class="form-control" id="arNameF" type="text" placeholder="الاسم الأول (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                       <label for="arNameF">الاسم الأول (عربي)</label>
-                                       <div class="invalid-feedback">هذا الحقل مطلوب</div>
-                                   </div>
-                               </div>
-                               <div class="col-xl-3 col-lg-6 col-md-6 p-1">
-                                   <!-- Second Name input-->
-                                   <div class="form-floating mb-1">
-                                       <input class="form-control" id="arNameS" type="text" placeholder="الاسم الثاني (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                       <label for="arNameS">الاسم الثاني (عربي)</label>
-                                       <div class="invalid-feedback">هذا الحقل مطلوب</div>
-                                   </div>
-                               </div>
-                               <div class="col-xl-3 col-lg-6 col-md-6 p-1">
-                                   <!-- Third Name input-->
-                                   <div class="form-floating mb-1">
-                                       <input class="form-control" id="arNameT" type="text" placeholder="الاسم الثالث (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                       <label for="arNameT">الاسم الثالث (عربي)</label>
-                                       <div class="invalid-feedback">هذا الحقل مطلوب</div>
-                                   </div>
-                               </div>
-                               <div class="col-xl-3 col-lg-6 col-md-6 p-1">
-                                   <!-- Last Name input-->
-                                   <div class="form-floating mb-1">
-                                       <input class="form-control" id="arNameL" type="text" placeholder="اسم العائلة (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                       <label for="arNameL">اسم العائلة (عربي)</label>
-                                       <div class="invalid-feedback">هذا الحقل مطلوب</div>
-                                   </div>
-                               </div>
-                           </div>
-                           
-                           
-                           <div id="check_en_name">
-                               <p class="d-inline-block correct-icon-active">
-                                   <i class="bx bx-check-circle"></i>
-                               </p>
-                               <p class="d-inline-block incorrect-icon">
-                                   <i class="bx bx-x-circle"></i>
-                               </p>
-                               <p class="d-inline-block">
-                                   الاسم الرباعي (انحليزي)
-                               </p>
-                           </div>
-                           @*<table border="0" style="width:100%">
-            <tbody>
-                <tr>
-                    <td style="vertical-align:middle">
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>*@
-                       </div>
-                   </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

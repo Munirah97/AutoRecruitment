@@ -319,25 +319,43 @@ function close_popup(modal_id) {
     document.getElementById(modal_id).style.display = 'none';
 }
 
+////----- icons for check applicant data in interview form ---
+//$(".incorrect-icon").click(function () {
+//    //if incorrect icone is on
+//    if (this.classList.contains('incorrect-active')) {
+//        //turn off incorrect icon
+//        this.classList.remove('incorrect-active');
+//        //hide edit section
+//        document.getElementById(this.dataset.editid).style.display = 'none';
+//    }
+//    else {
+//        //turn on incorrect icon
+//        this.classList.add('incorrect-active');
+//        //show edit section
+//        document.getElementById(this.dataset.editid).style.display = '';
+//    }
+//});
+
 //----- icons for check applicant data in interview form ---
 $(".incorrect-icon").click(function () {
-    this.classList.remove('incorrect-icon');
-    this.classList.add('incorrect-icon-active');
-});
+    //turn on incorrect icon
+    this.classList.add('incorrect-active');
 
-$(".incorrect-icon-active").click(function () {
-    alert('test');
-    this.classList.remove('incorrect-icon-active');
-    this.classList.add('incorrect-icon');
+    //turn off correct icon
+    document.getElementById(this.dataset.othericon).classList.remove('correct-active');
+
+    //show edit section
+    document.getElementById(this.dataset.editid).style.display = '';
 });
 
 $(".correct-icon").click(function () {
-    this.classList.remove('correct-icon');
-    this.classList.add('correct-icon-active');
-});
+    //turn on correct icon
+    this.classList.add('correct-active');
 
-$(".correct-icon-active").click(function () {
-    alert('test');
-    this.classList.remove('correct-icon-active');
-    this.classList.add('correct-icon');
+    //turn off incorrect icon
+    this.classList.remove('incorrect-active');
+    document.getElementById(this.dataset.othericon).classList.remove('incorrect-active');
+
+    //hide edit section
+    document.getElementById(this.dataset.editid).style.display = 'none';
 });
