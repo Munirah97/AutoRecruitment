@@ -2039,9 +2039,10 @@
     <Content Include="Views\Admin\Campaigns.cshtml" />
     <Content Include="Views\Admin\Configuration.cshtml" />
     <Content Include="Views\Admin\ApplicantProfile.cshtml" />
-    <Content Include="Views\Admin\CampaignDetail.cshtml" />
+    <Content Include="Views\Admin\NewCampaign.cshtml" />
     <Content Include="Views\Admin\Blacklist.cshtml" />
     <Content Include="Views\Admin\Emails.cshtml" />
+    <Content Include="Views\Admin\EditCampaign.cshtml" />
     <None Include="Views\Admin\index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2055,7 +2056,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\temp.cshtml" />
     <Content Include="Views\Registration\RegistrationForm.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\RegistrationReview.cshtml" />
@@ -2064,7 +2064,6 @@
     <Content Include="Views\Admin\tamplate.cshtml" />
     <Content Include="Views\Admin\Programs.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Registration\ResponsePage.cshtml" />
     <Content Include="Views\Evaluation\Index.cshtml" />
     <Content Include="Views\Evaluation\EngAssessmentForm.cshtml" />

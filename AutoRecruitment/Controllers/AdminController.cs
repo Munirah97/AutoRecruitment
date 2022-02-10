@@ -22,7 +22,11 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-        public ActionResult CampaignDetail()
+        public ActionResult NewCampaign()
+        {
+            return View();
+        }
+        public ActionResult EditCampaign()
         {
             return View();
         }

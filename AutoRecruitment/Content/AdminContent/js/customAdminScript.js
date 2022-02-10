@@ -187,13 +187,11 @@ function addCustomFileUpload() {
 
 }
 
-
 //delete row in table
 function deleteRow(o) {
     var p = o.parentNode.parentNode;
     p.parentNode.removeChild(p);
 }
-
 
 //----- To Display Date Picker -----
 $(function () {

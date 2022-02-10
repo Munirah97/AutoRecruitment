@@ -446,21 +446,19 @@
                     <!-- Upload -->
                     <p class="m-3 mt-5">مرفقات اضافية <span class="m-2" onclick="addFile('interview_files_table')" style="cursor:pointer;color:#f5494c; text-decoration:underline">(اضغط لإضافة مرفق آخر)</span></p>
                     <table border="0" class="text-center" id="interview_files_table" style="width:100%">
-                        <tbody>
-                            <tr>
-                                <td style="width: 100%;">
-                                    <div class="form-floating" id="upload_form">
-                                        <input class="form-control upload_input" style="border-radius: 10rem" id="file_certi_name" placeholder="صورة من الشهادة" disabled />
-                                        <button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile('file_certi')">
-                                            <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
-                                        </button>
-                                        <label>ارفاق ملف...</label>
-                                        <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
-                                        <input type="file" id="file_certi" style="display: none;" accept="image/*;capture=camera" onchange="importFile('file_certi','file_certi_name')" />
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tr>
+                            <td style="width: 100%;">
+                                <div class="form-floating">
+                                    <input class="form-control upload_input" style="border-radius: 10rem" id="extra_file_1_name" placeholder="صورة من الشهادة" disabled />
+                                    <button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile('extra_file_1')">
+                                        <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                    </button>
+                                    <label>ارفاق ملف...</label>
+                                    <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                    <input type="file" id="extra_file_1" style="display: none;" accept="image/*;capture=camera" onchange="importFile('extra_file_1','extra_file_1_name')" />
+                                </div>
+                            </td>
+                        </tr>
                     </table>
 
                     <!-- Remarks -->

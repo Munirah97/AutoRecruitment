@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "Edit Campaign";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-gray-700">Edit Campaign</h1>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xl-12 col-md-12">
+            <div class="row">
+                <!-- Program Selector-->
+                <div class="col-xl-6 col-md-6">
+                    <div class="form-floating mb-3">
+                        <select class="form-control pt-0 pb-0" id="program" onfocusout="vlidateEmpty(this)" disabled>
+                            <option value="" selected disabled>Choose Program</option>
+                            <option value="apne" selected>Apprenticeship (APNE)</option>
+                        </select>
+                        <div class="invalid-feedback">Required</div>
+                    </div>
+                </div>
+                <!-- Camp Name input-->
+                <div class="col-xl-6 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="camp_title" type="text" placeholder="Campaign Title" maxlength="50" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                        <label for="camp_title">Campaign Title</label>
+                        <div class="invalid-feedback">Required</div>
+                    </div>
+                </div>
+
+                <!-- Reg Form Start date input-->
+                <div class="col-xl-6 col-md-6">
+                    <div class="form-floating mb-3">
+                        @*<input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'open','invalid-open-date','EDate')" />*@
+                        <input class="form-control gregorian-date-default" id="ODate" type="text" placeholder="Registration Open" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                        <label for="ODate">Registration Open</label>
+                        <div id="invalid-open-date" class="invalid-feedback">Required</div>
+                    </div>
+                </div>
+
+                <!-- Reg Form End date input-->
+                <div class="col-xl-6 col-md-6">
+                    <div class="form-floating mb-3">
+                        @*<input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />*@
+                        <input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                        <label for="CDate">Registration Close</label>
+                        <div id="invalid-close-date" class="invalid-feedback">Required</div>
+                    </div>
+                </div>
+
+                <!-- applications expiry date -->
+                <div class="col-xl-12 col-md-12">
+                    <div class="form-floating mb-3">
+                        <input class="form-control gregorian-date-default" id="ExDate" type="text" placeholder="Applications Expiry Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                        <label for="ODate">Applications Expiry Date</label>
+                        <div id="invalid-open-date" class="invalid-feedback">Required</div>
+                    </div>
+                </div>
+
+                <!-- Registeration Requested Files -->
+                <div class="col-xl-12 col-md-12">
+                    <p class="font-weight-bold text-primary">Applicants need to Upload: <span class="noselect m-1" style="cursor:pointer;color:#f5494c; text-decoration:underline; font-weight:normal; font-size:9pt" onclick="addCustomFileUpload()">(Click to Add Custom File)</span></p>
+                    <div class="mb-3">
+                        <label class="mycontainer d-inline-block">
+                            National ID
+                            <input type="checkbox" name="reg_files" value="">
+                            <span class="checkbox"></span>
+                        </label>
+
+                        <label class="mycontainer d-inline-block">
+                            High School Certificate
+                            <input type="checkbox" name="reg_files" value="">
+                            <span class="checkbox"></span>
+                        </label>
+
+                        <label class="mycontainer d-inline-block">
+                            Qiyas
+                            <input type="checkbox" name="reg_files" value="">
+                            <span class="checkbox"></span>
+                        </label>
+
+                        <label class="mycontainer d-inline-block">
+                            CV
+                            <input type="checkbox" name="reg_files" value="">
+                            <span class="checkbox"></span>
+                        </label>
+                        <table border="0" class="text-center" id="cstm_reg_files" style="width:100%">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- Camp Required Steps -->
+                <div class="col-xl-12 col-md-12">
+                    <p class="font-weight-bold text-primary">Applicants need to finish:</p>
+                    <div class="mb-3">
+                        <label class="mycontainer d-inline-block">
+                            Interview
+                            <input type="checkbox" name="priv" value="">
+                            <span class="checkbox"></span>
+                        </label>
+                        <label class="mycontainer d-inline-block">
+                            English Assessment
+                            <input type="checkbox" name="priv" value="">
+                            <span class="checkbox"></span>
+                        </label>
+                        <label class="mycontainer d-inline-block">
+                            OLT
+                            <input type="checkbox" name="priv" value="">
+                            <span class="checkbox"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Campaign Regulration -->
+                <div class="col-xl-12 col-md-12">
+                    <p class="mb-1 font-weight-bold text-primary">Requlation in Registeration Form <span class="text-gray-500" style="font-weight: normal; font-size:9pt">(Recommended in Arabic)</span></p>
+                    <table border="0" class="text-center mb-3" id="camp_regu_table" style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 35%;vertical-align: top;">
+                                    <div class="form-floating">
+                                        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />
+                                        <label for="v_rule">Section Title</label>
+                                    </div>
+                                </td>
+                                <td style="width: 55%;">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>
+                                        <label for="v_value">List of regulations...</label>
+                                    </div>
+                                </td>
+
+                                <td style="width: 10%;">
+                                    <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRegu('camp_regu_table')" type="button">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Campaign Verification -->
+                <div class="col-xl-12 col-md-12">
+                    <p class="mb-1 font-weight-bold  text-primary">Campaign Qualification Rules</p>
+                    <table border="0" class="text-center" id="camp_rules_table" style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 35%;">
+                                    <div class="form-floating">
+                                        <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                        <label for="v_rule">Field</label>
+                                    </div>
+                                </td>
+                                <td style="width: 20%;">
+                                    <div class="form-floating">
+                                        <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                            <option value="" selected disabled>Condition</option>
+                                            <option value="gt">Grater than</option>
+                                            <option value="eq">Equal to</option>
+                                            <option value="lt">Less than</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 35%;">
+                                    <div class="form-floating">
+                                        <input class="form-control" name="v_value" type="text" placeholder="Value" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                        <label for="v_value">Value</label>
+                                    </div>
+                                </td>
+                                <td style="width: 10%;">
+                                    <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="addRule('camp_rules_table')" type="button">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-xl-12 col-md-12">
+                    <!-- Buttons -->
+                    <div class="row justify-content-center mt-3 mb-3">
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                Save
+                            </button>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                            <a href="/Admin/Campaigns" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" style="width:100%">
+                                Cancel
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->

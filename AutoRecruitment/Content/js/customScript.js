@@ -168,14 +168,33 @@ function validateDate(input, dateType, errID) {
     }
 }
 
-//----- function To Convert Date H -> G -----
-//----- function To Convert Date G -> H -----
-
-
 // End of Validation functions 
 
 
 //============== Interaction Functions ==============
+
+//----------- Add extra file uploader in onterview Form --------------
+function addFile(tableID) {
+    var table = document.getElementById(tableID);
+    if (table.rows.length < 5) {
+        var row = table.insertRow(table.rows.length);
+        row.innerHTML =
+            '	<td style="width: 100%;">'
+            + '		<div class="form-floating">'
+            + '			<input class="form-control upload_input" style="border-radius: 10rem" id="extra_file_' + table.rows.length + '_name" placeholder="ملف اضافي" disabled />'
+            + '			<button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile(\'extra_file_' + table.rows.length + '\')">'
+            + '				<i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>'
+            + '			</button>'
+            + '			<label>ارفاق ملف...</label>'
+            + '			<div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>'
+            + '			<input type="file" id="extra_file_' + table.rows.length + '" style="display: none;" accept="image/*;capture=camera" onchange="importFile(\'extra_file_' + table.rows.length + '\',\'extra_file_' + table.rows.length + '_name\')" />'
+            + '		</div>'
+            + '	</td>';
+    }
+    else {
+
+    }
+}
 
 //----------- Calculate Scores in English Assessment Form --------------
 $(".reading_score").click(function () {
@@ -319,23 +338,6 @@ function close_popup(modal_id) {
     document.getElementById(modal_id).style.display = 'none';
 }
 
-////----- icons for check applicant data in interview form ---
-//$(".incorrect-icon").click(function () {
-//    //if incorrect icone is on
-//    if (this.classList.contains('incorrect-active')) {
-//        //turn off incorrect icon
-//        this.classList.remove('incorrect-active');
-//        //hide edit section
-//        document.getElementById(this.dataset.editid).style.display = 'none';
-//    }
-//    else {
-//        //turn on incorrect icon
-//        this.classList.add('incorrect-active');
-//        //show edit section
-//        document.getElementById(this.dataset.editid).style.display = '';
-//    }
-//});
-
 //----- icons for check applicant data in interview form ---
 $(".incorrect-icon").click(function () {
     //turn on incorrect icon
@@ -359,3 +361,4 @@ $(".correct-icon").click(function () {
     //hide edit section
     document.getElementById(this.dataset.editid).style.display = 'none';
 });
+
