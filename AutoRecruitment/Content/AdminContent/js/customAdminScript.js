@@ -26,7 +26,7 @@ function vlidateEmpty(input) {
     }
 }
 
-//----- To Check if Field is Empty -----
+//----- To Check files -----
 function importFile() {
     //check if the selected file is EXCEL
     var accepted = ["xls", "xlsx"];

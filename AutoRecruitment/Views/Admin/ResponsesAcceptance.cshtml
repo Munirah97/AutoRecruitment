@@ -58,45 +58,64 @@
     </div>
 </div>
 
-<!-- ======= Add Applicant ======= -->
-<div id="addBlacklist" class="modal">
+<!-- ======= Edit Record ======= -->
+<div id="editRecord" class="modal">
     <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-8 col-sm-10">
             <div class="modal-content animate">
-                <span onclick="close_popup('addBlacklist')" class="close" title="Close">&times;</span>
+                <span onclick="close_popup('editRecord')" class="close" title="Close">&times;</span>
 
                 <div class="modal-header-container">
-                    <h5>Add Applicant in Blacklist</h5>
+                    <h5>Edit Acceptance Record</h5>
                 </div>
                 <div class="modal-container">
-                    <!-- NID -->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="nid" type="number" placeholder="National ID" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'eng')" />
-                        <label for="NID">National ID</label>
-                        <div id="invalid-nid" class="invalid-feedback">Required</div>
-                    </div>
+                    <!-- Form -->
+                    <form>
+                        <!-- General Info -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                                <p class="mb-2">
+                                    <i class="fas fa-user fa-1x text-gray-300 mr-1"></i>
+                                    <strong>Applicant:</strong> Ahmed Mohammed Bin Ibraheem
+                                </p>
+                            </div>
+                           
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+                                <p class="mb-2 d-inline-block">
+                                    <i class="fas fa-check-circle fa-1x text-gray-300 mr-1"></i>
+                                    <strong>Response:</strong>
+                                </p>
+                                <div class="d-inline-block">
+                                    <select class="form-control pt-0 pb-0">
+                                        <option value="" selected>Accept</option>
+                                        <option value="">Reject</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                    <!-- Reason -->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="reason" placeholder="Reason" onfocusout="vlidateEmpty(this)"></textarea>
-                        <label for="reason">Reason</label>
-                        <div class="invalid-feedback">Required</div>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="row justify-content-center mt-3 mb-3">
-                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
-                                Save
-                            </button>
                         </div>
 
-                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('addBlacklist')">
-                                Cancel
-                            </button>
+                        <!-- Change justification -->
+                        <hr>
+                        <h6> <i class="fas fa-question-circle fa-1x text-gray-300 mr-1"></i> Justification </h6>
+                        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" onfocusout="vlidateEmpty(this)"></textarea>
+                        <div class="invalid-feedback">You have to specify the reason for your changes.</div>
+
+                        <!-- Buttons -->
+                        <div class="row justify-content-center mt-3 mb-3">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                    Save
+                                </button>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('editRecord')">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
