@@ -31,16 +31,15 @@
             <div class="col-lg-8 col-md-10">
                 <form id="contactForm">
 
-                    @*<p>رقم الهوية الوطنية <span style="color:#f5494c">*</span> </p>*@
                     <!-- NID input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" style="border-radius:10rem" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
+                        <input class="form-control br-15" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
                         <label for="NID">رقم الهوية الوطنية</label>
-                        <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                        <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
                     </div>
                     <!-- Validate Applicant Info-->
                     <div class="row gx-4 gx-lg-5 m-1 mb-4" style="position: relative;">
-                        <div class="col-lg-12 p-4" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%); border-radius:25px;background-color:#fff;">
+                        <div class="col-lg-12 p-4 br-15" style="box-shadow: 0 0 29px 0 rgb(0 0 0 / 8%); background-color:#fff;">
                             <div class="ar-text">
                                 <div class="col-xl-12 noselect">
                                     <!-- Check applicant name -->
@@ -66,7 +65,7 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 p-1">
                                             <!-- First Name input-->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="arNameF" type="text" placeholder="الاسم الأول (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="arNameF" type="text" placeholder="الاسم الأول (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="arNameF">الاسم الأول (عربي)</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -74,7 +73,7 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 p-1">
                                             <!-- Second Name input-->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="arNameS" type="text" placeholder="الاسم الثاني (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="arNameS" type="text" placeholder="الاسم الثاني (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="arNameS">الاسم الثاني (عربي)</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -82,7 +81,7 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 p-1">
                                             <!-- Third Name input-->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="arNameT" type="text" placeholder="الاسم الثالث (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="arNameT" type="text" placeholder="الاسم الثالث (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="arNameT">الاسم الثالث (عربي)</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -90,7 +89,7 @@
                                         <div class="col-xl-3 col-lg-6 col-md-6 p-1">
                                             <!-- Last Name input-->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="arNameL" type="text" placeholder="اسم العائلة (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="arNameL" type="text" placeholder="اسم العائلة (عربي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="arNameL">اسم العائلة (عربي)</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -120,7 +119,7 @@
                                         <div class="col-xl-6 col-lg-6 col-md-6 p-1">
                                             <!-- Hijri-->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control hijri-date-default" id="HDate" type="text" placeholder="تاريخ الميلاد (هجري)" onpaste="validateDate(this,'Hijri','invalid-hijri')" onfocusout="validateDate(this,'Hijri','invalid-hijri')" />
+                                                <input class="form-control hijri-date-default br-15" id="HDate" type="text" placeholder="تاريخ الميلاد (هجري)" onpaste="validateDate(this,'Hijri','invalid-hijri')" onfocusout="validateDate(this,'Hijri','invalid-hijri')" />
                                                 <label for="HDate">تاريخ الميلاد (هجري)</label>
                                                 <div id="invalid-hijri" class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -128,7 +127,7 @@
                                         <div class="col-xl-6 col-lg-6 col-md-6 p-1">
                                             <!-- Gorgian -->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control gregorian-date-default" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
+                                                <input class="form-control gregorian-date-default br-15" id="GDate" type="text" placeholder="تاريخ الميلاد (ميلادي)" onfocusout="validateDate(this,'Gregorian','invalid-gregorian')" />
                                                 <label for="GDate">تاريخ الميلاد (ميلادي)</label>
                                                 <div id="invalid-gregorian" class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -154,11 +153,15 @@
                                     </div>
 
                                     <!-- Edit applicant phone num if need -->
-                                    <div id="update_phone" style="display:none">
-                                        <div class="form-floating mb-1">
-                                            <input class="form-control phoneNumber" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone1')" />
-                                            <label for="phone">هاتف المتقدم</label>
-                                            <div id="invalid-phone1" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                    <div class="row">
+                                        <div class="col-xl-12 p-1">
+                                            <div id="update_phone" style="display:none">
+                                                <div class="form-floating mb-1">
+                                                    <input class="form-control phoneNumber br-15" style="direction:ltr; text-align:right" type="tel" placeholder="(966) 55-555-5555" maxlength="17" oninput="inputMaxLength(this)" onfocusout="validatePhoneNumber(this,'invalid-phone1')" />
+                                                    <label for="phone">هاتف المتقدم</label>
+                                                    <div id="invalid-phone1" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -195,14 +198,14 @@
                                         <div class="col-xl-6 col-lg-6 col-md-6 p-1">
                                             <!-- Text -->
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="highgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="النسبة المئوية للثانوية العامة" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="highgrade">النسبة المئوية للثانوية العامة</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 p-1">
                                             <div class="form-floating mb-1">
-                                                <input class="form-control" id="qiysgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                                <input class="form-control br-15" id="qiysgrade" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="نسبة القدرات (قياس)" maxlength="3" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                                 <label for="qiysgrade">نسبة القدرات (قياس)</label>
                                                 <div class="invalid-feedback">هذا الحقل مطلوب</div>
                                             </div>
@@ -444,32 +447,51 @@
                     </div>
 
                     <!-- Upload -->
-                    <p class="m-3 mt-5">مرفقات اضافية <span class="m-2" onclick="addFile('interview_files_table')" style="cursor:pointer;color:#f5494c; text-decoration:underline">(اضغط لإضافة مرفق آخر)</span></p>
+                    <p class="m-3 mt-5 noselect">مرفقات اضافية <span class="m-2" onclick="addInterviewFile('interview_files_table')" style="cursor:pointer;color:#f5494c; text-decoration:underline">(اضغط لإضافة مرفق آخر)</span></p>
+
+                    <!-- Interview Extra Files -->
                     <table border="0" class="text-center" id="interview_files_table" style="width:100%">
                         <tr>
-                            <td style="width: 100%;">
-                                <div class="form-floating">
-                                    <input class="form-control upload_input" style="border-radius: 10rem" id="extra_file_1_name" placeholder="صورة من الشهادة" disabled />
-                                    <button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile('extra_file_1')">
-                                        <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
-                                    </button>
-                                    <label>ارفاق ملف...</label>
-                                    <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
-                                    <input type="file" id="extra_file_1" style="display: none;" accept="image/*;capture=camera" onchange="importFile('extra_file_1','extra_file_1_name')" />
+                            <td>
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                        <!-- Text -->
+                                        <div class="form-floating mb-0">
+                                            <input class="form-control br-15 p-1" id="" type="text" placeholder="وصف المرفق" maxlength="50" oninput="inputMaxLength(this)" />
+                                            <label for="file_des">وصف المرفق</label>
+                                            <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 p-1">
+                                        <!-- File Upload -->
+                                        <div class="form-floating mb-0 upload_form">
+                                            <input class="form-control upload_input br-15" id="extra_file_1_name" placeholder="ارفاق ملف..." disabled />
+                                            <button type="button" class="upload_btn brr-15" onclick="getFile('extra_file_1')">
+                                                <i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>
+                                            </button>
+                                            <label>ارفاق ملف...</label>
+                                            <div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>
+                                            <input type="file" id="extra_file_1" accept="image/*;capture=camera" onchange="importFile('extra_file_1','extra_file_1_name')" hidden />
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
                     </table>
 
                     <!-- Remarks -->
-                    <div class="form-floating mb-3 mt-3">
-                        <textarea class="form-control" id="remarks" placeholder="ملاحظات" style="height:100px; border-radius:25px"></textarea>
-                        <label for="remarks">ملاحظات</label>
-                    </div>
-                    <!-- Submit Button-->
-                    <div class="text-center">
-                        @*<button class="btn btn-primary btn-xl mt-3" id="submitButton" type="button">ارسال التقييم</button>*@
-                        <a class="btn btn-primary btn-xl mt-3" id="submitButton" href="/Evaluation/ResponsePageAr"> ارسال التقييم</a>
+                    <div class="row">
+                        <div class="col-xl-12 p-1">
+                            <div class="form-floating mb-3 mt-1">
+                                <textarea class="form-control br-15" id="remarks" placeholder="ملاحظات" style="height:100px"></textarea>
+                                <label for="remarks">ملاحظات</label>
+                            </div>
+                            <!-- Submit Button-->
+                            <div class="text-center">
+                                @*<button class="btn btn-primary btn-xl mt-3 br-15" id="submitButton" type="button">ارسال التقييم</button>*@
+                                <a class="btn btn-primary btn-xl mt-3 br-15" id="submitButton" href="/Evaluation/ResponsePageAr"> ارسال التقييم</a>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

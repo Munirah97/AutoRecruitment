@@ -27,27 +27,32 @@ function vlidateEmpty(input) {
 }
 
 //----- To Check files -----
-function importFile() {
+function importFile(file_id, file_name) {
     //check if the selected file is EXCEL
-    var accepted = ["xls", "xlsx"];
-    var extension = document.getElementById('import_file').files.item(0).name.split('.').pop();
-    if (!(accepted.includes(extension))) {
-        //reomve the selected file
-        document.getElementById('import_file').value = null;
-        document.getElementById('filename').value = "";
+    //var accepted = ["xls", "xlsx"];
+    //var extension = document.getElementById('import_file').files.item(0).name.split('.').pop();
+    //if (!(accepted.includes(extension))) {
+    //    //reomve the selected file
+    //    document.getElementById('import_file').value = null;
+    //    document.getElementById('filename').value = "";
 
-        //display warning
-        warn_response.innerHTML = 'You can only upload Excel files';
-        document.getElementById('warn_popup').style.display = 'block';
-    }
-    else {
-        //display file name in the field
-        var name = document.getElementById('import_file').files.item(0).name;
-        document.getElementById('filename').value = name;
-    }
+    //    //display warning
+    //    warn_response.innerHTML = 'You can only upload Excel files';
+    //    document.getElementById('warn_popup').style.display = 'block';
+    //}
+    //else {
+
+    //display file name in the field
+    var name = document.getElementById(file_id).files.item(0).name;
+    document.getElementById(file_name).value = name;
+    //}
 }
 
+
+
 //============== Interaction Functions ==============
+
+
 
 // -------Table intraction for search ---------
 $(document).ready(function () {
@@ -85,12 +90,12 @@ function close_popup(modal_id) {
 }
 
 // Add new row in rules table
-function addRule(tableId) {
+function addQualiRule(tableId) {
     var table = document.getElementById(tableId);
     var row = table.insertRow(table.rows.length);
 
     row.innerHTML =
-          '<td style="width: 35%;">'
+        '<td style="width: 35%;">'
         + '     <div class="form-floating">'
         + '         <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>'
         + '         <label for="v_rule">Field</label>'
@@ -118,7 +123,7 @@ function addRule(tableId) {
 
         + '<td style="width: 10%">'
         + '     <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
-        + '         <i class="fas fa-trash"></i>'
+        + '         <i class="fas fa-trash-alt"></i>'
         + '     </button>'
         + '</td>';
 }
@@ -138,14 +143,14 @@ function addRegu(tableId) {
 
         + '<td style="width: 55%;">'
         + '    <div class="form-floating">'
-        + '        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="List of regulations..."></textarea>'
-        + '        <label for="v_value">List of regulations...</label>'
+        + '        <textarea class="form-control" name="" style="min-height:calc(3.5rem + 2px)" placeholder="Section content..."></textarea>'
+        + '        <label for="v_value">Section content...</label>'
         + '    </div>'
         + '</td>'
 
         + ' <td style="width:10%;">'
         + '     <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
-        + '         <i class="fas fa-trash"></i>'
+        + '         <i class="fas fa-trash-alt"></i>'
         + '     </button>'
         + ' </td>';
 
@@ -157,7 +162,16 @@ function addCustomFileUpload() {
     if (table.rows.length < 2) {
         var row = table.insertRow(table.rows.length);
         row.innerHTML =
-            '<td style="width: 35%;">'
+
+
+            '<td style="width: 25%;">'
+            + '    <div class="form-floating">'
+            + '        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
+            + '        <label for="">Attachment Name</label>'
+            + '    </div>'
+            + '</td>'
+
+            + '<td style="width: 20%;">'
             + '     <div class="form-floating">'
             + '          <select class="form-control pt-0 pb-0" id="is_required">'
             + '             <option value="required">Required</option>'
@@ -166,16 +180,16 @@ function addCustomFileUpload() {
             + '    </div>'
             + '</td>'
 
-            + '<td style="width: 55%;">'
+            + '<td style="width: 45%;">'
             + '    <div class="form-floating">'
-            + '        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
-            + '        <label for="">Lable in the form</label>'
+            + '        <input class="form-control" name="" type="text" placeholder="Lable in the form" onfocusout="vlidateEmpty(this)" />'
+            + '        <label for="">Lable in the form <span style="font-size:9pt">(recomended in arabic)</span></label>'
             + '    </div>'
             + '</td>'
 
             + ' <td style="width:10%;">'
             + '     <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)" type="button">'
-            + '         <i class="fas fa-trash"></i>'
+            + '         <i class="fas fa-trash-alt"></i>'
             + '     </button>'
             + ' </td>';
     }
@@ -183,8 +197,43 @@ function addCustomFileUpload() {
         warn_response.innerHTML = 'You can not add more than 2 files';
         document.getElementById('warn_popup').style.display = 'block';
     }
-    
 
+
+}
+
+//// Add custom file upload in edit interview response
+function addInterviewFile_editRes(tbl) {
+    var attachments = document.getElementById(tbl);
+
+    // check if there is space in attchmant table (header row + attachment rows = 6 as maximum)
+    if (attachments.rows.length < 6) {
+        var row = attachments.insertRow(attachments.rows.length);
+
+        row.innerHTML =
+            '<td>'
+            + '	<input class="form-control p-0 pl-2 fsize-10" name="" type="text" placeholder="File Description" onfocusout="vlidateEmpty(this)"/>'
+            + '</td>'
+            + '<td>'
+            + '	<div class="form-floating">'
+            + '		<div class="input-group">'
+            + '			<input type="text" class="form-control small disabled_input fsize-10" id="interview_file_' + (attachments.rows.length - 1) + '_name" placeholder="Select File ..." aria-label="Upload" aria-describedby="basic-addon2" disabled>'
+            + '			<div class="input-group-append">'
+            + '				<button class="btn btn-primary fsize-10" type="button" onclick="getFile(\'interview_file_' + (attachments.rows.length - 1) + '\')">'
+            + '					<i class="fas fa-upload fa-sm"></i>'
+            + '				</button>'
+            + '			</div>'
+            + '		</div>'
+            + '		<input type="file" id="interview_file_' + (attachments.rows.length - 1) + '" class="d-none" onchange="importFile(\'interview_file_' + (attachments.rows.length - 1) + '\',\'interview_file_' + (attachments.rows.length - 1) + '_name\')" />'
+            + '	</div>'
+            + '</td>'
+            + '<td>'
+            + '	<button type="button" class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)"><i class="fas fa-trash-alt fa-sm"></i></button>'
+            + '</td>';
+    }
+    else {
+        warn_response.innerHTML = 'You can not add more than 5 files';
+        document.getElementById('warn_popup').style.display = 'block';
+    }
 }
 
 //delete row in table

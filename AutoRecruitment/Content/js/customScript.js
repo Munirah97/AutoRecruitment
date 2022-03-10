@@ -173,23 +173,37 @@ function validateDate(input, dateType, errID) {
 
 //============== Interaction Functions ==============
 
-//----------- Add extra file uploader in onterview Form --------------
-function addFile(tableID) {
+//----------- Add extra file uploader in interview Form --------------
+function addInterviewFile(tableID) {
     var table = document.getElementById(tableID);
     if (table.rows.length < 5) {
         var row = table.insertRow(table.rows.length);
+
         row.innerHTML =
-            '	<td style="width: 100%;">'
-            + '		<div class="form-floating">'
-            + '			<input class="form-control upload_input" style="border-radius: 10rem" id="extra_file_' + table.rows.length + '_name" placeholder="ملف اضافي" disabled />'
-            + '			<button type="button" class="upload_btn" style="border-radius: 10rem" onclick="getFile(\'extra_file_' + table.rows.length + '\')">'
-            + '				<i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>'
-            + '			</button>'
-            + '			<label>ارفاق ملف...</label>'
-            + '			<div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>'
-            + '			<input type="file" id="extra_file_' + table.rows.length + '" style="display: none;" accept="image/*;capture=camera" onchange="importFile(\'extra_file_' + table.rows.length + '\',\'extra_file_' + table.rows.length + '_name\')" />'
+            '<td>'
+            + '	<div class="row">'
+            + '		<div class="col-xl-6 col-lg-6 col-md-6 p-1">'
+            + '			<!-- Text -->'
+            + '			<div class="form-floating mb-0">'
+            + '				<input class="form-control br-15 p-1" id="" type="text" placeholder="وصف المرفق" maxlength="50" oninput="inputMaxLength(this)" />'
+            + '				<label for="file_des">وصف المرفق</label>'
+            + '				<div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>'
+            + '			</div>'
             + '		</div>'
-            + '	</td>';
+            + '		<div class="col-xl-6 col-lg-6 col-md-6 p-1">'
+            + '			<!-- File Upload -->'
+            + '			<div class="form-floating mb-0 upload_form">'
+            + '				<input class="form-control upload_input br-15" id="extra_file_' + table.rows.length + '_name" placeholder="ارفاق ملف..." disabled />'
+            + '				<button type="button" class="upload_btn brr-15" onclick="getFile(\'extra_file_' + table.rows.length + '\')">'
+            + '					<i class="bx bx-upload" style="font-size: 24pt; padding-top: 5px; "></i>'
+            + '				</button>'
+            + '				<label>ارفاق ملف...</label>'
+            + '				<div id="invalid-nid" class="invalid-feedback mr-3">هذا الحقل مطلوب</div>'
+            + '				<input type="file" id="extra_file_' + table.rows.length + '" accept="image/*;capture=camera" onchange="importFile(\'extra_file_' + table.rows.length + '\',\'extra_file_' + table.rows.length + '_name\')" hidden />'
+            + '			</div>'
+            + '		</div>'
+            + '	</div>'
+            + '</td>';
     }
     else {
 

@@ -188,7 +188,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-heartbeat fa-1x text-gray-300 mr-1"></i>
                                 <strong>Health Condition:</strong> Other
-                                <p class="mb-2 ml-4" style="font-size:10pt">
+                                <p class="mb-2 ml-4 fsize-10">
                                     <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
                                     مرض السكري
                                 </p>
@@ -213,15 +213,15 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-certificate fa-1x text-gray-300 mr-1"></i>
                                 <strong>High Education:</strong> Yes
-                                <p class="mb-0 ml-4" style="font-size:10pt">
+                                <p class="mb-0 ml-4 fsize-10">
                                     <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
                                     <strong>Degree:</strong> Bachelor
                                 </p>
-                                <p class="mb-0 ml-4" style="font-size:10pt">
+                                <p class="mb-0 ml-4 fsize-10">
                                     <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
                                     <strong>Feild:</strong> علوم حاسب
                                 </p>
-                                <p class="mb-2 ml-4" style="font-size:10pt">
+                                <p class="mb-2 ml-4 fsize-10">
                                     <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
                                     <strong>GPA:</strong> 4.23/5
                                 </p>
@@ -235,26 +235,26 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-envelope fa-1x text-gray-300 mr-1"></i>
                                 <strong>Email</strong>
-                                <span class="ml-2" style="font-size:10pt">example@gmail.com</span>
+                                <span class="ml-2 fsize-10">example@gmail.com</span>
                             </div>
 
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
                                 <strong>Phone</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
+                                <span class="ml-2 fsize-10">+996 54 021 3902</span>
                             </div>
 
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
                                 <strong>Guardian</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
+                                <span class="ml-2 fsize-10">+996 54 021 3902</span>
                                 <span class="ml-2" style="font-size:8pt">(أحمد)</span>
                             </div>
 
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
                                 <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
                                 <strong>Relative</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
+                                <span class="ml-2 fsize-10">+996 54 021 3902</span>
                                 <span class="ml-2" style="font-size:8pt">(محمد)</span>
                             </div>
                         </div>
@@ -263,18 +263,23 @@
 
                         <!-- Attachments -->
                         <h6 class="mt-2">
-                            <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> Attachments
+                            <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> <strong>Attachments</strong>
                         </h6>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                            <div class="portfolio mt-1 ml-2">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100 icon-download">
-                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-download fa-x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" alt="..." />
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Attachments View -->
+                        <table id="" class="attachments_tbl">
+                            <tr>
+                                <th style="width:50%">File Description</th>
+                                <th style="width:50%">Action</th>
+                            </tr>
+                            <tr>
+                                <td>Personal Photo</td>
+                                <td><a href="#">Open</a> | <a href="#">Download</a></td>
+                            </tr>
+                            <tr>
+                                <td>CV</td>
+                                <td><a href="#">Open</a> | <a href="#">Download</a></td>
+                            </tr>
+                        </table>
 
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-4 mb-3">
@@ -302,188 +307,183 @@
                     <h5>Edit Application Record</h5>
                 </div>
                 <div class="modal-container">-->
-                    <!-- Form -->
-                    <!--<form>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                                <p class="mb-1">
-                                    <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
-                                    <strong>Application for:</strong> APNE - Campaign 2021
-                                </p>
-                            </div>
+<!-- Form -->
+<!--<form>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+            <p class="mb-1">
+                <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
+                <strong>Application for:</strong> APNE - Campaign 2021
+            </p>
+        </div>
 
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                                <p class="mb-1">
-                                    <i class="fas fa-calendar-alt fa-1x text-gray-300 mr-1"></i>
-                                    <strong>Apply Date:</strong> January 1, 2022
-                                </p>
-                            </div>
-                        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+            <p class="mb-1">
+                <i class="fas fa-calendar-alt fa-1x text-gray-300 mr-1"></i>
+                <strong>Apply Date:</strong> January 1, 2022
+            </p>
+        </div>
+    </div>
 
-                        <hr>-->
-                        <!-- General Info -->
-                        <!--<div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                                <p class="mb-2">
-                                    <i class="fas fa-id-card fa-1x text-gray-300 mr-1"></i>
-                                    <strong>National ID:</strong> 102345678
-                                </p>
+    <hr>-->
+<!-- General Info -->
+<!--<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+        <p class="mb-2">
+            <i class="fas fa-id-card fa-1x text-gray-300 mr-1"></i>
+            <strong>National ID:</strong> 102345678
+        </p>
 
-                                <p class="mb-2">
-                                    <i class="fas fa-user fa-1x text-gray-300 mr-1"></i>
-                                    <strong>English Name:</strong>
-                                </p>-->
-                                <!-- English Name input-->
-                                <!--<div class="row">
-                                    <div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
-                                        <!-- First Name input-->
-                                        <!--<div class="form-floating mb-3">
-                                            <input class="form-control" id="enNameF" type="text" placeholder="الاسم الأول (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="enNameF">Fisrt Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
-                                        <!-- Second Name input-->
-                                        <!--<div class="form-floating mb-3">
-                                            <input class="form-control" id="enNameS" type="text" placeholder="الاسم الثاني (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="enNameS">Second name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
-                                        <!-- Third Name input-->
-                                        <!--<div class="form-floating mb-3">
-                                            <input class="form-control" id="enNameT" type="text" placeholder="الاسم الثالث (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="enNameT">Third name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
-                                        <!-- Last Name input-->
-                                        <!--<div class="form-floating mb-3">
-                                            <input class="form-control" id="enNameL" type="text" placeholder="اسم العائلة (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="enNameL">Last name</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mb-2">
-                                    <i class="fas fa-user fa-1x text-gray-300 mr-1"></i>
-                                    <strong>Arabic Name:</strong> منيرة أحمد سالم الشهاب
-                                </p>
-                            </div>
-                        </div>
-                        <hr />-->
+        <p class="mb-2">
+            <i class="fas fa-user fa-1x text-gray-300 mr-1"></i>
+            <strong>English Name:</strong>
+        </p>-->
+<!-- English Name input-->
+<!--<div class="row">
+    <div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
+<!-- First Name input-->
+<!--<div class="form-floating mb-3">
+        <input class="form-control" id="enNameF" type="text" placeholder="الاسم الأول (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+        <label for="enNameF">Fisrt Name</label>
+    </div>
+</div>
+<div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
+<!-- Second Name input-->
+<!--<div class="form-floating mb-3">
+        <input class="form-control" id="enNameS" type="text" placeholder="الاسم الثاني (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+        <label for="enNameS">Second name</label>
+    </div>
+</div>
+<div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
+<!-- Third Name input-->
+<!--<div class="form-floating mb-3">
+        <input class="form-control" id="enNameT" type="text" placeholder="الاسم الثالث (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+        <label for="enNameT">Third name</label>
+    </div>
+</div>
+<div class="col-xl-3 col-lg-6 col-md-6 p-0 pl-1">-->
+<!-- Last Name input-->
+<!--<div class="form-floating mb-3">
+                    <input class="form-control" id="enNameL" type="text" placeholder="اسم العائلة (انجليزي)" maxlength="20" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                    <label for="enNameL">Last name</label>
+                </div>
+            </div>
+        </div>
+        <p class="mb-2">
+            <i class="fas fa-user fa-1x text-gray-300 mr-1"></i>
+            <strong>Arabic Name:</strong> منيرة أحمد سالم الشهاب
+        </p>
+    </div>
+</div>
+<hr />-->
+<!-- Personal Info -->
+<!--<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-calendar-alt fa-1x text-gray-300 mr-1"></i>
+        <strong>Birth Date:</strong> January 1, 1997
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-venus-mars fa-1x text-gray-300 mr-1"></i>
+        <strong>Gender:</strong> Female
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-map-marker-alt fa-1x text-gray-300 mr-2"></i>
+        <strong>Address:</strong> Alhasa
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-check fa-1x text-gray-300 mr-1"></i>
+        <strong>HRDF Supported:</strong> No
+    </div>-->
+<!-- Health Condition Info -->
+<!--<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-heartbeat fa-1x text-gray-300 mr-1"></i>
+        <strong>Health Condition:</strong> Other
+        <p class="mb-2 ml-4 fsize-10">
+            <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
+            مرض السكري
+        </p>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-tint fa-1x text-gray-300 mr-2"></i>
+        <strong>Blood Type:</strong> A+
+    </div>
+</div>
+<hr />-->
+<!-- Grades & Education Info -->
+<!--<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-graduation-cap fa-1x text-gray-300 mr-0"></i>
+        <strong>High School:</strong> 99.8%
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-percent fa-1x text-gray-300 mr-1"></i>
+        <strong>Qiyas:</strong> 74
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-certificate fa-1x text-gray-300 mr-1"></i>
+        <strong>High Education:</strong> Yes
+        <p class="mb-0 ml-4 fsize-10">
+            <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
+            <strong>Degree:</strong> Bachelor
+        </p>
+        <p class="mb-0 ml-4 fsize-10">
+            <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
+            <strong>Feild:</strong> علوم حاسب
+        </p>
+        <p class="mb-2 ml-4 fsize-10">
+            <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
+            <strong>GPA:</strong> 4.23/5
+        </p>
+    </div>
 
-                        <!-- Personal Info -->
-                        <!--<div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-calendar-alt fa-1x text-gray-300 mr-1"></i>
-                                <strong>Birth Date:</strong> January 1, 1997
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-venus-mars fa-1x text-gray-300 mr-1"></i>
-                                <strong>Gender:</strong> Female
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-map-marker-alt fa-1x text-gray-300 mr-2"></i>
-                                <strong>Address:</strong> Alhasa
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-check fa-1x text-gray-300 mr-1"></i>
-                                <strong>HRDF Supported:</strong> No
-                            </div>-->
-                            <!-- Health Condition Info -->
-                            <!--<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-heartbeat fa-1x text-gray-300 mr-1"></i>
-                                <strong>Health Condition:</strong> Other
-                                <p class="mb-2 ml-4" style="font-size:10pt">
-                                    <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
-                                    مرض السكري
-                                </p>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-tint fa-1x text-gray-300 mr-2"></i>
-                                <strong>Blood Type:</strong> A+
-                            </div>
-                        </div>
-                        <hr />-->
+</div>
+<hr />-->
+<!-- Contact Info -->
+<!--<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-envelope fa-1x text-gray-300 mr-1"></i>
+        <strong>Email</strong>
+        <span class="ml-2 fsize-10">example@gmail.com</span>
+    </div>
 
-                        <!-- Grades & Education Info -->
-                        <!--<div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-graduation-cap fa-1x text-gray-300 mr-0"></i>
-                                <strong>High School:</strong> 99.8%
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-percent fa-1x text-gray-300 mr-1"></i>
-                                <strong>Qiyas:</strong> 74
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-certificate fa-1x text-gray-300 mr-1"></i>
-                                <strong>High Education:</strong> Yes
-                                <p class="mb-0 ml-4" style="font-size:10pt">
-                                    <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
-                                    <strong>Degree:</strong> Bachelor
-                                </p>
-                                <p class="mb-0 ml-4" style="font-size:10pt">
-                                    <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
-                                    <strong>Feild:</strong> علوم حاسب
-                                </p>
-                                <p class="mb-2 ml-4" style="font-size:10pt">
-                                    <i class="fas fa-info-circle fa-1x text-gray-300 mr-1"></i>
-                                    <strong>GPA:</strong> 4.23/5
-                                </p>
-                            </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
+        <strong>Phone</strong>
+        <span class="ml-2 fsize-10">+996 54 021 3902</span>
+    </div>
 
-                        </div>
-                        <hr />-->
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
+        <strong>Guardian</strong>
+        <span class="ml-2 fsize-10">+996 54 021 3902</span>
+        <span class="ml-2" style="font-size:8pt">(أحمد)</span>
+    </div>
 
-                        <!-- Contact Info -->
-                        <!--<div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-envelope fa-1x text-gray-300 mr-1"></i>
-                                <strong>Email</strong>
-                                <span class="ml-2" style="font-size:10pt">example@gmail.com</span>
-                            </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+        <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
+        <strong>Relative</strong>
+        <span class="ml-2 fsize-10">+996 54 021 3902</span>
+        <span class="ml-2" style="font-size:8pt">(محمد)</span>
+    </div>
+</div>
 
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
-                                <strong>Phone</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
-                                <strong>Guardian</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
-                                <span class="ml-2" style="font-size:8pt">(أحمد)</span>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
-                                <i class="fas fa-mobile-alt fa-1x text-gray-300 mr-1"></i>
-                                <strong>Relative</strong>
-                                <span class="ml-2" style="font-size:10pt">+996 54 021 3902</span>
-                                <span class="ml-2" style="font-size:8pt">(محمد)</span>
-                            </div>
-                        </div>
-
-                        <hr>-->
-
-                        <!-- Attachments -->
-                        <!--<h6 class="mt-2">
-                            <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> Attachments
-                        </h6>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                            <div class="portfolio mt-1 ml-2">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100 icon-download">
-                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-download fa-x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" alt="..." />
-                                </div>
-                            </div>
-                        </div>-->
-
-                        <!-- Buttons -->
-                        <!--<div class="row justify-content-center mt-3 mb-3">
+<hr>-->
+<!-- Attachments -->
+<!--<h6 class="mt-2">
+    <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> Attachments
+</h6>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+    <div class="portfolio mt-1 ml-2">
+        <div class="portfolio-item">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100 icon-download">
+                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-download fa-x"></i></div>
+            </div>
+            <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" alt="..." />
+        </div>
+    </div>
+</div>-->
+<!-- Buttons -->
+<!--<div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
                                 <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
                                     Save

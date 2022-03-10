@@ -1,10 +1,16 @@
-﻿.ar-text {
+﻿.br-15 {
+    border-radius:15px !important;
+}
+.brr-15 {
+    border-radius: 15px 0 0 15px !important;
+}
+.ar-text {
     font-family: Calibri;
     text-align: right;
 }
 
 /*--------- input upload style -----*/
-#upload_form {
+.upload_form {
     position: relative;
 }
 

@@ -1,47 +1,22 @@
 ﻿
-.portfolio .portfolio-item {
-    cursor: pointer;
-    position: relative;
-    display: block;
-    max-width: 5rem;
-    border-radius: 0.5rem;
-    overflow: hidden;
+/*--------- table for attachments -----*/
+.attachments_tbl {
+    border-collapse: collapse !important;
+    width: 100%;
+    font-size:10pt;
 }
 
-.portfolio .portfolio-item img {
-    object-fit: cover;
-    width: 5rem;
-    height: 5rem;
-}
-
-.portfolio .portfolio-item .portfolio-item-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 0.2s ease-in-out;
-    opacity: 0;
-    
-}
-
-.portfolio .portfolio-item .portfolio-item-caption.icon-trash{
-    background-color: rgba(255, 184, 184, 0.8);
-}
-
-.portfolio .portfolio-item .portfolio-item-caption.icon-download {
-    background-color: rgba(10, 48, 73, 0.5);
+.attachments_tbl th, .attachments_tbl td {
+    padding: 8px;
+    text-align: left;
+    border-bottom:  1px solid #ddd;
 }
 
 
-.portfolio .portfolio-item .portfolio-item-caption:hover {
-    opacity: 1;
+/*--------- small font size -----*/
+.fsize-10 {
+    font-size: 10pt !important;
 }
-
-.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
-    font-size: 1.5rem;
-}
-
-
-
 
 /*--------- Hide Spinner in input type number -----*/
 /* Chrome, Safari, Edge, Opera */

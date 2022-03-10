@@ -133,6 +133,8 @@
   <ItemGroup>
     <Content Include="Content\AdminContent\css\customAdminStyle.css" />
     <Content Include="Content\AdminContent\css\sb-admin-2.css" />
+    <Content Include="Content\AdminContent\img\loading-dots.gif" />
+    <Content Include="Content\AdminContent\img\loading-gear.gif" />
     <Content Include="Content\AdminContent\img\no-img.jpg" />
     <Content Include="Content\AdminContent\img\RS.png" />
     <Content Include="Content\AdminContent\img\RS_Gray.png" />

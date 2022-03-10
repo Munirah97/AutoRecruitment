@@ -179,7 +179,7 @@
                 <div class="modal-container">
                     <!-- Form -->
                     <form>
-                        <p class="mb-3 text-gray-400" style="font-size:10pt">
+                        <p class="mb-3 text-gray-400 fsize-10">
                             <i class="fas fa-info-circle fa-x mr-2 "></i>
                             Only <span class="font-weight-bold text-orange">Qualified</span> applicants will recieve the meeting invitation
                         </p>
@@ -238,7 +238,7 @@
                         <!-- File input -->
                         <div class="form-floating mb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control small disabled_input" id="filename" placeholder="Select File ..."
+                                <input type="text" class="form-control small disabled_input" id="import_olt_filename" placeholder="Select File ..."
                                        aria-label="Upload" aria-describedby="basic-addon2" disabled>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button" onclick="getFile('import_olt')">
@@ -246,7 +246,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <input type="file" id="import_olt" style="display: none;" accept=".xls,.xlsx" onchange="importFile()" />
+                            <input type="file" id="import_olt" style="display: none;" accept=".xls,.xlsx" onchange="importFile('import_olt','import_olt_filename')" />
 
                             <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
                         </div>
@@ -290,7 +290,7 @@
                         <!-- File input -->
                         <div class="form-floating mb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control small disabled_input" id="filename" placeholder="Select File ..."
+                                <input type="text" class="form-control small disabled_input" id="upload_admitted_filename" placeholder="Select File ..."
                                        aria-label="Upload" aria-describedby="basic-addon2" disabled>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button" onclick="getFile('upload_admitted_file')">
@@ -298,7 +298,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <input type="file" id="upload_admitted_file" style="display: none;" accept=".xls,.xlsx" onchange="importFile()" />
+                            <input type="file" id="upload_admitted_file" style="display: none;" accept=".xls,.xlsx" onchange="importFile('upload_admitted_file','upload_admitted_filename')" />
 
                             <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
                         </div>
@@ -342,7 +342,7 @@
                         <!-- File input -->
                         <div class="form-floating mb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control small disabled_input" id="filename" placeholder="Select File ..."
+                                <input type="text" class="form-control small disabled_input" id="import_hrdf_filename" placeholder="Select File ..."
                                        aria-label="Upload" aria-describedby="basic-addon2" disabled>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button" onclick="getFile('import_hrdf')">
@@ -350,7 +350,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <input type="file" id="import_hrdf" style="display: none;" accept=".xls,.xlsx" onchange="importFile()" />
+                            <input type="file" id="import_hrdf" style="display: none;" accept=".xls,.xlsx" onchange="importFile('import_hrdf','import_hrdf_filename')" />
 
                             <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
                         </div>

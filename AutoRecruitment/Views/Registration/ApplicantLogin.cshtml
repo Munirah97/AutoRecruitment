@@ -22,25 +22,24 @@
         <hr class="divider" />
         <div class="row gx-4 gx-lg-5">
             <div class="col-12 text-center ar-text">
-                @*                    <div class="mb-2"><i class="bi-person fs-1 text-primary"></i></div>
-                *@                    <form id="contactForm">
+                <form>
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-10">
                             <!-- NID input -->
                             <div class="form-floating mb-3">
-                                <input style="border-radius:10rem" class="form-control" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
+                                <input class="form-control br-15" id="nid" type="number" placeholder="رقم الهوية الوطنية" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateNID(this,'ar')" />
                                 <label for="NID">رقم الهوية الوطنية</label>
                                 <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                             <!-- PIN input -->
                             <div class="form-floating mb-3" id="onetimePass" style="display: none">
-                                <input style="border-radius:10rem;" class="form-control" id="pin" type="text" placeholder="كلمة المرور المؤقتة" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
+                                <input class="form-control br-15" id="pin" type="text" placeholder="كلمة المرور المؤقتة" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
                                 <label for="pin">كلمة المرور المؤقتة</label>
                                 <div id="invalid-nid" class="invalid-feedback">هذا الحقل مطلوب</div>
                             </div>
                             <!-- Send Btn -->
-                            <button class="btn btn-primary btn-xl mb-1" id="sendButton" type="button" onclick="window.open('/Registration/RegistrationReview', target = '_self')" style="display:none;width:100%; height:58px">دخول</button>
-                            <button class="btn btn-primary btn-xl " id="requestButton" type="button" onclick="requestPass()" style="width:100%; height:58px">ارسال كلمة مرور مؤقتة</button>
+                            <button class="btn btn-primary btn-xl mb-1 br-15 w-100" id="sendButton" type="button" onclick="window.open('/Registration/RegistrationReview', target = '_self')" style="display:none; height:58px">دخول</button>
+                            <button class="btn btn-primary btn-xl br-15 w-100" id="requestButton" type="button" onclick="requestPass()" style="height:58px">ارسال كلمة مرور مؤقتة</button>
                             <h6 id="msg" class="text-center mt-4" style="display:none">تم ارسال كلمة مرور مؤقتة الى البريد الالكتروني ms***@@gmail.com</h6>
                             <h6 id="timer" class="text-center mt-4" style="display:none"></h6>
                         </div>

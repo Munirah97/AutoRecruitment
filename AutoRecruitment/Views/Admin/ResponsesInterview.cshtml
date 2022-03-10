@@ -228,19 +228,25 @@
                             <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> Attachments
                         </h6>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2">
-                            <!-- Attachments -->
-                            <div class="portfolio mt-1 ml-2">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100 icon-download">
-                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-download fa-x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" alt="..." />
-                                </div>
-                            </div>
+                            <!-- Attachments View -->
+                            <table id="" class="attachments_tbl">
+                                <tr>
+                                    <th style="width:50%">File Description</th>
+                                    <th style="width:50%">Action</th>
+                                </tr>
+                                <tr>
+                                    <td>Personal Photo</td>
+                                    <td><a href="#">Open</a> | <a href="#">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td>CV</td>
+                                    <td><a href="#">Open</a> | <a href="#">Download</a></td>
+                                </tr>
+                            </table>
                         </div>
 
                         <hr>
-                       
+
                         <h6 class="mt-2">
                             <i class="fas fa-pencil-alt fa-1x text-gray-300 mr-1"></i>
                             Remarks
@@ -445,20 +451,34 @@
                         <hr>
                         <h6 class="mt-2">
                             <i class="fas fa-paperclip fa-1x text-gray-300 mr-1"></i> Attachments
-                            <span class="noselect m-1" style="cursor:pointer;color:#f5494c; font-weight:normal; font-size:9pt" onclick="">
+                            <span class="noselect m-1" style="cursor:pointer;color:#f5494c; font-weight:normal; font-size:9pt" onclick="addInterviewFile_editRes('tbl_attachment_edit')">
                                 (Click to Add File - Maximum 5 files)
                             </span>
                         </h6>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            
                             <!-- Attachments View -->
-                            <div class="portfolio mt-1 ml-2">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100 icon-trash">
-                                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-trash-alt fa-x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="~/Content/assets/img/niti-bg2.jpg" alt="..." />
-                                </div>
-                            </div>
+                            <table id="tbl_attachment_edit" class="attachments_tbl">
+                                <tr>
+                                    <th style="width:50%">File Description</th>
+                                    <th style="width:45%">File</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>Personal Photo</td>
+                                    <td><a href="#">Open</a></td>
+                                    <td>
+                                        <button type="button" class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)"><i class="fas fa-trash-alt fa-sm"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CV</td>
+                                    <td><a href="#">Open</a></td>
+                                    <td>
+                                        <button type="button" class="d-sm-inline-block btn btn-sm btn-danger shadow-sm" onclick="deleteRow(this)"><i class="fas fa-trash-alt fa-sm"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
 
                         <hr>
@@ -494,3 +514,8 @@
         </div>
     </div>
 </div>
+
+<script>
+    
+
+</script>
