@@ -66,7 +66,16 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
+
+        public ActionResult SMS()
+        {
+            return View();
+        }
         public ActionResult Blacklist()
+        {
+            return View();
+        }
+        public ActionResult Templates()
         {
             return View();
         }

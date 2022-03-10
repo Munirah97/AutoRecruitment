@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Emails";
+    ViewBag.Title = "SMS";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -9,7 +9,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h2 mb-0 text-gray-700">Sent Emails</h1>
+        <h1 class="h2 mb-0 text-gray-700">Sent Messages</h1>
     </div>
 
     <div class="row">
@@ -21,18 +21,25 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="overflow-x:scroll">
                             <thead>
                                 <tr>
-                                    <th>Email for</th>
+                                    <th>SMS for</th>
                                     <th>Recipient Name</th>
-                                    <th>Recipient Email</th>
+                                    <th>Recipient Number</th>
                                     <th>Sendning Date</th>
-                                    <th>Email Status</th>
+                                    <th>Message Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Schedule Meeting for Campaing 2021</td>
                                     <td>Munirah Ahmed Alshehab</td>
-                                    <td>mshehab@niti.edu.sa</td>
+                                    <td>966 54 021 3902</td>
+                                    <td>October 2, 2021</td>
+                                    <td><span class="green-status">Sent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Schedule Meeting for Campaing 2021</td>
+                                    <td>Munirah Ahmed Alshehab</td>
+                                    <td>966 54 021 3902</td>
                                     <td>October 2, 2021</td>
                                     <td><span class="red-status">Failed</span></td>
                                 </tr>

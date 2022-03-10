@@ -84,7 +84,7 @@ input::-webkit-inner-spin-button {
 
 /*======================= style for open status =====================*/
 
-.open-status {
+.green-status {
     margin: auto;
     padding: 3px 10px;
     width: max-content;
@@ -93,7 +93,7 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
-.close-status {
+.red-status {
     margin: auto;
     padding: 3px 10px;
     width: max-content;

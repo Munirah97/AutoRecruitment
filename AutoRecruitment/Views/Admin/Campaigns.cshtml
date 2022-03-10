@@ -87,7 +87,7 @@
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-info-circle fa-x mr-2 text-gray-400"></i>
-                                    Form Status: <span class="close-status">close</span>
+                                    Form Status: <span class="red-status">close</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-users fa-x mr-1 text-gray-400"></i>
@@ -102,7 +102,7 @@
                                 <p class="mb-1">Verification</p>
                                 <p class="mb-1">
                                     <i class="fas fa-info-circle fa-x mr-1 text-gray-400"></i>
-                                    Verification Status: <span class="open-status">Done</span>
+                                    Verification Status: <span class="green-status">Done</span>
                                 </p>
                                 <p class="mb-1">
                                     <i class="fas fa-user fa-x mr-2 text-gray-400"></i>
@@ -165,7 +165,6 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-
 <!-- ======= Schedule Meeting ======= -->
 <div id="schedule_meeting" class="modal">
     <div class="row justify-content-center">
@@ -183,21 +182,83 @@
                             <i class="fas fa-info-circle fa-x mr-2 "></i>
                             Only <span class="font-weight-bold text-orange">Qualified</span> applicants will recieve the meeting invitation
                         </p>
-                        <!-- Meeting Date input-->
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2">
+                               
+                                <!-- Meeting Date input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control gregorian-date-default" id="MeetingDate" type="text" placeholder="Meeting Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
+                                    <label for="MeetingDate">Meeting Date</label>
+                                    <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
+                                </div>
+                            
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2">
+                               
+                                <!-- Meeting Time input-->
+                                <div class="form-floating mb-3">
+                                    <select class="form-control pt-0 pb-0" id="program" onfocusout="vlidateEmpty(this)">
+                                        <option value="" selected disabled>Meeting Time</option>
+                                        <option value="8:00 AM">8:00 AM</option>
+                                        <option value="8:30 AM">8:30 AM</option>
+                                        <option value="9:00 AM">9:00 AM</option>
+                                        <option value="9:30 AM">9:30 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="10:30 AM">10:30 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="11:30 AM">11:30 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="12:30 PM">12:30 PM</option>
+                                        <option value="1:00 PM">1:00 PM</option>
+                                        <option value="1:30 PM">1:30 PM</option>
+                                        <option value="2:00 PM">2:00 PM</option>
+                                        <option value="2:30 PM">2:30 PM</option>
+                                        <option value="3:00 PM">3:00 PM</option>
+                                        <option value="3:30 PM">3:30 PM</option>
+                                        <option value="4:00 PM">4:00 PM</option>
+                                        <option value="4:30 PM">4:30 PM</option>
+                                        <option value="5:00 PM">5:00 PM</option>
+                                        <option value="5:30 PM">5:30 PM</option>
+                                        <option value="6:00 PM">6:00 PM</option>
+                                        <option value="6:30 PM">6:30 PM</option>
+                                        <option value="7:00 PM">7:00 PM</option>
+                                        <option value="7:30 PM">7:30 PM</option>
+                                        <option value="8:00 PM">8:00 PM</option>
+                                        <option value="8:30 PM">8:30 PM</option>
+                                        <option value="9:00 PM">9:00 PM</option>
+                                        <option value="9:30 PM">9:30 PM</option>
+                                        <option value="10:00 PM">10:00 PM</option>
+                                        <option value="10:30 PM">10:30 PM</option>
+                                    </select>
+                                    <div class="invalid-feedback">Required</div>
+                                </div>
+
+                            </div>
+                        </div>
+                       
+
+                        <!-- Meeting Link -->
                         <div class="form-floating mb-3">
-                            @*<input class="form-control gregorian-date-default" id="EDate" type="text" placeholder="Registration Close"  onpaste="validateDate(this,'open')" onfocusout="validateDate(this,'close','invalid-close-date','ODate')" />*@
-                            <input class="form-control gregorian-date-default" id="MeetingDate" type="text" placeholder="Meeting Date" onpaste="vlidateEmpty(this)" onfocusout="vlidateEmpty(this)" />
-                            <label for="MeetingDate">Meeting Date</label>
-                            <div id="invalid-meeting-date" class="invalid-feedback">Required</div>
+                            <input class="form-control" type="url" placeholder="Meeting Link" onfocusout="vlidateEmpty(this)" />
+                            <label for="">Meeting Link</label>
+                            <div class="invalid-feedback">Required</div>
                         </div>
 
-                        <!-- Meeting Message -->
-                        <div class="form-floating mb-3">
-                            <textarea style=" min-height:130px;" class="form-control" id="meetingMsg" placeholder="Message" onfocusout="vlidateEmpty(this)"></textarea>
-                            <label for="ODate">Message</label>
-                            <div id="invalid-open-date" class="invalid-feedback">Required</div>
-                        </div>
 
+                        <!-- Notify Type -->
+                        <div>
+                            <p class="d-inline-block mr-2">Notify by:</p>
+                            <label class="mycontainer d-inline-block">
+                                Email
+                                <input type="checkbox" name="notify_email" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                            <label class="mycontainer d-inline-block">
+                                SMS
+                                <input type="checkbox" name="notify_sms" value="">
+                                <span class="checkbox"></span>
+                            </label>
+                        </div>
 
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
