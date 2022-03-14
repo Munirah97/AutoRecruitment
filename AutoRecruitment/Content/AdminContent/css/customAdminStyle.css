@@ -1,4 +1,10 @@
 ﻿
+
+/*--------- SweetAlert2 Custom style -----*/
+.swal2-styled.swal2-confirm {
+    background-color: #0a3049 !important;
+}
+
 /*--------- Switch on/off -----*/
 .switch {
     position: relative;

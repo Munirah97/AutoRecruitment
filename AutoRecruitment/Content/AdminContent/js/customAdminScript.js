@@ -65,6 +65,14 @@ $(".nav-item").each(function () {
     var url = window.location.href;
     const page = url.split("/");
     const pageID = page[page.length - 1];
+    const response_pages = ['ResponsesReg', 'ResponsesAcceptance', 'ResponsesInterview', 'ResponsesEvalu'];
+    const config_pages = ['Templates', 'Users', 'Settings'];
+    if (response_pages.includes(pageID)) {
+        $("#Responses").addClass("active");
+    }
+    else if (config_pages.includes(pageID)) {
+        $("#Configuration").addClass("active");
+    }
     $("#" + pageID).addClass("active");
 });
 

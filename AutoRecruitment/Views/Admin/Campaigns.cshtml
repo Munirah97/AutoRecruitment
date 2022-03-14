@@ -440,12 +440,34 @@
 
 <script>
     function verify_applicants() {
-        warn_response_continue.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on the followin Rules: <br><br> 1. Age less than 24 <br> 2. HRDF Status is Not Supported <br><br> Would you like to continue?';
-        document.getElementById('warn_popup_continue').style.display = 'block';
+        Swal.fire({
+            //title: 'Error!',
+            html: '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on the followin Rules: <br><br> 1. Age less than 24 <br> 2. HRDF Status is Not Supported <br><br> Would you like to continue?',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            showCancelButton: true,
+            //confirmButtonColor: '#0a3049',
+            //cancelButtonColor: '#6e7d88',
+            confirmButtonText: 'Continue',
+
+            //buttonsStyling: false,
+            //customClass: {
+            //    confirmButton: 'btn btn-sm btn-primary', //insert class here
+            //    cancelButton: 'swal2-cancel swal2-styled'
+            //}
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Saved!', '', 'success')
+            }
+        }) 
+        //warn_response_continue.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on the followin Rules: <br><br> 1. Age less than 24 <br> 2. HRDF Status is Not Supported <br><br> Would you like to continue?';
+        //document.getElementById('warn_popup_continue').style.display = 'block';
     }
     function continue_submit() {
         document.getElementById('warn_popup_continue').style.display = 'none';
         succ_response.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on Qualification Rules';
         document.getElementById('success_popup').style.display = 'block';
     }
+
+
 </script>

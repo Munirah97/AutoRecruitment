@@ -39,5 +39,10 @@ namespace AutoRecruitment.Controllers
             return View();
         }
 
+        public ActionResult RegistrationClosed()
+        {
+            return View();
+        }
+
     }
 }
