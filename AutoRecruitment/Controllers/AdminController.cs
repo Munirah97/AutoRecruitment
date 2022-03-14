@@ -79,7 +79,7 @@ namespace AutoRecruitment.Controllers
         {
             return View();
         }
-        public ActionResult Configuration()
+        public ActionResult Settings()
         {
             return View();
         }
