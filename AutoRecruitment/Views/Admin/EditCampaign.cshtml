@@ -157,8 +157,15 @@
                             <tr>
                                 <td style="width: 35%;">
                                     <div class="form-floating">
-                                        <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                        <label for="v_rule">Field</label>
+                                        <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                            <option value="" selected disabled>Field</option>
+                                            <option value="gender">Gender</option>
+                                            <option value="age">Age</option>
+                                            <option value="hs_score">High School Score</option>
+                                            <option value="qiyas">Qiyas Score</option>
+                                            <option value="hrdf">HRDF Status</option>
+                                            <option value="health">Health Condition</option>
+                                        </select>
                                     </div>
                                 </td>
                                 <td style="width: 20%;">
