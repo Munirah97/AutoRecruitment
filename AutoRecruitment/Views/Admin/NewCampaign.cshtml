@@ -65,7 +65,7 @@
 
                 <!-- Registeration Requested Files -->
                 <div class="col-xl-12 col-md-12">
-                    <p class="font-weight-bold text-primary">Applicants need to Upload: <span class="noselect m-1" style="cursor:pointer;color:#f5494c; text-decoration:underline; font-weight:normal; font-size:9pt" onclick="addCustomFileUpload()">(Click to Add Custom Attachment)</span></p>
+                    <p class="font-weight-bold text-primary">Applicants need to Upload <span class="star">*</span> <span class="noselect m-1" style="cursor:pointer;color:#f5494c; text-decoration:underline; font-weight:normal; font-size:9pt" onclick="addCustomFileUpload()">(Click to Add Custom Attachment)</span></p>
                     <div class="mb-3">
                         <label class="mycontainer d-inline-block">
                             National ID
@@ -90,7 +90,7 @@
                             <input type="checkbox" name="reg_files" value="">
                             <span class="checkbox"></span>
                         </label>
-                        <table border="0" class="text-center" id="cstm_reg_files" style="width:100%">
+                        <table border="0" class="text-center w-100" id="cstm_reg_files">
                             <tbody>
                             </tbody>
                         </table>
@@ -100,7 +100,7 @@
 
                 <!-- Camp Required Steps -->
                 <div class="col-xl-12 col-md-12">
-                    <p class="font-weight-bold text-primary">Applicants need to finish:</p>
+                    <p class="font-weight-bold text-primary">Applicants need to finish <span class="star">*</span></p>
                     <div class="mb-3">
                         <label class="mycontainer d-inline-block">
                             Interview
@@ -122,8 +122,8 @@
 
                 <!-- Campaign Regulration -->
                 <div class="col-xl-12 col-md-12">
-                    <p class="mb-1 font-weight-bold text-primary">Regulations in Registeration Form <span class="text-gray-500" style="font-weight: normal; font-size:9pt">(Recommended in Arabic)</span></p>
-                    <table border="0" class="text-center mb-4" id="camp_regu_table" style="width:100%">
+                    <p class="mb-1 font-weight-bold text-primary">Regulations in Registeration Form <span class="text-gray-500" style="font-weight: normal; font-size:9pt">(Recommended in Arabic) </span><span class="star">*</span></p>
+                    <table border="0" class="text-center mb-4 w-100" id="camp_regu_table">
                         <tbody>
                             <tr>
                                 <td style="width: 35%;vertical-align: top;">
@@ -152,7 +152,7 @@
                 <!-- Campaign Qualification -->
                 <div class="col-xl-12 col-md-12">
                     <p class="mb-1 font-weight-bold  text-primary">Qualification Rules</p>
-                    <table border="0" class="text-center mb-4" id="camp_quali_table" style="width:100%">
+                    <table border="0" class="text-center mb-4 w-100" id="camp_quali_table">
                         <tbody>
                             <tr>
                                 <td style="width: 35%;">
@@ -190,7 +190,7 @@
                 <!-- Campaign Acceptance Rules -->
                 <div class="col-xl-12 col-md-12">
                     <p class="mb-1 font-weight-bold text-primary">Acceptance Rules <span class="text-gray-500" style="font-weight: normal; font-size:9pt">(to be displayed in Acceptance Form - Recommended in Arabic)</span></p>
-                    <table border="0" class="text-center mb-3" id="camp_acptrules_table" style="width:100%">
+                    <table border="0" class="text-center mb-3 w-100" id="camp_acptrules_table">
                         <tbody>
                             <tr>
                                 <td style="width: 35%;vertical-align: top;">
@@ -220,13 +220,13 @@
                     <!-- Buttons -->
                     <div class="row justify-content-center mt-3 mb-3">
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                 Save
                             </button>
                         </div>
 
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                            <a href="/Admin/Campaigns" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" style="width:100%">
+                            <a href="/Admin/Campaigns" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100">
                                 Cancel
                             </a>
                         </div>

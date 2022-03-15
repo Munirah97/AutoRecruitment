@@ -239,10 +239,24 @@ $(".speaking_score").click(function () {
 function getFile(file_id) {
     document.getElementById(file_id).click();
 }
+
 function importFile(file_id, file_name) {
-    //display file name in the field
-    var name = document.getElementById(file_id).files.item(0).name;
-    document.getElementById(file_name).value = name;
+    var fileSize = document.getElementById(file_id).files.item(0).size / 1024 / 1024;
+    if (fileSize > 2) {
+        Swal.fire({
+            title: 'حجم الملف كبير',
+            text: 'الحد الاقصى المسموح به 2 ميغابايت',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            confirmButtonColor: '#f5494c',
+            confirmButtonText: 'موافق',
+        })
+    }
+    else {
+        //display file name in the field
+        var name = document.getElementById(file_id).files.item(0).name;
+        document.getElementById(file_name).value = name;
+    }
 }
 
 //----- Display/Hide Input when user check the radio btn -----

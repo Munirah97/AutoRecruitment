@@ -263,13 +263,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Save
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('schedule_meeting')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('schedule_meeting')">
                                     Cancel
                                 </button>
                             </div>
@@ -315,13 +315,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Upload
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('upload_olt')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('upload_olt')">
                                     Cancel
                                 </button>
                             </div>
@@ -367,13 +367,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Import
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('upload_admitted')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('upload_admitted')">
                                     Cancel
                                 </button>
                             </div>
@@ -419,13 +419,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Import
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('importHRDF')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('importHRDF')">
                                     Cancel
                                 </button>
                             </div>
@@ -446,28 +446,16 @@
             icon: 'info',
             iconColor: '#f6c23e',
             showCancelButton: true,
-            //confirmButtonColor: '#0a3049',
-            //cancelButtonColor: '#6e7d88',
+            confirmButtonColor: '#0a3049',
             confirmButtonText: 'Continue',
-
-            //buttonsStyling: false,
-            //customClass: {
-            //    confirmButton: 'btn btn-sm btn-primary', //insert class here
-            //    cancelButton: 'swal2-cancel swal2-styled'
-            //}
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire('Saved!', '', 'success')
+                Swal.fire({
+                    html: '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on Qualification Rules',
+                    icon: 'success',
+                    confirmButtonColor: '#0a3049',
+                })
             }
         }) 
-        //warn_response_continue.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on the followin Rules: <br><br> 1. Age less than 24 <br> 2. HRDF Status is Not Supported <br><br> Would you like to continue?';
-        //document.getElementById('warn_popup_continue').style.display = 'block';
     }
-    function continue_submit() {
-        document.getElementById('warn_popup_continue').style.display = 'none';
-        succ_response.innerHTML = '6592 applicants <span class="text-orange">Qualified</span> out of 10685 <br> Based on Qualification Rules';
-        document.getElementById('success_popup').style.display = 'block';
-    }
-
-
 </script>

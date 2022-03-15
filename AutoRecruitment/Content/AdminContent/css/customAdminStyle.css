@@ -1,8 +1,6 @@
-﻿
-
-/*--------- SweetAlert2 Custom style -----*/
-.swal2-styled.swal2-confirm {
-    background-color: #0a3049 !important;
+﻿/*--------- star for required feild -----*/
+.star {
+    color: #f5494c
 }
 
 /*--------- Switch on/off -----*/

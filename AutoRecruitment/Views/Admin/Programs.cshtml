@@ -59,7 +59,6 @@
     </div>
 </div>
 <!-- /.container-fluid -->
-
 <!-- ======= New Program ======= -->
 <div id="new_program" class="modal">
     <div class="row justify-content-center">
@@ -94,8 +93,8 @@
                         </div>
 
                         <!-- Campaign Regulation -->
-                        <p class="mb-1">Default Regulation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span></p>
-                        <table border="0" class="text-center mb-3" id="prog_regu_table_new" style="width:100%">
+                        <p class="mb-1">Default Regulation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span><span class="star">*</span></p>
+                        <table border="0" class="text-center mb-3 w-100" id="prog_regu_table_new">
                             <tbody>
                                 <tr>
                                     <td style="width: 35%;vertical-align: top;">
@@ -122,13 +121,20 @@
 
                         <!-- Program Verification Rules -->
                         <p class="mb-1 mt-3">Default Qualification Rules</p>
-                        <table border="0" class="text-center" id="prog_quali_table">
+                        <table border="0" class="text-center w-100" id="prog_quali_table">
                             <tbody>
                                 <tr>
                                     <td style="width: 35%;">
                                         <div class="form-floating">
-                                            <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="v_rule">Field</label>
+                                            <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                                <option value="" selected disabled>Field</option>
+                                                <option value="gender">Gender</option>
+                                                <option value="age">Age</option>
+                                                <option value="hs_score">High School Score</option>
+                                                <option value="qiyas">Qiyas Score</option>
+                                                <option value="hrdf">HRDF Status</option>
+                                                <option value="health">Health Condition</option>
+                                            </select>
                                         </div>
                                     </td>
                                     <td style="width: 20%;">
@@ -159,13 +165,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Save
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('new_program')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('new_program')">
                                     Cancel
                                 </button>
                             </div>
@@ -211,8 +217,8 @@
                         </div>
 
                         <!-- Campaign Regulation -->
-                        <p class="mb-1">Default Regulation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span></p>
-                        <table border="0" class="text-center mb-3" id="prog_regu_table_edit" style="width:100%">
+                        <p class="mb-1">Default Regulation in Registeration Form <span class="text-gray-500" style="font-size:12px">(Recommended to be in Arabic)</span><span class="star">*</span></p>
+                        <table border="0" class="text-center mb-3 w-100" id="prog_regu_table_edit">
                             <tbody>
                                 <tr>
                                     <td style="width: 35%;vertical-align: top;">
@@ -239,13 +245,20 @@
 
                         <!-- Program Verification Rules -->
                         <p class="mb-1 mt-3">Default Qualification Rules</p>
-                        <table border="0" class="text-center" id="prog_quali_table_edit">
+                        <table border="0" class="text-center w-100" id="prog_quali_table_edit">
                             <tbody>
                                 <tr>
                                     <td style="width: 35%;">
                                         <div class="form-floating">
-                                            <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)" />
-                                            <label for="v_rule">Field</label>
+                                            <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">
+                                                <option value="" selected disabled>Field</option>
+                                                <option value="gender">Gender</option>
+                                                <option value="age">Age</option>
+                                                <option value="hs_score">High School Score</option>
+                                                <option value="qiyas">Qiyas Score</option>
+                                                <option value="hrdf">HRDF Status</option>
+                                                <option value="health">Health Condition</option>
+                                            </select>
                                         </div>
                                     </td>
                                     <td style="width: 20%;">
@@ -277,13 +290,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Save
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('edit_program')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('edit_program')">
                                     Cancel
                                 </button>
                             </div>

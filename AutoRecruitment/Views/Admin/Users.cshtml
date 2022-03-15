@@ -127,13 +127,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Save
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('new_user')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('new_user')">
                                     Cancel
                                 </button>
                             </div>
@@ -209,13 +209,13 @@
                         <!-- Buttons -->
                         <div class="row justify-content-center mt-3 mb-3">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" type="button" style="width:100%">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right w-100" type="button">
                                     Save
                                 </button>
                             </div>
 
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('edit_user')">
+                                <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('edit_user')">
                                     Cancel
                                 </button>
                             </div>
@@ -229,7 +229,23 @@
 
 <script>
     function confirm_popup() {
-        warn_response_continue.innerHTML = 'If you disable this user, the user will no longer can access Recruitment System';
-        document.getElementById('warn_popup_continue').style.display = 'block';
+        Swal.fire({
+            title: 'Warning!',
+            text: 'If you disable this user, the user will no longer able to access Recruitment System',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            showCancelButton: true,
+            confirmButtonColor: '#0a3049',
+            confirmButtonText: 'Continue',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Done',
+                    text: 'User has been disabled successfully',
+                    icon: 'success',
+                    confirmButtonColor: '#0a3049',
+                })
+            }
+        }) 
     }
 </script>

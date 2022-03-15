@@ -467,122 +467,6 @@
         </div>
     </div>
 
-    <!-- ======= Success POP UP ======= -->
-    <div id="success_popup" class="modal">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-6 col-sm-10">
-                <div class="modal-content animate" style="border-radius: 10px;">
-
-                    <div class="imgcontainer" style="margin-top: -50px">
-                        <img src="~/Content/assets/img/done_icon.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
-                    </div>
-
-                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
-                        <div class="form-group">
-                            <p id="succ_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="row justify-content-center mt-3 mb-3">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-success shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('success_popup')">
-                                    OK
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ======= Error POP UP ======= -->
-    <div id="err_popup" class="modal">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-6 col-sm-10">
-                <div class="modal-content animate" style="border-radius: 10px;">
-
-                    <div class="imgcontainer" style="margin-top: -50px">
-                        <img src="~/Content/assets/img/error-icon.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
-                    </div>
-
-                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
-                        <div class="form-group">
-                            <p id="err_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="row justify-content-center mt-3 mb-3">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-danger shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('err_popup')">
-                                    OK
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ======= Warning POP UP ======= -->
-    <div id="warn_popup" class="modal">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-6 col-sm-10">
-                <div class="modal-content animate" style="border-radius: 10px;">
-                    <div class="imgcontainer" style="margin-top: -50px">
-                        <img src="~/Content/assets/img/warning-icon2.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
-                    </div>
-
-                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
-                        <div class="form-group">
-                            <p id="warn_response" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="row justify-content-center mt-3 mb-3">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('warn_popup')">
-                                    OK
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ======= Warning POP UP WITH continue  ======= -->
-    <div id="warn_popup_continue" class="modal">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-6 col-sm-10">
-                <div class="modal-content animate" style="border-radius: 10px;">
-                    <div class="imgcontainer" style="margin-top: -50px">
-                        <img src="~/Content/assets/img/warning-icon2.png" alt="Avatar" class="avatar" style="height:100px; width:100px">
-                    </div>
-
-                    <div class="loginContainer input-icons" style="padding: 0 50px 0 50px">
-                        <div class="form-group">
-                            <p id="warn_response_continue" style="text-align:center; font-size:16px; margin-bottom:30px"></p>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="row justify-content-center mt-3 mb-3">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-right" type="button" style="width:100%" onclick="continue_submit()">
-                                    Continue
-                                </button>
-                            </div>
-
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mt-2">
-                                <button class="d-sm-inline-block btn btn-sm btn-warning shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('warn_popup_continue')">
-                                    Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ======= View Log POP UP ======= -->
     <div id="viewLog" class="modal">
         <div class="row justify-content-center">
@@ -603,7 +487,7 @@
                             <div class="row justify-content-center mt-3 mb-3">
 
                                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mt-2">
-                                    <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left" type="button" style="width:100%" onclick="close_popup('viewLog')">
+                                    <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-left w-100" type="button" onclick="close_popup('viewLog')">
                                         Ok
                                     </button>
                                 </div>

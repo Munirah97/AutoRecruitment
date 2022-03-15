@@ -35,17 +35,25 @@ function importFile(file_id, file_name) {
     //    //reomve the selected file
     //    document.getElementById('import_file').value = null;
     //    document.getElementById('filename').value = "";
-
-    //    //display warning
-    //    warn_response.innerHTML = 'You can only upload Excel files';
-    //    document.getElementById('warn_popup').style.display = 'block';
     //}
     //else {
 
-    //display file name in the field
-    var name = document.getElementById(file_id).files.item(0).name;
-    document.getElementById(file_name).value = name;
-    //}
+    var fileSize = document.getElementById(file_id).files.item(0).size / 1024 / 1024;
+    if (fileSize > 2) {
+        Swal.fire({
+            title: 'File too big!',
+            text: 'The uploaded file exceeds 2 MB',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            confirmButtonColor: '#0a3049',
+        })
+    }
+    else {
+        //display file name in the field
+        var name = document.getElementById(file_id).files.item(0).name;
+        document.getElementById(file_name).value = name;
+    }
+
 }
 
 
@@ -100,13 +108,21 @@ function close_popup(modal_id) {
 // Add new row in rules table
 function addQualiRule(tableId) {
     var table = document.getElementById(tableId);
+    alert(tableId);
     var row = table.insertRow(table.rows.length);
 
     row.innerHTML =
         '<td style="width: 35%;">'
         + '     <div class="form-floating">'
-        + '         <input class="form-control" name="v_rule" type="text" placeholder="Field" maxlength="10" oninput="inputMaxLength(this)" onfocusout="vlidateEmpty(this)"/>'
-        + '         <label for="v_rule">Field</label>'
+        + '         <select class="form-control pt-0 pb-0" id="v_cond" onfocusout="vlidateEmpty(this)">'
+        + '             <option value="" selected disabled>Field</option>'
+        + '             <option value="gender">Gender</option>'
+        + '             <option value="age">Age</option>'
+        + '             <option value="hs_score">High School Score</option>'
+        + '             <option value="qiyas">Qiyas Score</option>'
+        + '             <option value="hrdf">HRDF Status</option>'
+        + '             <option value="health">Health Condition</option>'
+        + '         </select>'
         + '     </div>'
         + '</td>'
 
@@ -120,7 +136,6 @@ function addQualiRule(tableId) {
         + '         </select>'
         + '     </div>'
         + '</td>'
-
 
         + '<td style="width: 35%;">'
         + '     <div class="form-floating">'
@@ -170,8 +185,6 @@ function addCustomFileUpload() {
     if (table.rows.length < 2) {
         var row = table.insertRow(table.rows.length);
         row.innerHTML =
-
-
             '<td style="width: 25%;">'
             + '    <div class="form-floating">'
             + '        <input class="form-control" name="" type="text" placeholder="Section Title" onfocusout="vlidateEmpty(this)" />'
@@ -202,11 +215,14 @@ function addCustomFileUpload() {
             + ' </td>';
     }
     else {
-        warn_response.innerHTML = 'You can not add more than 2 files';
-        document.getElementById('warn_popup').style.display = 'block';
+        Swal.fire({
+            title: 'Warning!',
+            text: 'You can not add more than 2 files',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            confirmButtonColor: '#0a3049',
+        })
     }
-
-
 }
 
 //// Add custom file upload in edit interview response
@@ -239,8 +255,13 @@ function addInterviewFile_editRes(tbl) {
             + '</td>';
     }
     else {
-        warn_response.innerHTML = 'You can not add more than 5 files';
-        document.getElementById('warn_popup').style.display = 'block';
+        Swal.fire({
+            title: 'Warning!',
+            text: 'You can not add more than 5 files',
+            icon: 'info',
+            iconColor: '#f6c23e',
+            confirmButtonColor: '#0a3049',
+        })
     }
 }
 
